@@ -1,0 +1,67 @@
+.header
+{
+    height: 90vh;
+    display: flex;
+    background-color: rgba(6, 6, 250, 0.966);   
+     justify-content: center;
+    align-items: center;
+}
+
+.wrapper
+{
+    min-height: 60%;
+    min-width: 80%;
+    background-color: white;
+    border-radius: 1rem;
+    padding: 1rem;
+}
+
+.form__heading
+{
+    font-size: 1.8rem;
+    padding: 1rem;
+}
+.form__radio
+{
+    padding: 1rem 1rem;
+
+}
+
+.form__city
+{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+
+
+}
+
+.form__details
+{
+    padding: 1rem 2rem;
+}
+.form__city--cityinput
+{
+    margin-top: 1rem;
+    padding: 1rem 0;
+    border: none;
+    border-bottom: 1px solid black;
+    outline: none;
+}
+
+.form__inputcontainer
+{
+    padding: 0 1rem;
+}
+/* mat-fields css */
+
+
+@media screen and (max-width:768px)
+{
+    .wrapper
+    {
+        min-height: 90%;
+        min-width: 90%;
+    }
+}
