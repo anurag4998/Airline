@@ -1,0 +1,116 @@
+.Hero
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.6)), url(../../assets/header.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  padding: 2rem;
+}
+
+.signupcontainer
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 50%;
+    background-color: white;
+    border-radius: 1rem;
+    padding: 3rem;
+}
+
+
+.signupform__heading
+{
+    font-size: 3.5rem;
+    font-family: 'Poppins', sans-serif;
+    padding: 3rem 0;
+    font-weight: 600;
+}
+.signupform
+{
+    padding: 1rem;
+}
+.inputgroup
+{
+    margin: 1.7rem 1.5rem ;
+}
+.label {
+    font-size: 1.6rem;
+    color: #555;
+    text-transform: capitalize;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.input--style-4 
+{
+    line-height: 5rem;
+    background: #fafafa;
+    -webkit-box-shadow: inset 0px 1px 3px 0px rgba(0, 0, 0, 0.08);
+    -moz-box-shadow: inset 0px 1px 3px 0px rgba(0, 0, 0, 0.08);
+    box-shadow: inset 0px 1px 3px 0px rgba(0, 0, 0, 0.08);
+    -webkit-border-radius: 0.5rem;
+    -moz-border-radius: 0.5rem;
+    border-radius: 5px;
+    padding: 0 2rem;
+    font-size: 1.6rem;
+    color: #666;
+    -webkit-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+    border: none;
+}
+
+.pwdcontainer
+{
+    position: relative;
+}
+.loginform__toggleicon
+{
+    position: absolute;
+    font-size: 1.3rem;
+    top: 4rem;
+    right: 0rem;
+}
+.submitbtn 
+{
+    padding: 2rem 2rem;
+    outline: none;
+    color: floralwhite;
+    background-color: blueviolet;
+    border: none;
+    border-radius: 0.4rem;
+    cursor: pointer;
+    width: 15rem;
+    font-size: 1.6rem;
+    margin-top: 1rem;
+}
+@media screen and (max-width:1200px)
+{
+    .Hero
+    {
+        padding: 1rem;
+    }
+    .signupcontainer
+    {
+        width: 85%;
+    }
+}
+
+@media screen and (max-width:768px)
+{
+    .input--style-4 
+    {
+        width: 100%;
+    }
+    .inputgroup
+    {
+        margin: 1rem 0 ;
+    }
+}

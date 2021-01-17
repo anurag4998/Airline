@@ -11,15 +11,13 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
 import { MatInputModule } from '@angular/material/input';
+import { SignupComponent } from './signup/signup.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CockpitComponent,
-    ServerElementComponent,
-    SignupComponent,
     LoginComponent,
-    SearchComponent,
+    SignupComponent,
   ],
   imports: [
     BrowserModule,
