@@ -1,0 +1,21 @@
+<div class="loginwrapper">
+    <div class="logincontainer">
+        <h1 class='loginform__heading'>Login</h1>
+        <form class="loginform">
+            <div class="inputcontainer">
+                <label class="label">Email</label>
+                <input type='email'  class='loginform__input'  name="username" autoComplete="off" required/>
+
+            </div>
+            <div class='pwdcontainer inputcontainer'>
+                <label class="label">Password</label>
+                <input [type]="visible ? 'text' : 'password'"  id='password' class='loginform__input' name="password" minLength="8" autoComplete="off" required/>
+                <fa-icon [icon]  =  "visible ? faEye : faEyeSlash "  (click) = "onClick()" class="loginform__toggleicon"></fa-icon>
+
+            </div>
+            <button type="submit" class="submitbtn" > Login </button>
+
+        </form>
+
+    </div>
+</div>
