@@ -1,6 +1,6 @@
 <div class="header row">
     <div class="wrapper col-10 ">
-      <form class="form" #flightsearchform = "ngForm">
+      <form class="form" #flightsearchform = "ngForm" (ngSubmit) = "onSubmit()" novalidate>
               <h2 class="form__heading">
                   Book Flight Tickets
               </h2>
@@ -8,11 +8,11 @@
   
                   <div class="row">
                       <div class="form__radio">
-                          <input type="radio" value="one-way" name="journey" ngModel/>
+                          <input type="radio" value="one-way" name="journey" [(ngModel)] = model.direction/>
                           <label for="one-way"> One Way</label>
                       </div>
                       <div class="form__radio">
-                          <input type="radio" value="Return" name="journey" ngModel/>
+                          <input type="radio" value="Return" name="journey" [(ngModel)] = model.direction/>
                           <label for="return"> Return</label>
                       </div>
                   </div>
@@ -21,7 +21,7 @@
                 <div style="font-size: 1.5rem" class="form__inputcontainer" >
                   <mat-form-field appearance="outline" [hideRequiredMarker]= "true">
                     <mat-label>From</mat-label>
-                    <mat-select name="departurecity" [(ngModel)]="departurecity" ngModel required>
+                    <mat-select name="departurecity" [(ngModel)] = model.departurelocation required>
                       <mat-option *ngFor="let city of data" [value]="city.city_name">
                         {{city.city_name + ' (' + city.IATA_code + ')'}}
                       </mat-option>
@@ -31,7 +31,7 @@
                 <div style="font-size: 1.5rem" class="form__inputcontainer">
                     <mat-form-field appearance="outline" [hideRequiredMarker]= "true">
                       <mat-label>To</mat-label>
-                      <mat-select name="arrivalcity" [(ngModel)]="arrivalcity" ngModel required>
+                      <mat-select name="arrivalcity" [(ngModel)] = model.arrivallocation required>
                         <mat-option *ngFor="let city of data" [value]="city.city_name">
                           {{city.city_name + ' (' + city.IATA_code + ')'}}
                         </mat-option>
@@ -41,7 +41,7 @@
                 <div style="font-size: 1.5rem" class="form__inputcontainer">
                     <mat-form-field appearance="outline" [hideRequiredMarker]= "true">
                       <mat-label>Departure</mat-label>
-                      <input matInput [matDatepicker]="deptpicker" [min]="minDate" [max]="maxDate" matSelect ngModel name= "departure" required />
+                      <input matInput [matDatepicker]="deptpicker" [min]="minDate" [max]="maxDate" matSelect  [(ngModel)] = model.departuredate name= "departure" required />
                       <mat-datepicker-toggle matSuffix [for]="deptpicker"></mat-datepicker-toggle>
                       <mat-datepicker #deptpicker></mat-datepicker>
                     </mat-form-field>
@@ -49,7 +49,7 @@
                  <div style="font-size: 1.5rem" class="form__inputcontainer">
                     <mat-form-field appearance="outline" [hideRequiredMarker]= "true">
                         <mat-label>Arrival</mat-label>
-                        <input matInput [matDatepicker]="arrpicker" [min]="minDate" [max]="maxDate" matSelect ngModel name="arrival" required/>
+                        <input matInput [matDatepicker]="arrpicker" [min]="minDate" [max]="maxDate" matSelect  [(ngModel)] = model.arrivaldate name="arrival" required/>
                         <mat-datepicker-toggle matSuffix [for]="arrpicker"></mat-datepicker-toggle>
                         <mat-datepicker #arrpicker></mat-datepicker>
                     </mat-form-field>
@@ -57,14 +57,20 @@
                   <div style="font-size: 1.5rem" class="form__inputcontainer">
                     <mat-form-field appearance="outline" [hideRequiredMarker]= "true">
                       <mat-label>Travellers</mat-label>
-                      <mat-select name="travellers" ngModel required>
+                      <mat-select name="travellers"  [(ngModel)] = model.seats required>
                         <mat-option *ngFor="let count of travellers" [value]="count" >
                           {{count}}
                         </mat-option>
                       </mat-select>
                     </mat-form-field>
                   </div>
+
+              </div>
+              <div class="row justify-content-center">
+                <button [disabled] = "flightsearchform.form.invalid" type="submit" 
+                [ngClass]="(flightsearchform.form.invalid == false? 'btn-enabled' : 'btn-disabled')">SEARCH</button>
               </div>
           </form>
       </div>
   </div>
+

@@ -27,33 +27,48 @@
 
 }
 
-.form__city
-{
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    flex-direction: column;
 
-
-}
 
 .form__details
 {
     padding: 1rem 2rem;
 }
-.form__city--cityinput
-{
-    margin-top: 1rem;
-    padding: 1rem 0;
-    border: none;
-    border-bottom: 1px solid black;
-    outline: none;
-}
+
 
 .form__inputcontainer
 {
     padding: 0 1rem;
 }
+.btn-disabled
+{
+    cursor: not-allowed;
+    padding: 2rem 2rem;
+    outline: none;
+    color: floralwhite;
+    background-color: blueviolet;
+    border: none;
+    border-radius: 1rem;
+    width: 15rem;
+    font-size: 1.6rem;
+    margin-top: 1rem;
+    text-transform: capitalize;
+
+}
+.btn-enabled
+{
+    cursor: pointer;
+    padding: 2rem 2rem;
+    outline: none;
+    color: floralwhite;
+    background-color: blueviolet;
+    border: none;
+    border-radius: 1rem;
+    width: 15rem;
+    font-size: 1.6rem;
+    margin-top: 1rem;
+    text-transform: capitalize;
+}
+
 /* mat-fields css */
 
 
