@@ -13,13 +13,15 @@ import {MatNativeDateModule} from '@angular/material/core';
 import { MatInputModule } from '@angular/material/input';
 import { SignupComponent } from './signup/signup.component';
 import { SearchComponent } from './search/search.component';
-
+import { AirplanecardComponent } from './airplanecard/airplanecard.component';
+import {MatChipsModule} from '@angular/material/chips'; 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     SignupComponent,
     SearchComponent,
+    AirplanecardComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,6 +34,7 @@ import { SearchComponent } from './search/search.component';
     MatDatepickerModule,
     MatNativeDateModule,
     MatInputModule,
+    MatChipsModule,
   ],
 
   providers: [],
