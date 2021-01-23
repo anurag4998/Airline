@@ -8,7 +8,6 @@ import { LoginComponent } from '../app/components/login/login.component';
 import { AirplanecardComponent } from '../app/components/airplanecard/airplanecard.component';
 import { SearchComponent } from '../app/components/search/search.component';
 import { SignupComponent } from '../app/components/signup/signup.component';
-import { JsonComponent } from './json/json.component'; 
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
