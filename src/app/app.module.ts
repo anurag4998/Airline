@@ -27,7 +27,6 @@ import { HttpClientModule } from '@angular/common/http';
     SignupComponent,
     SearchComponent,
     AirplanecardComponent,
-    JsonComponent,
   ],
   imports: [
     BrowserModule,
