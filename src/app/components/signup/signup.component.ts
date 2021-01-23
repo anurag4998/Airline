@@ -19,4 +19,10 @@ export class SignupComponent implements OnInit {
     this.visible = !this.visible;
   }
 
+  onSubmit(event)
+  {
+    console.log(event)
+
+  }
+
 }

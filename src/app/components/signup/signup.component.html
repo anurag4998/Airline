@@ -1,0 +1,114 @@
+<div class=" Hero signupwrapper">
+    <div class = 'signupcontainer'>   
+        <h1 class='signupform__heading'>Signup</h1>
+        <form class="signupform" #signupform = "ngForm" novalidate (ngSubmit) = "onSubmit($event)">
+            <div class="row">
+                <div class="col-12 col-md-5 inputgroup">
+                    <div>
+                        <label class="label">Title</label>
+                        <input class="input--style-4" type="text" name="Title" required autocomplete="off" ngModel>
+                        
+                    </div>
+                </div>
+                <div class="col-12 col-md-5 inputgroup">
+                    <div>
+                        <label class="label">First name</label>
+                        <input class="input--style-4" type="text" name="first_name" required autocomplete="off" ngModel #name="ngModel">
+                        <div *ngIf="name.invalid && (name.dirty || name.touched)">
+                            <small *ngIf="name.errors.required">
+                                Name is required.
+                            </small>
+                        </div>
+                     </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12 col-md-5 inputgroup">
+                    <div>
+                        <label class="label">last name</label>
+                        <input class="input--style-4" type="text" name="last_name" required autocomplete="off" ngModel
+                             #last_name = "ngModel">
+                        <div *ngIf="last_name.invalid && (last_name.dirty || last_name.touched)">
+                            <small *ngIf="last_name.errors.required">
+                                Last Name is required.
+                            </small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-5 inputgroup">
+                    <div>
+                        <label class="label">DOB</label>
+                        <input class="input--style-4"  onfocus="(this.type='date')" onblur="(this.type='text')" name="dob" 
+                            type='text' required autocomplete="off" ngModel #dob = "ngModel">
+                            <div *ngIf = "dob.invalid && (dob.dirty || dob.touched)">
+                                <small *ngIf = "dob.errors.required">
+                                    Date Of Birth is required
+                                </small>
+                            </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-5 inputgroup">
+                    <div class="pwdcontainer">
+                        <label class="label">Password</label>
+                        <input class="input--style-4"  [type]="visible ? 'text' : 'password'" name="Password" required 
+                            autocomplete="off" ngModel #Password = "ngModel" 
+                            minlength="8">
+                        <fa-icon [icon]  =  "visible ? faEye : faEyeSlash"  (click) = "onClick()" class="loginform__toggleicon"></fa-icon>
+
+                        <div *ngIf="Password.invalid && (Password.dirty || Password.touched)">
+                            <small *ngIf="Password.errors?.required">Password is required</small>
+                            <small *ngIf="Password.errors?.minlength">Password must be at least 8 charachters</small>
+                            <small *ngIf="Password.errors?.pattern">This is not a valid Email</small>
+                        </div>
+
+                     </div> 
+                </div>
+                <div class="col-12 col-md-5 inputgroup">
+                    <div class="pwdcontainer">
+                        <label class="label">Confirm Password</label>
+                        <input class="input--style-4"  [type]="visible ? 'text' : 'password'" name="Password" required autocomplete="off" ngModel>
+                        <fa-icon [icon]  =  "visible ? faEye : faEyeSlash "  (click) = "onClick()" class="loginform__toggleicon"></fa-icon>
+
+                     </div>
+                </div>
+                
+            </div>
+
+            <div class="row">
+                <div class="col-12 col-md-5 inputgroup">
+                    <div>
+                        <label class="label">Email</label>
+                        <input class="input--style-4" type="email" name="Email" required autocomplete="off" 
+                            ngModel #Email = "ngModel" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"  >
+                            <div *ngIf="Email.invalid && (Email.dirty || Email.touched)">
+                                <small><mat-error *ngIf="Email.errors?.required">Email is a required field</mat-error></small>
+                                <small *ngIf="Email.errors?.pattern">This is not a valid Email</small>
+                            </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-5 inputgroup">
+                    <div>
+                        <label class="label">Phone Number</label>
+                        <input class="input--style-4" type="tel" name="Phone" required autocomplete="off" ngModel
+                            #Phone = "ngModel" minlength="10" maxlength="10">
+                        <div *ngIf="Phone.invalid && (Phone.dirty || Phone.touched)">
+                            <small *ngIf="Phone.errors?.required">Phone Number is a required field</small>
+                            <small *ngIf="Phone.errors?.minlength">Phone number must be of 10 digits</small>
+                        </div>
+                     </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-5 inputgroup">
+                    <button type="submit" class="submitbtn" > Submit </button>
+                </div>
+            </div>
+
+
+    </form>
+
+    </div>
+</div>
