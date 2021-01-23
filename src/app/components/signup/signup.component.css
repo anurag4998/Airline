@@ -4,7 +4,7 @@
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.6)), url(../../assets/header.jpg);
+  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.6)), url(../../../assets/header.jpg);
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
