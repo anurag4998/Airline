@@ -44,3 +44,9 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+dept.ts
+fetch.service.ts
+json.component.css 
+json.component.html 
+json.component.ts
