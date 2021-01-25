@@ -20,7 +20,9 @@ import {MatChipsModule} from '@angular/material/chips';
 
 import { HttpClientModule } from '@angular/common/http';
 
-import {Confirmvalidator} from '../app/shared/confirmvalidator.directive'
+import {Confirmvalidator} from '../app/shared/confirmvalidator.directive';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component'
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import {Confirmvalidator} from '../app/shared/confirmvalidator.directive'
     SignupComponent,
     SearchComponent,
     AirplanecardComponent,
-    Confirmvalidator
+    Confirmvalidator,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
