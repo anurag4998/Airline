@@ -1,43 +1,41 @@
-<div class="wrapper">
-<div class="card">
+<div class="card" *ngFor = "let a of flightdetails">
     <div class="card__section card__flight">
         <div class="card__flight--logo">
             <img src="../../assets/logo.png" style="height: 6rem;">
         </div>
         <div class="card__flight--number">
-            AI678
+            {{'AI'+a.flight_number}}
         </div>
     </div>
     <div class = "card__location card__section">
         <div class="card__location--time">
-            08:30
+            {{a.departure_time}}
         </div> 
         <div class="card__location--place">
-            ahmedabad
+            {{a.departure_location}}
         </div> 
        
     </div>
     <div class="card__section card__duration">
         <div class="card__duration--name">Lorem Ipsum</div>
-        <div class="card__duration--time">7h 30M</div>
+        <div class="card__duration--time">{{a.duration}}</div>
         <div class="card__duration--type">NON-STOP</div>
     </div>
     <div class = "card__location card__section">
         <div class="card__location--time">
-            09:30
+            {{a.arrival_time}}
         </div> 
         <div class="card__location--place">
-            Pune
+           {{a.arrival_location}}
         </div> 
     </div>
     <div class="card__section card__booking">
         <div class="card__booking--price">
-           {{ '₹' +  6058}}
+           {{ '₹' +  a.economy_price}}
 
         </div>
         <div class="card__booking--book">
             <button class="book">Book Now</button>
         </div>
     </div>
-</div>
 </div>
