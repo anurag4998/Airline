@@ -1,6 +1,7 @@
 <div class="header row">
     <div class="wrapper col-10 ">
       <form class="form" #flightsearchform = "ngForm" (ngSubmit) = "onSubmit()" novalidate>
+
               <h2 class="form__heading">
                   Book Flight Tickets
               </h2>
@@ -68,9 +69,11 @@
               </div>
               <div class="row justify-content-center">
                 <button [disabled] = "flightsearchform.form.invalid" type="submit" 
-                [ngClass]="(flightsearchform.form.invalid == false? 'btn-enabled' : 'btn-disabled')">SEARCH</button>
+                [ngClass]="(flightsearchform.form.invalid == false? 'btn-enabled' : 'btn-disabled')"
+                >SEARCH</button>
               </div>
           </form>
       </div>
   </div>
 
+<app-footer></app-footer>

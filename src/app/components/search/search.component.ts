@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {AirportsService} from '../../services/airports.service';
+import {SearchflightService} from '../../services/searchflight.service'
 import {Searchflight} from '../../models/searchflight'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-search',
@@ -9,7 +11,7 @@ import {Searchflight} from '../../models/searchflight'
 })
 export class SearchComponent implements OnInit {
 
-  constructor(private service : AirportsService) {
+  constructor(private service : AirportsService, private GetFlightsService:SearchflightService,private router: Router) {
     const currentYear = new Date().getFullYear();
     const currentMonth = new Date().getMonth();
     const currentDate = new Date().getDate();
@@ -28,12 +30,31 @@ export class SearchComponent implements OnInit {
   public arrivalcity:string
   minDate: Date;
   maxDate: Date;
+  pageName = 'flight/search'
+
   
   model = new Searchflight("one-way","Delhi", '', new Date(), new Date() , 1);
- 
-  onSubmit()
+  
+  
+   
+  async onSubmit()
   {
-    console.log(3)
+    var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+
+    let depart_location = this.model.departurelocation
+    let arrival_location = this.model.arrivallocation
+    let departure_date = `${this.model.departuredate.getFullYear()}-${this.model.departuredate.getUTCMonth()+1}-${this.model.departuredate.getDate()}`
+    let day = days[this.model.departuredate.getDay()]
+    let direction = this.model.direction
+    let seats = this.model.seats
+
+    if(this.model.direction == 'one-way')
+     await this.GetFlightsService.post(
+        depart_location,arrival_location,day,departure_date,seats
+      )
+
+    this.router.navigate([`${this.pageName}`]);
+
 
   }
 

@@ -2,11 +2,15 @@
 {
     height: 90vh;
     display: flex;
-    background-color: rgba(6, 6, 250, 0.966);   
+    background-image: linear-gradient(to bottom,#051322,#15457c);   
      justify-content: center;
     align-items: center;
 }
-
+.row 
+{
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+}
 .wrapper
 {
     min-height: 60%;
