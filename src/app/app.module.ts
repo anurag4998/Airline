@@ -22,7 +22,8 @@ import { HttpClientModule } from '@angular/common/http';
 
 import {Confirmvalidator} from '../app/shared/confirmvalidator.directive';
 import { HeaderComponent } from './components/header/header.component';
-import { FooterComponent } from './components/footer/footer.component'
+import { FooterComponent } from './components/footer/footer.component';
+import { DisplayflightComponent } from './components/displayflight/displayflight.component'
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { FooterComponent } from './components/footer/footer.component'
     AirplanecardComponent,
     Confirmvalidator,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    DisplayflightComponent
   ],
   imports: [
     BrowserModule,
