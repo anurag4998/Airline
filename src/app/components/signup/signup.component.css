@@ -31,6 +31,15 @@
     padding: 3rem 0;
     font-weight: 600;
 }
+
+.error-msg
+{
+    font-size: 2rem;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    padding: 1rem 0 2rem 0;
+    font-weight: 600;
+}
 .signupform
 {
     padding: 1rem;

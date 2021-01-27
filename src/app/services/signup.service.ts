@@ -17,8 +17,16 @@ export class Signupservice {
   }
   constructor(private httpClient: HttpClient) { }
   
-  post(data:Signup) : Observable<Signup>{
-    return this.httpClient.post<Signup>(this.apiServer,data,this.httpOptions)
+  async post(data:Signup) {
+    try 
+    {
+      let a = await this.httpClient.post<Signup>(this.apiServer,data,this.httpOptions).toPromise()
+    }
+    catch(error)
+    { 
+
+         return (error.error.Message)
+    }
   
   }
  
