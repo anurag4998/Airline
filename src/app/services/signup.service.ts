@@ -24,7 +24,6 @@ export class Signupservice {
     }
     catch(error)
     { 
-
          return (error.error.Message)
     }
   

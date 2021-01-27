@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 import { faEye } from '@fortawesome/free-solid-svg-icons';
-import {faPlaneDeparture} from '@fortawesome/free-solid-svg-icons'
+import Swal from 'sweetalert2'
 import {Signupservice} from '../../services/signup.service'
+
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
@@ -10,7 +12,7 @@ import {Signupservice} from '../../services/signup.service'
 })
 export class SignupComponent implements OnInit {
 
-  constructor(public signup: Signupservice) {​​​​​​​​ }​​​​​​​​
+  constructor(public signup: Signupservice, private router: Router) {​​​​​​​​ }​​​​​​​​
   faEyeSlash = faEyeSlash;
   faEye=faEye;
   //password toggle
@@ -32,7 +34,12 @@ export class SignupComponent implements OnInit {
     setTimeout(() => {
       this.timer = false
     },3000)
-    console.log(this.error)
+    if(this.error == null)
+    {
+      Swal.fire('Done', 'Account Created!', 'success')
+      this.router.navigate([`${'login'}`]);
+      
+    }
 
   }
 
