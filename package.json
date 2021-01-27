@@ -25,6 +25,7 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.34",
     "@fortawesome/free-solid-svg-icons": "^5.15.2",
     "bootstrap": "^4.5.3",
+    "ng2-search-filter": "^0.5.1",
     "rxjs": "~6.6.0",
     "sweetalert2": "^10.13.3",
     "tslib": "^2.0.0",

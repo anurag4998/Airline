@@ -1,0 +1,85 @@
+.view
+{
+    padding:20px;
+}
+.tbl
+    {
+        border-spacing: 0.5rem;
+        margin:auto;
+        border-radius: 15px;
+        padding:20px;
+        width:75%;
+        padding-left: 40px;
+        background-color: white;   
+        border-collapse: collapse;
+    }
+.h1
+{
+    font-size:30px;
+    padding-top: 20px;
+}
+    .th
+    {
+        color:white;
+        background-color: rgb(102, 96, 96); 
+        padding:20px;  
+    }
+
+    .tr:nth-child(even) 
+    {
+        background-color: rgb(209, 179, 179);
+    }
+
+    .td
+    {
+        font-family: "Gill Sans", sans-serif;
+        text-align: center;
+        font-size:16px;
+        font-weight: 550;
+        padding:15px;
+        
+    }
+
+    .bt
+    {
+        width:110px;
+        color:white;
+        font-size: large;
+        border: none;
+        
+        border-radius: 3px;
+        padding: 15px 28px;
+        text-align: center;
+        display: inline-block;
+        font-size: 16px;
+    }
+
+    .update
+    {
+        margin-bottom: 5px;
+        background-color: #5a8ad3;
+        
+    }
+
+    .delete
+    {
+        background-color: rgb(214, 90, 90);
+    }
+    
+    .search
+    { 
+        padding:15px;
+        border-radius: 4px;
+        border:none;
+        background-color: rgb(216, 215, 215);
+        height:40px;
+        width:400px;
+        font-size:14px;
+        
+    }
+    .searchicon
+    {
+        font-size: 40px;
+        
+        
+    }
