@@ -1,0 +1,83 @@
+.dim {
+    max-width: 700px;
+    padding: 30px;
+    margin: 10px auto;
+    border-radius: 10px;
+    background-color: white;
+}
+
+
+.control-label
+{
+    font-weight: 500;
+    padding-left: 50px;
+    padding-top:6px;
+}
+.form-control{
+    font-family: 'Open Sans' , sans-serif;
+    position:relative;
+    width:100%;
+    padding:8px;
+    border: solid #000;
+    border-width: 0 1px;
+    border-radius: 4px;
+    background-color: rgb(231, 231, 231);
+    color:rgb(80, 79, 79);
+   font-weight:500;
+}
+
+
+.container
+{       width:60%;
+        margin-left:auto;
+}
+
+
+.dim .h2 { 
+    font-family: 'Open Sans' , sans-serif;
+    font-size: 30px;
+    font-weight: 600;
+    margin-top: 3%;
+    text-align: center;
+}
+.msg{
+    padding-left: 190px;
+    color:red;
+    font-weight: 700;
+}
+.days
+{
+    list-style-type: none;
+    background-color: rgb(231, 231, 231);
+    height:100px;
+    overflow-y:scroll ;
+    border-radius: 8px;
+    padding-left: 15px;
+    padding-top: 10px;
+    border: solid #000;
+    border-width: 0 1px;
+}
+
+.bt
+{
+        
+    color:black;
+    background-color: rgb(202, 195, 195);
+    font-size: large;
+    border: none;
+    border-radius: 3px;
+    padding: 15px 28px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    width:100%;
+    font-weight:550;
+}
+
+.add
+{
+    margin-bottom: 5px;
+    background-color: #5a8ad3;
+    color:white;
+        
+}

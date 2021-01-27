@@ -20,6 +20,13 @@ import {MatChipsModule} from '@angular/material/chips';
 
 import { HttpClientModule } from '@angular/common/http';
 
+import { AddflightComponent } from './components/addflight/addflight.component'
+import { DeleteflightComponent } from './components/deleteflight/deleteflight.component';
+import { UpdateflightComponent } from './components/updateflight/updateflight.component';
+import { ViewallflightsComponent } from './components/viewallflights/viewallflights.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+
+
 import {Confirmvalidator} from '../app/shared/confirmvalidator.directive';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -35,7 +42,12 @@ import { DisplayflightComponent } from './components/displayflight/displayflight
     Confirmvalidator,
     HeaderComponent,
     FooterComponent,
-    DisplayflightComponent
+    DisplayflightComponent,
+    AddflightComponent,
+    DeleteflightComponent,
+    UpdateflightComponent,
+    ViewallflightsComponent,
+   
   ],
   imports: [
     BrowserModule,
@@ -50,6 +62,8 @@ import { DisplayflightComponent } from './components/displayflight/displayflight
     MatInputModule,
     MatChipsModule,
     HttpClientModule,
+    Ng2SearchPipeModule
+    
   ],
 
   providers: [],

@@ -1,0 +1,60 @@
+.view
+ {
+     margin-top:100px;
+ }   
+    .tbl
+    {
+        border-spacing: 0.5rem;
+        margin:auto;
+        border-radius: 15px;
+        padding:20px;
+        width:75%;
+        padding-left: 40px;
+        background-color: white;   
+        border-collapse: collapse;
+
+    }
+
+    .th
+    {
+        color:white;
+        background-color: rgb(102, 96, 96); 
+        padding:20px;  
+    }
+
+
+    .td
+    {
+        font-family: "Gill Sans", sans-serif;
+        text-align: center;
+        font-size:16px;
+        font-weight: 550;
+        padding:15px;
+    }
+
+    .tbt
+    {
+        background-color: rgb(209, 179, 179);
+    }
+
+    .bt
+    {
+        margin-left:450px;
+        margin-right:450px;
+        color:black;
+        font-size: large;
+        border: none;
+        border-radius: 3px;
+        padding: 15px 28px;
+        text-align: center;
+        display: inline-block;
+        font-size: 16px;
+        width:300px;
+        background-color: rgb(177, 169, 169);
+        font-weight:550;
+    }
+
+ .delete{
+     color:white;
+   background-color: rgb(182, 69, 69);
+ }

@@ -1,0 +1,39 @@
+<div class="view">
+    <table class="tbl">
+        
+        <thead>
+            <tr><th colspan="7" class="td"><h1 class="h1">FLIGHTS</h1></th></tr>
+            <tr>
+                <th class="td" colspan="7">
+                <span class="searchicon">⌕</span><input type="text" class="search" name="search" [(ngModel)]="searchText" placeholder=" Search for Flights">
+                </th>
+            </tr>
+            <tr class="th">
+                <th class="td">Flight Number</th>
+                <th class="td">Origin</th>
+                <th class="td">Departure Time</th>
+                <th class="td">Destination</th>
+                <th class="td">Arrival Time</th>
+                <th class="td">Duration</th> 
+                <th class="td"></th>                         
+            
+            </tr>
+        </thead>
+        <tbody>
+            
+            <tr class="tr" *ngFor="let flight of flights | filter:searchText">
+                <td class="td">{{flight.FlightNumber}}</td>
+                <td class="td">{{flight.departure_location}}</td>
+                <td class="td">{{flight.departure_time}}</td>
+                <td class="td">{{flight.arrival_location}}</td>
+                <td class="td">{{flight.arrival_time}}</td>
+                <td class="td">{{flight.duration}}</td>
+                <td class="td">
+                    <button class="bt update" [routerLink]="['/updateflight/', flight.FlightNumber]">Update</button><br>
+                    <button class="bt delete" [routerLink]="['/deleteflight/', flight.FlightNumber]">Delete</button>
+                </td>
+            
+            </tr>
+        </tbody>
+    </table>
+</div>
