@@ -33,7 +33,7 @@
 .nav-items>a
 {
     padding: 1rem 2rem;
-    background-color:#4834d4;
+    background-color:#4934d467;
     margin-left: 2rem;
     text-decoration: none;
     border-radius: 0.5rem;
@@ -94,7 +94,7 @@
     padding: 2rem 2rem;
     outline: none;
     color: floralwhite;
-    background-color: blueviolet;
+    background-color:#4934d4;
     border: none;
     border-radius: 1rem;
     width: 15rem;
@@ -109,7 +109,7 @@
     padding: 2rem 2rem;
     outline: none;
     color: floralwhite;
-    background-color: blueviolet;
+    background-color: #4934d4;
     border: none;
     border-radius: 1rem;
     width: 15rem;
