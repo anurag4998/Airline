@@ -31,16 +31,20 @@ export class SignupComponent implements OnInit {
     delete formvalue.cnfpwd;
     this.timer = true
     this.error = await this.signup.post(formvalue)
-    setTimeout(() => {
-      this.timer = false
-    },3000)
+    
     if(this.error == null)
     {
       Swal.fire('Done', 'Account Created!', 'success')
       this.router.navigate([`${'login'}`]);
       
     }
-
+    else 
+    {
+      Swal.fire('oops', this.error, 'error')
+    }
+    setTimeout(() => {
+      this.timer = false
+    },3000)
   }
 
 }
