@@ -10,16 +10,30 @@
           </ul>
     </div>
  </header> 
- <div class="travel-details">
+
+ <div class="search-details">
     <div class="heading">
         <h2 class="heading--title">Search Results</h2>
         <h4 class="heading--results">We found {{flights.length}} results</h4>
     </div>
-    <div class="heading__location" *ngIf = "departure!=null">
-        <span class="heading__location--place"> {{departure}}</span> <span class="heading__location--arrow">&#8594;</span>   <span class="heading__location--place">{{arrival}}</span>
-    </div>
+ </div>
+ <div class="travel-details" *ngIf = "arrival!=null">
+     <div class="travel-details--wrapper">
+
+        <div class="heading__location" >
+            <span class="heading__location--place"> {{departure}}</span> <span class="heading__location--arrow">&#8594;</span>   <span class="heading__location--place">{{arrival}}</span>
+        </div>
+        <div class="seatclasstoggler">
+            <span>Economic</span>
+            <div class= "toggle-switch">
+                <button [ngClass]="(classstate) ? 'switchlight on-animationright' :'switchlight on-animationleft'" (click) = "toggle()"></button>
+            </div>
+            <span>Business</span>
+        </div>
+        
+     </div>
  </div>   
- <app-airplanecard [flightdetails] = "flights" class="flightdetailwrapper">    
+ <app-airplanecard [flightdetails] = "flights" [classstate] = "classstate" class="flightdetailwrapper">    
 
     </app-airplanecard>
 

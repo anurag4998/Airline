@@ -11,10 +11,14 @@ export class DisplayflightComponent implements OnInit {
   public flights =[]
   public departure:string
   public arrival:String
+  public classstate:boolean= false
   ngOnInit(): void {
    this.flights = this.service.flightdata
    this.departure = this.service.departure_location
    this.arrival = this.service.arrival_location  
   }
-
+  toggle()
+  {
+     this.classstate =  !this.classstate
+  }
 }

@@ -1,15 +1,4 @@
-.flightdetailwrapper
-{
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 2.5rem 0;
-    background-color: #fdfdfd;
-    min-height: 100vh;
-    flex-direction: column;
-
-}
-
+/* Header */
 header 
 {
     display: flex;
@@ -73,21 +62,38 @@ ul {
     width: 90%; 
     left: 1rem; 
   }
+/* *********SEARCH DETAILS***************** */
 
-  .travel-details
+.search-details
+{
+  background-color:  #fdfdfd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 2rem 0;
+ 
+}
+
+.search-details>div
+{
+  width: 60%;
+}
+/* *******************TRAVEL DETAILS*************************** */
+
+.travel-details 
   {
     background-color:  #fdfdfd;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    padding: 2rem 0;
-   
   }
-
-  .travel-details>div
+ .travel-details--wrapper
   {
-    width: 60%;
+        width: 60%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
   }
   .heading--title
   {
@@ -126,3 +132,77 @@ ul {
     font-size: 3.5rem;
     padding-right:1.5rem;
   }
+
+  .seatclasstoggler
+  {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .seatclasstoggler > span 
+  {
+    padding: 0 1rem;
+    font-weight: 500;
+  }
+
+/* *****************TOGGLE SWITCH************************ */
+.toggle-switch
+{
+  height: 2rem;
+  width: 4rem;
+  border-radius: 1rem;
+  transition: all .35s;
+  border: 1px solid #1b9cfc;
+  text-align: left;
+  background-color: #1b9cfc;
+}
+
+.switchlight
+{
+  height: 1.7rem;
+  width: 1.7rem;
+  border-radius: 50%;
+  border: #666;
+  transition: all .5s;
+  background-color: #fff;
+  box-shadow: 0 .1rem .3rem #666;
+  margin: 0.6px 0.1px 2.5px 1px;
+  cursor: pointer;
+}
+
+.switchlight:focus
+{
+    outline-style: none;
+}
+.on-animationright
+{
+    transform: translate(1.85rem, 0px); 
+
+}
+
+.on-animationleft
+{
+    transform: translate(0px, 0px);
+
+}
+
+/***************flight card wrapper**********************/
+
+
+.flightdetailwrapper
+{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 2.5rem 0;
+    background-color: #fdfdfd;
+    min-height: 100vh;
+    flex-direction: column;
+
+}
+
+
+ 
+  
+
