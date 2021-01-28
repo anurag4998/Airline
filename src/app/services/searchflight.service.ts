@@ -10,8 +10,10 @@ import {Searchflight} from '../models/searchflight';
 
 export class SearchflightService {
   private apiServer = environment.url + "searchflight";
-  public departure_location;
-  public arrival_location;
+  public departure_location:string;
+  public arrival_location:string;
+  public seats:number
+  public date:Date
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json'
@@ -24,6 +26,9 @@ export class SearchflightService {
     let params = new HttpParams();
     this.departure_location = departure
     this.arrival_location = arrival
+    this.seats = seats
+    this.date = date
+
     params = params.append('departure', departure);
     params = params.append('arrival', arrival);
     params = params.append('day', day);
@@ -32,7 +37,6 @@ export class SearchflightService {
   
     let a =   await this.httpClient.get<Searchflight[]>(this.apiServer,{ params: params }).toPromise()
     this.flightdata = a;
-    console.log(a)
     
     
  

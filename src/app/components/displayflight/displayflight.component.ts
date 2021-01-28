@@ -14,9 +14,7 @@ export class DisplayflightComponent implements OnInit {
   ngOnInit(): void {
    this.flights = this.service.flightdata
    this.departure = this.service.departure_location
-   this.arrival = this.service.arrival_location
-   console.log(this.flights)
-  
+   this.arrival = this.service.arrival_location  
   }
 
 }
