@@ -72,6 +72,7 @@ ul {
   align-items: center;
   flex-direction: column;
   padding: 2rem 0;
+  width: 100%;
  
 }
 
@@ -202,7 +203,45 @@ ul {
 
 }
 
+@media screen and (max-width:768px)
+{
+  .search-details>div
+    {
+      width: 90%;
+    }
+    .travel-details--wrapper
+    {
+          width: 90%;
+          
+    }
+    .heading--title
+    {
+      font-size: 1.8rem;
+    }
 
- 
-  
+    .heading__location--place
+    {
+      font-size: 2rem;
+    }
+}
+@media screen and (max-width:500px)
+{
+  .search-details 
+  {
+    padding-bottom: 1rem;
+    padding-left:2rem;
+  }
+  .travel-details--wrapper
+  {
+    flex-direction: column;
+  }
+  .travel-details--wrapper>div 
+  {
+    margin:1rem 0;
+  }
 
+  .flightdetailwrapper
+  {
+    padding-top: 1.5rem;
+  }
+}
