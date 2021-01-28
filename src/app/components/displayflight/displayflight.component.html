@@ -9,7 +9,16 @@
             <li><a [routerLink]="['/signup']">Signup</a></li>
           </ul>
     </div>
- </header>    
+ </header> 
+ <div class="travel-details">
+    <div class="heading">
+        <h2 class="heading--title">Search Results</h2>
+        <h4 class="heading--results">We found {{flights.length}} results</h4>
+    </div>
+    <div class="heading__location" *ngIf = "departure!=null">
+        <span class="heading__location--place"> {{departure}}</span> <span class="heading__location--arrow">&#8594;</span>   <span class="heading__location--place">{{arrival}}</span>
+    </div>
+ </div>   
  <app-airplanecard [flightdetails] = "flights" class="flightdetailwrapper">    
 
     </app-airplanecard>
