@@ -8,6 +8,7 @@ import {SearchflightService} from '../../services/searchflight.service'
 })
 export class AirplanecardComponent implements OnInit {
   @Input() flightdetails: any;
+  @Input() classstate:boolean;
   constructor(public service : SearchflightService) { }
   public date:Date
   public seats :number

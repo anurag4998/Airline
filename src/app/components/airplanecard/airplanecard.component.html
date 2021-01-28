@@ -30,10 +30,12 @@
         </div> 
     </div>
     <div class="card__section card__booking">
-        <div class="card__booking--price">
+        <div class="card__booking--price" *ngIf = "classstate==false">
            {{ '₹' +  a.economy_price}}
-
         </div>
+        <div class="card__booking--price" *ngIf = "classstate==true">
+            {{ '₹' +  a.business_price}}
+         </div>
         <div class="card__booking--book">
             <button class="book" (click) = "onBookNow(a.flight_number,a.departure_location,a.arrival_location)">Book Now</button>
         </div>
