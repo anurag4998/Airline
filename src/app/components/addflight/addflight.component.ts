@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Adminflight } from 'src/app/models/adminflight';
 import { AdminflightcrudService } from 'src/app/services/adminflightcrud.service';
+import { AirportsService } from 'src/app/services/airports.service';
 
 @Component({
   selector: 'app-addflight',
@@ -8,9 +9,9 @@ import { AdminflightcrudService } from 'src/app/services/adminflightcrud.service
   styleUrls: ['./addflight.component.css']
 })
 export class AddflightComponent implements OnInit {
-
+  public citydata;
   addflight:Adminflight;
-  constructor(private service:AdminflightcrudService) { }
+  constructor(private service:AdminflightcrudService, private airportservice : AirportsService) { }
 
   ngOnInit(): void {
     this.addflight={
@@ -28,6 +29,7 @@ export class AddflightComponent implements OnInit {
       arrival_time:null,
       duration:null
     }
+    this.citydata = this.airportservice.airports;
   }
   
   

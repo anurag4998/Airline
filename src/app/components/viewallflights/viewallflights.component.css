@@ -1,7 +1,22 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap');
+
+.bg
+{
+    background-image:url(../../../assets/adminbg.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 2rem;
+    
+   
+}
 .view
 {
-    padding:20px;
+    min-height:575px;
+    
 }
+
 .tbl
     {
         border-spacing: 0.5rem;
@@ -15,14 +30,17 @@
     }
 .h1
 {
+    font-family: 'Rubik';
     font-size:30px;
-    padding-top: 20px;
+    padding-top: 40px;
+    padding-bottom: 10px;
 }
     .th
     {
         color:white;
         background-color: rgb(102, 96, 96); 
         padding:20px;  
+        
     }
 
     .tr:nth-child(even) 
@@ -30,14 +48,22 @@
         background-color: rgb(209, 179, 179);
     }
 
+   
     .td
     {
-        font-family: "Gill Sans", sans-serif;
+        font-family: 'Rubik';
         text-align: center;
         font-size:16px;
-        font-weight: 550;
-        padding:15px;
+        font-weight: 600;
+        padding:15px;   
         
+    }
+    .th{
+        font-family: 'Rubik';
+        text-align: center;
+        font-size:16px;
+        font-weight: 600;
+        padding:15px;   
     }
 
     .bt
@@ -46,12 +72,12 @@
         color:white;
         font-size: large;
         border: none;
-        
         border-radius: 3px;
         padding: 15px 28px;
         text-align: center;
         display: inline-block;
         font-size: 16px;
+        cursor:pointer;  
     }
 
     .update
@@ -66,20 +92,37 @@
         background-color: rgb(214, 90, 90);
     }
     
+    .searchplace
+    {
+         margin-bottom: 30px;
+    }
     .search
     { 
-        padding:15px;
-        border-radius: 4px;
+       
+        font-family: 'Rubik';
+        padding-top:15px;
+        padding-bottom:15px;
+        padding-right:15px;
+        padding-left:5px;
         border:none;
         background-color: rgb(216, 215, 215);
-        height:40px;
+        height:50px;
         width:400px;
-        font-size:14px;
+        font-size:16px;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        outline: none;
         
     }
     .searchicon
     {
-        font-size: 40px;
-        
+        color:rgb(133, 131, 131);
+        font-size: 30px;
+        background-color: rgb(216, 215, 215);
+        padding-top: 3px;
+        padding-left: 10px;
+        padding-bottom: 12px;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
         
     }

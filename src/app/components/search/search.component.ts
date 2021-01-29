@@ -3,6 +3,7 @@ import {AirportsService} from '../../services/airports.service';
 import {SearchflightService} from '../../services/searchflight.service'
 import {Searchflight} from '../../models/searchflight'
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-search',
@@ -39,8 +40,8 @@ export class SearchComponent implements OnInit {
    
   async onSubmit()
   {
+    Swal.fire('Fetching Your Flights');    Swal.showLoading();
     var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
-
     let depart_location = this.model.departurelocation
     let arrival_location = this.model.arrivallocation
     let departure_date = `${this.model.departuredate.getFullYear()}-${this.model.departuredate.getUTCMonth()+1}-${this.model.departuredate.getDate()}`
@@ -48,12 +49,13 @@ export class SearchComponent implements OnInit {
     let direction = this.model.direction
     let seats = this.model.seats
 
-    if(this.model.direction == 'one-way')
+    if(direction == 'one-way')
      await this.GetFlightsService.post(
         depart_location,arrival_location,day,departure_date,seats
       )
+      Swal.close();
+      this.router.navigate([`${this.pageName}`]);
 
-    this.router.navigate([`${this.pageName}`]);
 
 
   }

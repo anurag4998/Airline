@@ -1,4 +1,16 @@
-<div class="header row">
+ <div class="header row">
+  <nav class="navbar">
+        <div class="logo">
+          <a [routerLink]="['/']"> LOGO </a>   
+        </div>
+      <div class="nav-items">
+        
+            <a [routerLink]="['/login']">Login</a>
+            <a [routerLink]="['/signup']">Signup</a>
+            
+      </div>
+
+  </nav>
     <div class="wrapper col-10 ">
       <form class="form" #flightsearchform = "ngForm" (ngSubmit) = "onSubmit()" novalidate>
 

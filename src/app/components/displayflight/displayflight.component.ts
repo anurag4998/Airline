@@ -9,10 +9,16 @@ export class DisplayflightComponent implements OnInit {
 
   constructor(public service : SearchflightService) { }
   public flights =[]
+  public departure:string
+  public arrival:String
+  public classstate:boolean= false
   ngOnInit(): void {
    this.flights = this.service.flightdata
-   console.log(this.flights)
-  
+   this.departure = this.service.departure_location
+   this.arrival = this.service.arrival_location  
   }
-
+  toggle()
+  {
+     this.classstate =  !this.classstate
+  }
 }

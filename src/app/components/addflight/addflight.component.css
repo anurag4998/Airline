@@ -1,52 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap');
+.bg
+{
+    background-image:url(../../../assets/adminbg.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 2rem;
+   
+}
 .dim {
+    padding: 30px;
     max-width: 700px;
     padding: 30px;
-    margin: 10px auto;
+    margin: 20px auto;
     border-radius: 10px;
     background-color: white;
+    font-size:15px;
+    
+    
 }
-
 
 .control-label
 {
-    font-weight: 500;
+    font-weight: 650;
     padding-left: 50px;
     padding-top:6px;
+    font-family: 'Rubik', sans-serif;
 }
 .form-control{
     font-family: 'Open Sans' , sans-serif;
     position:relative;
     width:100%;
     padding:8px;
-    border: solid #000;
-    border-width: 0 1px;
+    border: solid rgb(114, 111, 111);
+    border-width: 1px;
     border-radius: 4px;
     background-color: rgb(231, 231, 231);
     color:rgb(80, 79, 79);
-   font-weight:500;
+   font-weight:650;
+   outline: none;
+   font-family: 'Rubik', sans-serif;
 }
 
 
 .container
 {       width:60%;
         margin-left:auto;
+        
 }
 
 
 .dim .h2 { 
-    font-family: 'Open Sans' , sans-serif;
+    font-family: 'Rubik' , sans-serif;
     font-size: 30px;
     font-weight: 600;
     margin-top: 3%;
     text-align: center;
 }
 .msg{
-    padding-left: 190px;
+    
     color:red;
     font-weight: 700;
 }
 .days
 {
+    font-family: 'Rubik', sans-serif;
     list-style-type: none;
     background-color: rgb(231, 231, 231);
     height:100px;
@@ -54,8 +72,9 @@
     border-radius: 8px;
     padding-left: 15px;
     padding-top: 10px;
-    border: solid #000;
-    border-width: 0 1px;
+    border: solid rgb(114, 111, 111);
+    border-width: 1px;
+    font-weight:570;
 }
 
 .bt
@@ -72,6 +91,8 @@
     font-size: 16px;
     width:100%;
     font-weight:550;
+    font-family: 'Rubik', sans-serif;
+    cursor:pointer;   
 }
 
 .add
@@ -79,5 +100,6 @@
     margin-bottom: 5px;
     background-color: #5a8ad3;
     color:white;
-        
+     
 }
+

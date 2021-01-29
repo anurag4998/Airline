@@ -24,6 +24,8 @@ export class Signupservice {
     }
     catch(error)
     { 
+         if(error.status == 0)
+          return ('Check Your Connection')
          return (error.error.Message)
     }
   
