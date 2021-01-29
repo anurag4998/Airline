@@ -1,43 +1,45 @@
-<div class="view">
-    
-    <table class="tbl">
-        <thead>
-            <tr class="tr">
-                <th class="td" colspan="7">
-                    <h1>Are you sure you want to remove this flight?</h1>
-                </th>
-            </tr>
-            <tr class="th">
-                <th class="td">Flight Number</th>
-                <th class="td">Origin</th>
-                <th class="td">Destination</th>
-                <th class="td">Departure</th>
-                <th class="td">Arrival</th>
-                <th class="td">Duration</th>                       
-            
-            </tr>
-        </thead>
-        <tbody>
-            <tr class="tr">
-                <td class="td">{{flight.FlightNumber}}</td>
-                <td class="td">{{flight.departure_location}}</td>
-                <td class="td">{{flight.arrival_location}}</td>
-                <td class="td">{{flight.departure_time}}</td>
-                <td class="td">{{flight.arrival_time}}</td>
-                <td class="td">{{flight.duration}}</td>          
-            </tr>
-            
-            <tr class="tbt">
-                <td colspan="7">
-                    <button class="bt delete" type="submit" (click)="delete(flight.FlightNumber)" onclick="window.location='http://localhost:4200/ViewAllFlights'">Delete Flight</button>
-                </td>
-            </tr>
-            <tr class="tbt">
-                <td colspan="7">
-                    <button class="bt" onclick="window.location='http://localhost:4200/ViewAllFlights'">Cancel</button>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-
+<div class="bg">
+    <div class="view">
+        <div *ngIf="flight">
+            <table class="tbl">
+                <thead>
+                    <tr class="tr">
+                        <th class="td" colspan="7">
+                            <h1 class="h1">Are you sure you want to remove this flight?</h1>
+                        </th>
+                    </tr>
+                    <tr class="th">
+                        <th class="td">Flight Number</th>
+                        <th class="td">Origin</th>
+                        <th class="td">Destination</th>
+                        <th class="td">Departure</th>
+                        <th class="td">Arrival</th>
+                        <th class="td">Duration</th>                       
+                    
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="tr">
+                        <td class="td">{{flight.FlightNumber}}</td>
+                        <td class="td">{{flight.departure_location}}</td>
+                        <td class="td">{{flight.arrival_location}}</td>
+                        <td class="td">{{flight.departure_time}}</td>
+                        <td class="td">{{flight.arrival_time}}</td>
+                        <td class="td">{{flight.duration}}</td>          
+                    </tr>
+                    
+                    <tr class="tbt">
+                        <td colspan="7">
+                            <button class="bt delete" type="submit" (click)="delete(flight.FlightNumber)" onclick="window.location='http://localhost:4200/ViewAllFlights'">Delete Flight</button>
+                        </td>
+                    </tr>
+                    <tr class="tbt">
+                        <td colspan="7">
+                            <button class="bt" onclick="window.location='http://localhost:4200/ViewAllFlights'">Cancel</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
 </div>

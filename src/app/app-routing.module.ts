@@ -8,6 +8,7 @@ import { AddflightComponent } from './components/addflight/addflight.component';
 import { DeleteflightComponent } from './components/deleteflight/deleteflight.component';
 import { UpdateflightComponent } from './components/updateflight/updateflight.component';
 import { ViewallflightsComponent } from './components/viewallflights/viewallflights.component';
+import { AdminnavigationComponent } from './components/adminnavigation/adminnavigation.component';
 
 const routes: Routes = [
   { path: '', component:SearchComponent},
@@ -18,8 +19,8 @@ const routes: Routes = [
   {path:'AddFlight', component: AddflightComponent},
   {path:'ViewAllFlights', component: ViewallflightsComponent},
   {path:'updateflight/:flightnumber', component:UpdateflightComponent},
-  {path:'deleteflight/:flightnumber', component:DeleteflightComponent}
-
+  {path:'deleteflight/:flightnumber', component:DeleteflightComponent},
+  {path:'AdminNavigation', component: AdminnavigationComponent}
 ];
 
 @NgModule({

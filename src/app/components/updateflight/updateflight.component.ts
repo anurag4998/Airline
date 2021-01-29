@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Adminflight } from 'src/app/models/adminflight';
 import { AdminflightcrudService } from 'src/app/services/adminflightcrud.service';
+import { AirportsService } from 'src/app/services/airports.service';
 
 @Component({
   selector: 'app-updateflight',
@@ -9,9 +10,9 @@ import { AdminflightcrudService } from 'src/app/services/adminflightcrud.service
   styleUrls: ['./updateflight.component.css']
 })
 export class UpdateflightComponent implements OnInit {
-
+  public citydata;
   updateflight:Adminflight;
-  constructor(private service:AdminflightcrudService,private router:ActivatedRoute) { }
+  constructor(private service:AdminflightcrudService,private router:ActivatedRoute,private airportservice : AirportsService) { }
 
   ngOnInit(): void {
     this.service.getByflightnumber(this.router.snapshot.params['flightnumber']).subscribe((data)=>
@@ -31,7 +32,7 @@ export class UpdateflightComponent implements OnInit {
       duration:data["duration"]
       }
     )
-    
+    this.citydata = this.airportservice.airports;
     
   }
  
