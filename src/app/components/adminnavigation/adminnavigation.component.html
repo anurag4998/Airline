@@ -1,0 +1,33 @@
+<div class="whole">
+    <header>
+        <div class="logo">
+            <a [routerLink]="['/']"> LOGO </a>   
+        </div>
+        <div class="nav-items">
+            <ul>
+                <li><a [routerLink]="['/AddFlight']">Create Flight</a></li>
+                <li><a [routerLink]="['/ViewAllFlights']">Display all Flights</a></li>
+            </ul>
+        </div>
+    </header> 
+
+    <router-outlet></router-outlet>
+    
+    
+
+    <footer>
+        <div class="Container">
+            <div class="iconcontainer">
+                <div class="fa fa-facebook"></div>
+                <div class="fa fa-twitter "></div>
+                <div class="fa fa-google"></div>
+            </div>
+            <div class="copyrighttext">
+                © 2020 LOREM IPSUM PVT. LTD.<br>
+                Country India 
+            </div>
+        </div>
+        
+    </footer>
+</div>
+

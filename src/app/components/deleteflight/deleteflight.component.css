@@ -1,7 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap');
+.bg
+{
+    background-image:url(../../../assets/adminbg.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height:100%;
+    padding: 2rem;
+   
+}
 .view
  {
-     margin-top:100px;
- }   
+     margin-top: 10%;
+     margin-bottom: 11%;
+ }  
+ .h1
+ {
+    font-family: 'Rubik', sans-serif;
+ } 
     .tbl
     {
         border-spacing: 0.5rem;
@@ -12,6 +28,8 @@
         padding-left: 40px;
         background-color: white;   
         border-collapse: collapse;
+        font-family: 'Rubik';
+        
 
     }
 
@@ -20,16 +38,18 @@
         color:white;
         background-color: rgb(102, 96, 96); 
         padding:20px;  
+        
     }
 
 
     .td
     {
-        font-family: "Gill Sans", sans-serif;
+        font-family: 'Rubik', sans-serif;
         text-align: center;
-        font-size:16px;
-        font-weight: 550;
+        font-size:18px;
+        font-weight: 500;
         padding:15px;
+        
     }
 
     .tbt
@@ -48,10 +68,12 @@
         padding: 15px 28px;
         text-align: center;
         display: inline-block;
-        font-size: 16px;
+        font-size: 18px;
         width:300px;
         background-color: rgb(177, 169, 169);
-        font-weight:550;
+        font-weight:500;
+        font-family: 'Rubik', sans-serif;
+        cursor: pointer;
     }
 
  .delete{

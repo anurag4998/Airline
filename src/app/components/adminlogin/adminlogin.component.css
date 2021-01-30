@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap');
 .loginwrapper
 {
     display: flex;
@@ -5,8 +6,8 @@
     justify-content: center;
     min-height: 100vh;
     padding: 2rem;
-    background-image: url(../../../assets/login_image.jpg);
-   background-color: black;
+    background-image:url(../../../assets/adminbg.jpg);
+    
 }
 .logincontainer
 {
@@ -31,8 +32,8 @@
 
 .loginform__heading
 {
-    font-size: 3.5rem;
-    font-family: 'Poppins', sans-serif;
+    font-size: 3.0rem;
+    font-family: 'Rubik', sans-serif;
     padding: 3rem 0;
     font-weight: 600;
 }
@@ -46,9 +47,12 @@
     text-transform: capitalize;
     display: block;
     margin-bottom: 0.5rem;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 600;
 }
 .loginform__input
-{
+{       
+        font-family: 'Rubik', sans-serif;
         line-height: 5rem;
         background: #fafafa;
         -webkit-box-shadow: inset 0px 1px 3px 0px rgba(0, 0, 0, 0.08);
@@ -56,7 +60,7 @@
         box-shadow: inset 0px 1px 3px 0px rgba(0, 0, 0, 0.08);
         -webkit-border-radius: 0.5rem;
         -moz-border-radius: 0.5rem;
-        border-radius: 5px;
+        border-radius: 4px;
         padding: 0 2rem;
         font-size: 1.6rem;
         color: #666;
@@ -64,10 +68,18 @@
         -o-transition: all 0.4s ease;
         -moz-transition: all 0.4s ease;
         transition: all 0.4s ease;
-        border: none;
         width: 30rem;
+        border: solid rgb(114, 111, 111);
+        border-width: 1px;
+        outline:none;
+        font-weight:550;
 
     
+}
+.msg{
+    font-size:15px;
+    color:red;
+    font-weight: 700;
 }
 .pwdcontainer
 {
@@ -81,19 +93,29 @@
     right: 1.5rem;
 }
 .submitbtn 
-{
-    padding: 2rem 2rem;
-    outline: none;
-    color: floralwhite;
-    background-color: blueviolet;
+{     
+    color:black;
+    background-color: rgb(202, 195, 195);
+    font-size: 50px;
     border: none;
-    border-radius: 0.4rem;
-    cursor: pointer;
-    width: 15rem;
-    font-size: 1.6rem;
-    margin-top: 3rem;
+    border-radius: 3px;
+    padding: 15px 28px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    width:100%;
+    height:70px;
+    font-weight:600;
+    font-family: 'Rubik', sans-serif;
+    cursor:pointer;   
+    margin-bottom: 5px;
+    background-color: #4772af;
+    color:white;
+     
+
+
 }
-/**********************************************/
+
 @media screen and (max-width:500px)
 {
   .logincontainer

@@ -1,164 +1,161 @@
-<div class="container">
-    
-    <form class="dim" #UpdateFlightForm="ngForm" (ngSubmit)="submitForm(UpdateFlightForm)" novalidate>
-        <h2 class="h2">Update Flight</h2><br>
-        <div class="form-group">
-            <div class="row">
-                <label for="FlightNumber" class="col-sm-3 control-label">Flight Number</label>
-                <div class="col-sm-9" id="FlightNumber" ><input type ="text" name="FlightNumber" class="form-control" placeholder="Flight Number" required minlength="4" #FlightNumber="ngModel"
-                    [(ngModel)]="updateflight.FlightNumber"></div>
-                <div
-                  *ngIf="!FlightNumber?.valid && (FlightNumber?.dirty ||FlightNumber?.touched)" class="errors">
-                  <div *ngIf="FlightNumber.errors.required">
-                  <span class="msg">&#9888; Flight Number is required</span>
-                  </div>
-                  <div *ngIf="FlightNumber.errors.minlength">
-                    <span class="msg">&#9888; Min Length is 4</span>
-                  </div>
-                </div>
-            </div><br>
+<div class="bg">   
+    <div class="container">
+        <div *ngIf="updateflight">
+            <form class="dim" #UpdateFlightForm="ngForm" (ngSubmit)="submitForm(UpdateFlightForm)" novalidate>
+                <h2 class="h2">Update Flight</h2><br>
+                <div class="form-group">
+                    <div class="row">
+                        <label for="FlightNumber" class="col-sm-3 control-label">Flight Number</label>
+                        <div class="col-sm-9" id="FlightNumber" ><input type ="text" name="FlightNumber" class="form-control" placeholder="Flight Number" pattern="^[0-9]*$" required minlength="4" maxlength="4" #FlightNumber="ngModel"
+                            [(ngModel)]="updateflight.FlightNumber">
+                                <div
+                                *ngIf="!FlightNumber?.valid && (FlightNumber?.dirty ||FlightNumber?.touched)" class="errors">
+                                <div *ngIf="FlightNumber.errors.required">
+                                <span class="msg">&#9888; Flight Number is required</span>
+                                </div>
+                                <div *ngIf="FlightNumber.errors.minlength">
+                                    <span class="msg">&#9888; Min Length is 4</span>
+                                </div>
+                                <div *ngIf="FlightNumber.errors.pattern">
+                                    <span class="msg">&#9888; Enter only digits</span>
+                                </div>
+                                </div>
+                        </div>
+                    </div><br>
 
-            <div class="row">
-                <label for="departure_location" class="col-sm-3 control-label">From </label>
-                <div class="col-sm-9" id="departure_location">
-                    <select type ="type" name="departure_location" class="form-control" required #departure_location="ngModel"
-                    [(ngModel)]="updateflight.departure_location">
-                        <option value="" disabled selected>Select Origin</option>
-                        <option value="Ahmedabad(AMD)">Ahmedabad(AMD)</option>
-                        <option value="Bengaluru(BLR)">Bengaluru(BLR)</option>
-                        <option value="Bhopal(BHO)">Bhopal(BHO)</option>
-                        <option value="Chandigarh(IXC)">Chandigarh(IXC)</option>
-                        <option value="Chennai(MAA)">Chennai(MAA)</option>
-                        <option value="Delhi(DEL)">Delhi(DEL)</option>
-                        <option value="Hyderabad(HYD)">Hyderabad(HYD)</option>
-                        <option value="Jaipur(JAI)">Jaipur(JAI)</option>
-                        <option value="Kolkata(CCU)">Kolkata(CCU)</option>
-                        <option value="Mumbai(BOM)">Mumbai(BOM)</option>
-                        <option value="Pune(PNQ)">Pune(PNQ)</option>
+                    <div class="row">
+                        <label for="departure_location" class="col-sm-3 control-label">From </label>
+                        <div class="col-sm-9" id="departure_location">
+                            <select type ="type" name="departure_location" class="form-control" required #departure_location="ngModel"
+                            [(ngModel)]="updateflight.departure_location">
+                            <option value="" disabled selected>Select Origin</option>
+                            <option *ngFor="let city of citydata" [value]="city.city_name + ' (' + city.IATA_code + ')'">
+                                {{city.city_name + ' (' + city.IATA_code + ')'}}
+                            <option>
+                                
+                            </select>
                         
-                    </select>
-                </div>
-                <div
-                  *ngIf="!departure_location?.valid && (departure_location?.dirty ||departure_location?.touched)" class="errors">
-                  <div *ngIf="departure_location.errors.required">
-                    <span class="msg">&#9888; Origin is required</span>
-                  </div>
-                </div>
-            </div><br>
+                            <div
+                            *ngIf="!departure_location?.valid && (departure_location?.dirty ||departure_location?.touched)" class="errors">
+                            <div *ngIf="departure_location.errors.required">
+                                <span class="msg">&#9888; Origin is required</span>
+                            </div>
+                            </div>
+                        </div>
+                    </div><br>
 
-            <div class="row">
-                <label for="arrival_location" class="col-sm-3 control-label">To </label>
-                <div class="col-sm-9" id="arrival_location">
-                    <select type ="type" name="arrival_location" class="form-control" required #arrival_location="ngModel"
-                    [(ngModel)]="updateflight.arrival_location">
-                        <option value="" disabled selected>Select Destination</option>
-                        <option value="Ahmedabad(AMD)">Ahmedabad(AMD)</option>
-                        <option value="Bengaluru(BLR)">Bengaluru(BLR)</option>
-                        <option value="Bhopal(BHO)">Bhopal(BHO)</option>
-                        <option value="Chandigarh(IXC)">Chandigarh(IXC)</option>
-                        <option value="Chennai(MAA)">Chennai(MAA)</option>
-                        <option value="Delhi(DEL)">Delhi(DEL)</option>
-                        <option value="Hyderabad(HYD)">Hyderabad(HYD)</option>
-                        <option value="Jaipur(JAI)">Jaipur(JAI)</option>
-                        <option value="Kolkata(CCU)">Kolkata(CCU)</option>
-                        <option value="Mumbai(BOM)">Mumbai(BOM)</option>
-                        <option value="Pune(PNQ)">Pune(PNQ)</option>
-                    </select>
-                </div>
-                <div
-                  *ngIf="!arrival_location?.valid && (arrival_location?.dirty ||arrival_location?.touched)" class="errors">
-                  <div *ngIf="arrival_location.errors.required">
-                    <span class="msg">&#9888; Destination is required</span>
-                  </div>
-                </div>
-            </div><br>
+                    <div class="row">
+                        <label for="arrival_location" class="col-sm-3 control-label">To </label>
+                        <div class="col-sm-9" id="arrival_location">
+                            <select type ="type" name="arrival_location" class="form-control" required #arrival_location="ngModel"
+                            [(ngModel)]="updateflight.arrival_location">
+                                <option value="" disabled selected>Select Destination</option>
+                                <option *ngFor="let city of citydata" [value]="city.city_name + ' (' + city.IATA_code + ')'">
+                                    {{city.city_name + ' (' + city.IATA_code + ')'}}
+                                <option>
+                            </select>
+                        
+                            <div
+                            *ngIf="!arrival_location?.valid && (arrival_location?.dirty ||arrival_location?.touched)" class="errors">
+                            <div *ngIf="arrival_location.errors.required">
+                                <span class="msg">&#9888; Destination is required</span>
+                            </div>
+                            </div>
+                        </div>
+                    </div><br>
 
-            <div class="row">
-                <label for="days" class="col-sm-3 control-label">Days </label>
-                <div class="col-sm-9" id="days">
-                   
-                    <ul class="days">
-                        <li><input type="checkbox" name="days" required #days="ngModel"
-                            [(ngModel)]="updateflight.Monday" /> Monday </li>
-                        <li><input type="checkbox" name="days" #days="ngModel"
-                            [(ngModel)]="updateflight.Tuesday"  /> Tuesday </li>
-                        <li><input type="checkbox" name="days" #days="ngModel"
-                            [(ngModel)]="updateflight.Wednesday" /> Wednesday </li>
-                        <li><input type="checkbox" name="days" #days="ngModel"
-                            [(ngModel)]="updateflight.Thursday" /> Thursday </li>
-                        <li><input type="checkbox" name="days" #days="ngModel"
-                            [(ngModel)]="updateflight.Friday" /> Friday </li>
-                        <li><input type="checkbox" name="days" #days="ngModel"
-                            [(ngModel)]="updateflight.Saturday" /> Saturday </li>
-                        <li><input type="checkbox" name="days" #days="ngModel"
-                            [(ngModel)]="updateflight.Sunday" /> Sunday </li>
-                    </ul>
-                
-                </div>
-                <div
-                  *ngIf="!days?.valid && (days?.dirty || days?.touched)" class="errors">
-                  <div *ngIf="days.errors.required">
-                    <span class="msg">&#9888; Select atleast one day</span>
-                  </div>
-                </div>
-              
-            </div><br>
+                    <div class="row">
+                        <label for="days" class="col-sm-3 control-label">Days </label>
+                        <div class="col-sm-9" id="days">
+                        
+                            <ul class="days" name="days" required>
+                                <li><input type="checkbox" name="Monday"  #days="ngModel"
+                                    [(ngModel)]="updateflight.Monday" /> Monday </li>
+                                <li><input type="checkbox" name="Tuesday" #days="ngModel"
+                                    [(ngModel)]="updateflight.Tuesday"  /> Tuesday </li>
+                                <li><input type="checkbox" name="Wednesday" #days="ngModel"
+                                    [(ngModel)]="updateflight.Wednesday" /> Wednesday </li>
+                                <li><input type="checkbox" name="Thrusday" #days="ngModel"
+                                    [(ngModel)]="updateflight.Thursday" /> Thursday </li>
+                                <li><input type="checkbox" name="Friday" #days="ngModel"
+                                    [(ngModel)]="updateflight.Friday" /> Friday </li>
+                                <li><input type="checkbox" name="Saturday" #days="ngModel"
+                                    [(ngModel)]="updateflight.Saturday" /> Saturday </li>
+                                <li><input type="checkbox" name="Sunday" #days="ngModel"
+                                    [(ngModel)]="updateflight.Sunday" /> Sunday </li>
+                            </ul>
+                        
+                        
+                            <div
+                            *ngIf="!days?.valid && (days?.dirty || days?.touched)" class="errors">
+                            <div *ngIf="days.errors.required">
+                                <span class="msg">&#9888; Select atleast one weekday</span>
+                            </div>
+                            </div>
+                        </div>
+                    
+                    </div><br>
 
 
 
-            <div class="row">
-                <label for="departure_time" class="col-sm-3 control-label">Departure </label>
-                <div class="col-sm-9" id="departure_time"><input type ="time" name="departure_time" class="form-control" required #departure_time="ngModel"
-                    [(ngModel)]="updateflight.departure_time"></div>
-                <div
-                  *ngIf="!departure_time?.valid && (departure_time?.dirty ||departure_time?.touched)" class="errors">
-                  <div *ngIf="departure_time.errors.required">
-                    <span class="msg">&#9888; Departure Time is required</span>
-                  </div>
-                </div>
-            </div><br>
+                    <div class="row">
+                        <label for="departure_time" class="col-sm-3 control-label">Departure </label>
+                        <div class="col-sm-9" id="departure_time"><input type ="time" name="departure_time" class="form-control" required #departure_time="ngModel"
+                            [(ngModel)]="updateflight.departure_time">
+                            <div
+                            *ngIf="!departure_time?.valid && (departure_time?.dirty ||departure_time?.touched)" class="errors">
+                            <div *ngIf="departure_time.errors.required">
+                                <span class="msg">&#9888; Departure Time is required</span>
+                            </div>
+                            </div>
+                        </div>
+                    </div><br>
 
-            <div class="row">
-                <label for="arrival_time" class="col-sm-3 control-label">Arrival</label>
-                <div class="col-sm-9" id="arrival"><input type ="time" name="arrival_time" class="form-control" required #arrival_time="ngModel"
-                    [(ngModel)]="updateflight.arrival_time"></div>
-                <div
-                  *ngIf="!arrival_time?.valid && (arrival_time?.dirty ||arrival_time?.touched)" class="errors">
-                  <div *ngIf="arrival_time.errors.required">
-                    <span class="msg">&#9888; Arrival Time is required</span>
-                  </div>
-                </div>
-            </div><br>
+                    <div class="row">
+                        <label for="arrival_time" class="col-sm-3 control-label">Arrival</label>
+                        <div class="col-sm-9" id="arrival"><input type ="time" name="arrival_time" class="form-control" required #arrival_time="ngModel"
+                            [(ngModel)]="updateflight.arrival_time">
+                            <div
+                            *ngIf="!arrival_time?.valid && (arrival_time?.dirty ||arrival_time?.touched)" class="errors">
+                            <div *ngIf="arrival_time.errors.required">
+                                <span class="msg">&#9888; Arrival Time is required</span>
+                            </div>
+                            </div>
+                        </div>
+                    </div><br>
 
-            <div class="row">
-                <label for="duration" class="col-sm-3 control-label">Duration</label>
-                <div class="col-sm-9" id="duration"><input type ="text" name="duration" class="form-control" placeholder="Duration in HH:MM" required #duration="ngModel"
-                    [(ngModel)]="updateflight.duration"></div>
-                <div
-                  *ngIf="!duration?.valid && (duration?.dirty ||duration?.touched)" class="errors">
-                  <div *ngIf="duration.errors.required">
-                    <span class="msg">&#9888; Duration is required</span>
-                  </div>
-                </div>
-            </div><br>
+                    <div class="row">
+                        <label for="duration" class="col-sm-3 control-label">Duration</label>
+                        <div class="col-sm-9" id="duration"><input type ="text" name="duration" class="form-control" placeholder="Duration in HH:MM" required #duration="ngModel"
+                            [(ngModel)]="updateflight.duration">
+                            <div
+                            *ngIf="!duration?.valid && (duration?.dirty ||duration?.touched)" class="errors">
+                            <div *ngIf="duration.errors.required">
+                                <span class="msg">&#9888; Duration is required</span>
+                            </div>
+                            </div>
+                        </div>
+                    </div><br>
 
-            <div class="row">
-                <label for="cabin" class="col-sm-3 control-label">Cabin</label>
-                <div class="col-sm-9 " id="cabin">
-                    <select type ="type" class="form-control">
-                        <option value="busiecon">Business and Economy Class</option>
-                    </select>
+                    <div class="row">
+                        <label for="cabin" class="col-sm-3 control-label">Cabin</label>
+                        <div class="col-sm-9 " id="cabin">
+                            <select type ="type" class="form-control">
+                                <option value="busiecon">Business and Economy Class</option>
+                            </select>
+                        </div>
+                        
+                    </div><br><br>
+                    <div>
+                        <div>
+                            <button class="bt add" type="submit" [disabled]="!UpdateFlightForm.valid" [ngStyle]="{'cursor': (!UpdateFlightForm.valid? 'not-allowed':'pointer')}" onclick="window.location='http://localhost:4200/ViewAllFlights';">Update Flight</button>
+                        </div>
+                        <div>
+                            <button class="bt" onclick="window.location='http://localhost:4200/ViewAllFlights'">Cancel</button>
+                        </div>
+                    </div>  
                 </div>
-                
-            </div><br><br>
-            <div>
-                <div>
-                    <button class="bt add" type="submit" [disabled]="!UpdateFlightForm.valid" onclick="window.location='http://localhost:4200/ViewAllFlights'" >Update Flight</button>
-                </div>
-                <div>
-                    <button class="bt" onclick="window.location='http://localhost:4200/ViewAllFlights'">Cancel</button>
-                </div>
-            </div>  
+            </form>
         </div>
-    </form>
-</div>
+    </div>
+</div> 

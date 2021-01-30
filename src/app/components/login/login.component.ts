@@ -19,4 +19,8 @@ export class LoginComponent implements OnInit {
   {
     this.visible = !this.visible;
   }
+  onSubmit(data) {
+    console.log(data);
+  };
+
 }

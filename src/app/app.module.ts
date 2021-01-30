@@ -32,6 +32,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { DisplayflightComponent } from './components/displayflight/displayflight.component';
 import { PassengersComponent } from './components/passengers/passengers.component';
+import { AdminloginComponent } from './components/adminlogin/adminlogin.component';
+import { AdminnavigationComponent } from './components/adminnavigation/adminnavigation.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +51,8 @@ import { PassengersComponent } from './components/passengers/passengers.componen
     UpdateflightComponent,
     ViewallflightsComponent,
     PassengersComponent,
+    AdminloginComponent,
+    AdminnavigationComponent,
    
   ],
   imports: [
