@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Router } from '@angular/router';
 import {SearchflightService} from '../../services/searchflight.service'
+import {SelectedFlightService} from '../../services/selectedflight.service'
 
 @Component({
   selector: 'app-airplanecard',
@@ -9,7 +11,7 @@ import {SearchflightService} from '../../services/searchflight.service'
 export class AirplanecardComponent implements OnInit {
   @Input() flightdetails: any;
   @Input() classstate:boolean;
-  constructor(public service : SearchflightService) { }
+  constructor(public service : SearchflightService, public flightselected:SelectedFlightService, public router : Router ) { }
   public date:Date
   public seats :number
  
@@ -18,8 +20,19 @@ export class AirplanecardComponent implements OnInit {
     this.date = this.service.date
     this.seats = this.service.seats
   }
-  onBookNow(flight_number,departure,arrival)
+  async onBookNow(flight_number:number,departure:string,arrival:string)
   {
-    console.log(this.date,this.seats,flight_number,departure,arrival)
+      await this.flightselected.postdata(
+        {
+          "departure_location":departure,
+          "arrival_location":arrival,
+          "flight_number":flight_number,
+          "travel_date":this.date,
+          "number_of_seats":this.seats,
+          "classstate":this.classstate
+        })
+
+        this.router.navigate([`${'flight/passengers'}`]);
+
   }
 }
