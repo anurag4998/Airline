@@ -30,7 +30,8 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import {Confirmvalidator} from '../app/shared/confirmvalidator.directive';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { DisplayflightComponent } from './components/displayflight/displayflight.component'
+import { DisplayflightComponent } from './components/displayflight/displayflight.component';
+import { PassengersComponent } from './components/passengers/passengers.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { DisplayflightComponent } from './components/displayflight/displayflight
     DeleteflightComponent,
     UpdateflightComponent,
     ViewallflightsComponent,
+    PassengersComponent,
    
   ],
   imports: [

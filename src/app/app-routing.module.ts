@@ -8,13 +8,13 @@ import { AddflightComponent } from './components/addflight/addflight.component';
 import { DeleteflightComponent } from './components/deleteflight/deleteflight.component';
 import { UpdateflightComponent } from './components/updateflight/updateflight.component';
 import { ViewallflightsComponent } from './components/viewallflights/viewallflights.component';
-
+import{PassengersComponent} from './components/passengers/passengers.component'
 const routes: Routes = [
   { path: '', component:SearchComponent},
   { path: 'flight/search', component: DisplayflightComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'login', component: LoginComponent },
-  
+  { path: 'flight/passengers', component: PassengersComponent },
   {path:'AddFlight', component: AddflightComponent},
   {path:'ViewAllFlights', component: ViewallflightsComponent},
   {path:'updateflight/:flightnumber', component:UpdateflightComponent},
