@@ -1,0 +1,76 @@
+<app-header></app-header>
+
+<div class="passengercontainer">
+    <div class="passengerwrapper">
+
+        <section class="section flight--summary">
+            <p class="heading">Flight Summary</p>
+
+            <div class="flight--summary-card">
+                <h3> {{flightselectobj.departure_location}}- {{flightselectobj.arrival_location}}</h3>
+                <h4> Departure {{flightselectobj.travel_date|date}} </h4>
+            </div>
+
+        </section>
+
+        <section class="section passenger__summary">
+            <div class="passenger__summary__headingcontainer">
+                <p class="heading">Traveller Details</p>
+                <p class="heading passenger__summary__headingcontainer--count">{{count}}/{{this.flightselectobj.number_of_seats}} Selected</p>
+            </div>
+           
+            <form #f = "ngForm" (ngSubmit) = "f.valid && onSubmit()">
+                <div *ngFor = "let obj of dataarray; let i = index" class="passengerdetails details-wrapper">
+                    <div class="card-heading">
+                        <span class="title">Adult</span>
+                        <div class="errormsg" *ngIf = "f.invalid">Incomplete</div>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-body--info">
+                            IMPORTANT: Enter your name as it is mentioned on your passport or any government approved ID.
+                        </div>
+                        <div class="card-body--details card-body--firstname">
+                            <div class="card-body--input">
+                                <input type="text" placeholder="First Name" name="firstname{{i}}" required [(ngModel)]="obj.firstname" >
+                            </div>
+                            <div class="card-body--input card-body--lastname">
+                                <input type="text" placeholder="Last Name"  name="lastname{{i}}" required [(ngModel)]="obj.lastname">
+                            </div>
+                            <div class="card-body--input card-body--age">
+                                <input type="number" min="0" placeholder="Age"  name="age{{i}}" required [(ngModel)]="obj.age">
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="buttons">
+                    <span (click) = "onAdd()" class="passengerdetails--addpassengers" *ngIf = "count<flightselected.number_of_seats">+ Add Passenger</span>
+                    <button type="submit" class="passenger--submit">Continue</button>
+                </div>
+                
+            </form>
+
+        </section>
+        
+
+        <!-- <form class="contactdetails  details-wrapper">
+            <div class="contactdetails--info">
+                <h3>Your ticket and flights information will be sent here.</h3>
+            </div>
+            <div class="card-body">
+                <div class="card-body--details card-body--firstname">
+                    <div class="card-body--input">
+                        <input type="text" placeholder="India(+91)" required readonly>
+                    </div>
+                    <div class="card-body--input card-body--mobile_no">
+                        <input type="text" placeholder="Mobile No" required>
+                    </div>
+                    <div class="card-body--input card-body--email">
+                        <input type="email" placeholder="Email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" >
+                    </div>
+                </div>
+            </div>
+        </form> -->
+    </div>
+</div>
+
