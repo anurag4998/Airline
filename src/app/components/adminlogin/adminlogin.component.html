@@ -7,7 +7,7 @@
         <form class="loginform" #AdminLoginForm="ngForm" (ngSubmit)="submitForm(AdminLoginForm)" novalidate>
             <div class="inputcontainer">
                 <label class="label">Email</label>
-                <input type='email'  class='loginform__input' placeholder="Email"  name="username" autoComplete="off" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required #email="ngModel"
+                <input type='email'  class='loginform__input' placeholder="Email"  name="email" autoComplete="off" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required #email="ngModel"
                 [(ngModel)]="adminlogin.email"/>
                 <div *ngIf="!email?.valid && (email?.dirty ||email?.touched)" class="errors">
                     <div *ngIf="email.errors.required">

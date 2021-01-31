@@ -20,7 +20,11 @@ header
     text-decoration: none;
 }
 
-
+.msg{
+    
+  color:red;
+  font-weight: 700;
+}
 .paymentwrapper
 {
     background-color:  #fdfdfd;
@@ -81,6 +85,7 @@ body a {
   }
   .flex.justify-space-between {
     justify-content: space-between;
+    
   }
   .card {
     padding: 50px;
@@ -141,10 +146,11 @@ body a {
     color: #28333b;
   }
   .card .card-body .payment-type .types .type.selected::after {
-    content: '\f00c';
-    font-family: 'Font Awesome 5 Free';
+    content: "\f00c";
+    font-family:FontAwesome;
     font-weight: 900;
     position: absolute;
+    color:rgb(27, 122, 27);
     height: 40px;
     width: 40px;
     top: -21px;
