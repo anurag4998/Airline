@@ -8,7 +8,9 @@ import { AddflightComponent } from './components/addflight/addflight.component';
 import { DeleteflightComponent } from './components/deleteflight/deleteflight.component';
 import { UpdateflightComponent } from './components/updateflight/updateflight.component';
 import { ViewallflightsComponent } from './components/viewallflights/viewallflights.component';
-import{PassengersComponent} from './components/passengers/passengers.component'
+import {PassengersComponent} from './components/passengers/passengers.component'
+import{SeatuiComponent} from './components/seatui/seatui.component'
+
 import { AdminnavigationComponent } from './components/adminnavigation/adminnavigation.component';
 
 const routes: Routes = [
@@ -17,11 +19,12 @@ const routes: Routes = [
   { path: 'signup', component: SignupComponent },
   { path: 'login', component: LoginComponent },
   { path: 'flight/passengers', component: PassengersComponent },
-  {path:'AddFlight', component: AddflightComponent},
-  {path:'ViewAllFlights', component: ViewallflightsComponent},
-  {path:'updateflight/:flightnumber', component:UpdateflightComponent},
-  {path:'deleteflight/:flightnumber', component:DeleteflightComponent},
-  {path:'AdminNavigation', component: AdminnavigationComponent}
+  { path: 'flight/seats', component: SeatuiComponent },
+  { path:'AddFlight', component: AddflightComponent},
+  { path:'ViewAllFlights', component: ViewallflightsComponent},
+  { path:'updateflight/:flightnumber', component:UpdateflightComponent},
+  { path:'deleteflight/:flightnumber', component:DeleteflightComponent},
+  { path:'AdminNavigation', component: AdminnavigationComponent}
 ];
 
 @NgModule({

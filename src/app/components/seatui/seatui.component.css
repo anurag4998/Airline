@@ -1,0 +1,43 @@
+.airplane-seatswrapper
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.airplane-left
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 2rem;
+}
+
+.seat
+{
+    width: 40px;
+    height: 40px;
+    border-radius: 2px;
+    color: #333;
+    line-height: 40px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 100;
+    margin: 0.5rem;
+    background-color: #fff;
+    font-family: 'Poppins';
+    text-transform: capitalize;
+    border: 1px solid #e1e1e1;
+    cursor: pointer;
+}
+.disabled 
+{
+    cursor: not-allowed;
+    background-color: red;
+    color: floralwhite;
+}
+
+.reserved 
+{
+    background-color: green;
+    color: floralwhite;
+}
