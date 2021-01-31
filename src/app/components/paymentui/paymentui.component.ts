@@ -5,10 +5,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./paymentui.component.css']
 })
 export class PaymentuiComponent implements OnInit {
-
+payment;
   constructor() { }
 
   ngOnInit(): void {
+    this.payment={
+      name:'',
+      cardnumber:null,
+      exp:null,
+      cvc:null
+    }
   }
 
+  submitForm(paymentForm)
+  {
+
+  }
 }

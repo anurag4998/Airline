@@ -17,7 +17,7 @@
                         <div class="types flex justify-space-between">
                             <div class="type selected">
                                 <div class="logo">
-                                    <i class="far fa-credit-card"></i>
+                                    <i class="fa fa-credit-card"></i>
                                 </div>
                                 <div class="text">
                                     <p>Pay with Credit Card</p>
@@ -25,7 +25,7 @@
                             </div>
                             <div class="type">
                                 <div class="logo">
-                                    <i class="fab fa-paypal"></i>
+                                    <i class="fa fa-paypal"></i>
                                 </div>
                                 <div class="text">
                                     <p>Pay with PayPal</p>
@@ -33,7 +33,7 @@
                             </div>
                             <div class="type">
                                 <div class="logo">
-                                    <i class="fab fa-amazon"></i>
+                                    <i class="fa fa-amazon"></i>
                                 </div>
                                 <div class="text">
                                     <p>Pay with Amazon</p>
@@ -41,42 +41,77 @@
                             </div>
                         </div>
                     </div>
-                    <div class="payment-info flex justify-space-between">
-                       
-                        <div class="column shipping">
-                            <div class="title">
-                                <h4>Credit Card Info</h4>
-                            </div>
-                            <div class="field full">
-                                <label for="name">Cardholder Name</label>
-                                <input id="name" type="text" placeholder="Full Name">
-                            </div>
-                            <div class="field full">
-                                <label for="address">Card Number</label>
-                                <input id="address" type="text" placeholder="1234-5678-9012-3456" maxlength="16">
-                            </div>
-                            <div class="flex justify-space-between">
-                                <div class="field half">
-                                    <label for="city">Exp. Month</label>
-                                    <input id="city" type="number" placeholder="12" min="1" max="12">
+                    <form #paymentForm="ngForm" (ngSubmit)="submitForm(paymentForm)" novalidate>
+                        <div class="payment-info flex justify-space-between">
+                        
+                            <div class="column shipping">
+                                <div class="title">
+                                    <h4>Credit Card Info</h4>
                                 </div>
-                                <div class="field half">
-                                    <label for="state">Exp. Year</label>
-                                    <input id="state" type="number" placeholder="19" maxlength="2" min="21" max="99">
+                                <div class="field full">
+                                    <label for="name">Cardholder Name</label>
+                                    <input id="name" type="text" placeholder="Full Name" name="name" required #name="ngModel"
+                                    [(ngModel)]="payment.name">
+                                    <div
+                                        *ngIf="!name?.valid && (name?.dirty || name?.touched)" class="errors">
+                                        <div *ngIf="name.errors.required">
+                                        <span class="msg">&#9888; Enter Name</span>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="field full">
-                                <label for="zip">CVC Number</label>
-                                <input id="zip" type="text" placeholder="468" maxlength="3">
+                                <div class="field full">
+                                    <label for="cardnumber">Card Number</label>
+                                    <input id="cardnumber" type="text" placeholder="xxxx-xxxx-xxxx-xxxx" required pattern="[0-9]{16}" maxlength="16" name="cardnumber" #cardnumber="ngModel"
+                                    [(ngModel)]="payment.cardnumber">
+                                    <div
+                                        *ngIf="!cardnumber?.valid && (cardnumber?.dirty || cardnumber?.touched)" class="errors">
+                                        <div *ngIf="cardnumber.errors.required">
+                                        <span class="msg">&#9888; Enter Cardnumber</span>
+                                        </div>
+                                        <div *ngIf="cardnumber.errors.pattern">
+                                            <span class="msg">&#9888; Enter 16 digits</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                    <div class="field full">
+                                            <label for="exp">Exp. Month/year</label>
+                                            <input id="exp" type="month" placeholder="MM" min="2021-03" required name="exp" #exp="ngModel"
+                                            [(ngModel)]="payment.exp"> 
+                                        
+                                        <div 
+                                            *ngIf="!exp?.valid && (exp?.dirty || exp?.touched)" class="errors">
+                                            <div *ngIf="exp.errors.required">
+                                            <span class="msg">&#9888; Enter Expiring Month/Year</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                
+                                <div class="field full">
+                                    <label for="cvc">CVC Number</label>
+                                    <input id="cvc" type="password" placeholder="xxx" required maxlength="3" pattern="[0-9]{3}" name="cvc" #cvc="ngModel"
+                                    [(ngModel)]="payment.cvc">
+                                    <div
+                                        *ngIf="!cvc?.valid && (cvc?.dirty || cvc?.touched)" class="errors">
+                                        <div *ngIf="cvc.errors.required">
+                                        <span class="msg">&#9888; Enter CVC Number</span>
+                                        </div>
+                                        <div *ngIf="cvc.errors.pattern">
+                                            <span class="msg">&#9888; Enter 3 digits</span>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="card-actions flex justify-space-between">
-                   
-                    <div class="flex-end">
-                        <button class="button button-primary">Proceed</button>
-                    </div>
+                    
+                        
+                        <div class="card-actions flex justify-space-between">
+                        
+                            <div class="flex-end">
+                                <button class="button button-primary" [disabled]="!paymentForm.valid" [ngStyle]="{'cursor': (!paymentForm.valid? 'not-allowed':'pointer')}">Proceed</button>
+                            </div>
+                        </div>
+                    </form> 
                 </div>
             </div>
         </article>

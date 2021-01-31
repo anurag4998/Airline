@@ -34,7 +34,7 @@ import { DisplayflightComponent } from './components/displayflight/displayflight
 import { PassengersComponent } from './components/passengers/passengers.component';
 import { AdminloginComponent } from './components/adminlogin/adminlogin.component';
 import { AdminnavigationComponent } from './components/adminnavigation/adminnavigation.component';
-import { SeatuiComponent } from './components/seatui/seatui.component';
+
 import { PaymentuiComponent } from './components/paymentui/paymentui.component';
 
 @NgModule({
@@ -55,7 +55,7 @@ import { PaymentuiComponent } from './components/paymentui/paymentui.component';
     PassengersComponent,
     AdminloginComponent,
     AdminnavigationComponent,
-    SeatuiComponent,
+    
     PaymentuiComponent,
    
   ],
