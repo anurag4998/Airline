@@ -1,0 +1,85 @@
+<header>
+    <div class="logo">
+        <a [routerLink]="['/']"> LOGO </a>   
+     </div>
+ </header> 
+
+ <div class="paymentwrapper">
+     <div class="paymentcontainer">
+        <article class="card">
+            <div class="container">
+                <div class="card-title">
+                    <h2>Payment</h2>
+                </div>
+                <div class="card-body">
+                    <div class="payment-type">
+                        <h4>Choose payment method below</h4>
+                        <div class="types flex justify-space-between">
+                            <div class="type selected">
+                                <div class="logo">
+                                    <i class="far fa-credit-card"></i>
+                                </div>
+                                <div class="text">
+                                    <p>Pay with Credit Card</p>
+                                </div>
+                            </div>
+                            <div class="type">
+                                <div class="logo">
+                                    <i class="fab fa-paypal"></i>
+                                </div>
+                                <div class="text">
+                                    <p>Pay with PayPal</p>
+                                </div>
+                            </div>
+                            <div class="type">
+                                <div class="logo">
+                                    <i class="fab fa-amazon"></i>
+                                </div>
+                                <div class="text">
+                                    <p>Pay with Amazon</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="payment-info flex justify-space-between">
+                       
+                        <div class="column shipping">
+                            <div class="title">
+                                <h4>Credit Card Info</h4>
+                            </div>
+                            <div class="field full">
+                                <label for="name">Cardholder Name</label>
+                                <input id="name" type="text" placeholder="Full Name">
+                            </div>
+                            <div class="field full">
+                                <label for="address">Card Number</label>
+                                <input id="address" type="text" placeholder="1234-5678-9012-3456" maxlength="16">
+                            </div>
+                            <div class="flex justify-space-between">
+                                <div class="field half">
+                                    <label for="city">Exp. Month</label>
+                                    <input id="city" type="number" placeholder="12" min="1" max="12">
+                                </div>
+                                <div class="field half">
+                                    <label for="state">Exp. Year</label>
+                                    <input id="state" type="number" placeholder="19" maxlength="2" min="21" max="99">
+                                </div>
+                            </div>
+                            <div class="field full">
+                                <label for="zip">CVC Number</label>
+                                <input id="zip" type="text" placeholder="468" maxlength="3">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-actions flex justify-space-between">
+                   
+                    <div class="flex-end">
+                        <button class="button button-primary">Proceed</button>
+                    </div>
+                </div>
+            </div>
+        </article>
+        
+     </div>
+ </div>
