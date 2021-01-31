@@ -36,6 +36,7 @@ import { AdminloginComponent } from './components/adminlogin/adminlogin.componen
 import { AdminnavigationComponent } from './components/adminnavigation/adminnavigation.component';
 
 import { PaymentuiComponent } from './components/paymentui/paymentui.component';
+import { SeatuiComponent } from './components/seatui/seatui.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,7 @@ import { PaymentuiComponent } from './components/paymentui/paymentui.component';
     PassengersComponent,
     AdminloginComponent,
     AdminnavigationComponent,
-    
+    SeatuiComponent,
     PaymentuiComponent,
    
   ],
