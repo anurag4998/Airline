@@ -40,6 +40,7 @@ export class PassengersComponent implements OnInit {
     async onSubmit()
       {
         this.fetchseats.number_of_seats = this.flightselected.number_of_seats
+        this.fetchseats.seatclass = this.flightselected.travel_status == true?"business":"economy"
         await this.fetchseats.fetchseats(this.flightselected.flight_number,this.flightselected.travel_date)
         this.router.navigate([`${'flight/seats'}`]);
 

@@ -13,6 +13,7 @@ export class SelectedFlightService {
     public flight_number:number
     public travel_date:Date
     public number_of_seats:number
+    public travel_status:boolean
 
     public flightobj = {}
 
@@ -23,6 +24,7 @@ export class SelectedFlightService {
         this.flight_number = obj.flight_number
         this.travel_date = obj.travel_date
         this.number_of_seats = obj.number_of_seats
+        this.travel_status = obj.classstate
         this.flightobj = obj
     }
 

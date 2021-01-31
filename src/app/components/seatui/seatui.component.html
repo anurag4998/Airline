@@ -2,24 +2,27 @@
     <div class="airplane-left">
         <div class="row-wrapper">
             <div *ngFor="let s of row1,let i = index;">
-                <button  [disabled] = "s.booked == 1"
-                [ngClass]="(s.booked==1)?'seat disabled' : (s.reserved == 1) ? 'seat reserved' : 'seat'"
+                <button  [disabled] = "s.booked == 1 || s.class != seatclass"
+                [ngClass]="(s.booked==1)?'seat disabled' : ( s.class != seatclass) ? 'seat notallowed' :
+                 (s.reserved == 1) ? 'seat reserved' : 'seat'"
                  (click) = "reserve(s.seatnumber)" >{{s.seatnumber}} </button>
             </div>
         </div>
         
         <div class="row-wrapper">
             <div *ngFor="let s of row2;">
-                <button  [disabled] = "s.booked == 1"
-                [ngClass]="(s.booked==1)?'seat disabled' : (s.reserved == 1) ? 'seat reserved' : 'seat'"
+                <button  [disabled] = "s.booked == 1 || s.class != seatclass"
+                [ngClass]="(s.booked==1)?'seat disabled' : ( s.class != seatclass) ? 'seat notallowed' :
+                 (s.reserved == 1) ? 'seat reserved' : 'seat'"
                  (click) = "reserve(s.seatnumber)" >{{s.seatnumber}} </button>
             </div>
         </div>
         
         <div class="row-wrapper">
             <div *ngFor="let s of row3;">
-                <button  [disabled] = "s.booked == 1"
-                [ngClass]="(s.booked==1)?'seat disabled' : (s.reserved == 1) ? 'seat reserved' : 'seat'"
+                <button  [disabled] = "s.booked == 1 || s.class != seatclass"
+                [ngClass]="(s.booked==1)?'seat disabled' : ( s.class != seatclass) ? 'seat notallowed' :
+                    (s.reserved == 1) ? 'seat reserved' : 'seat'"
                  (click) = "reserve(s.seatnumber)" >{{s.seatnumber}} </button>
             </div>
         </div>
@@ -30,24 +33,27 @@
         <div class="airplane-left">
             <div class="row-wrapper">
                 <div *ngFor="let s of row4;">
-                    <button  [disabled] = "s.booked == 1"
-                    [ngClass]="(s.booked==1)?'seat disabled' : (s.reserved == 1) ? 'seat reserved' : 'seat'"
+                    <button  [disabled] = "s.booked == 1 || s.class != seatclass"
+                    [ngClass]="(s.booked==1)?'seat disabled' : ( s.class != seatclass) ? 'seat notallowed' :
+                        (s.reserved == 1) ? 'seat reserved' : 'seat'"
                      (click) = "reserve(s.seatnumber)" >{{s.seatnumber}} </button>
                 </div>
             </div>
             
             <div class="row-wrapper">
                 <div *ngFor="let s of row5;">
-                    <button  [disabled] = "s.booked == 1"
-                    [ngClass]="(s.booked==1)?'seat disabled' : (s.reserved == 1) ? 'seat reserved' : 'seat'"
+                    <button  [disabled] = "s.booked == 1 || s.class != seatclass"
+                    [ngClass]="(s.booked==1)?'seat disabled' : ( s.class != seatclass) ? 'seat notallowed' :
+                        (s.reserved == 1) ? 'seat reserved' : 'seat'"
                     (click) = "reserve(s.seatnumber)" >{{s.seatnumber}} </button>
                 </div>
             </div>
             
             <div class="row-wrapper">
                 <div *ngFor="let s of row6;">
-                    <button  [disabled] = "s.booked == 1"
-                    [ngClass]="(s.booked==1)?'seat disabled' : (s.reserved == 1) ? 'seat reserved' : 'seat'"
+                    <button  [disabled] = "s.booked == 1 || s.class != seatclass"
+                    [ngClass]="(s.booked==1)?'seat disabled' : ( s.class != seatclass) ? 'seat notallowed' :
+                        (s.reserved == 1) ? 'seat reserved' : 'seat'"
                     (click) = "reserve(s.seatnumber)" >{{s.seatnumber}} </button>
                 </div>
             </div>

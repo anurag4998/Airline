@@ -20,6 +20,7 @@ export class SeatuiComponent implements OnInit {
   public n =20
   public k=0;
   public numberofseats:number
+  public seatclass:string
 
   public reservedSeatsArray = []
 
@@ -31,6 +32,7 @@ export class SeatuiComponent implements OnInit {
     const date =`${currentYear}-${currentMonth+1}-${currentDate}`
     this.seatService.fetchseats(111,date)
     this.numberofseats = this.seatService.number_of_seats
+    this.seatclass = this.seatService.seatclass
     this.setbooked()
 
   }
@@ -72,7 +74,9 @@ export class SeatuiComponent implements OnInit {
       this.row6[this.k]=this.seatarray[j];
       this.k++;
     }
-
+    console.log(this.seatclass)
+    console.log(this.seatService.seatclass)
+    console.log(this.seatarray)
   }
 
   

@@ -14,8 +14,8 @@
 
 .seat
 {
-    width: 40px;
-    height: 40px;
+    width: 4rem;
+    height: 4rem;
     border-radius: 2px;
     color: #333;
     line-height: 40px;
@@ -28,6 +28,11 @@
     text-transform: capitalize;
     border: 1px solid #e1e1e1;
     cursor: pointer;
+}
+
+.notallowed
+{
+    cursor: not-allowed;
 }
 .disabled 
 {
