@@ -1,7 +1,7 @@
 import { Time } from "@angular/common";
 
 export class Adminflight {
-    FlightNumber:number;
+    flight_number:number;
     departure_location:string;
     arrival_location:string;
     Monday:Boolean;

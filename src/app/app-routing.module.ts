@@ -12,6 +12,7 @@ import {PassengersComponent} from './components/passengers/passengers.component'
 import{SeatuiComponent} from './components/seatui/seatui.component'
 
 import { AdminnavigationComponent } from './components/adminnavigation/adminnavigation.component';
+import { AdminloginComponent } from './components/adminlogin/adminlogin.component';
 
 const routes: Routes = [
   { path: '', component:SearchComponent},
@@ -24,7 +25,8 @@ const routes: Routes = [
   { path:'ViewAllFlights', component: ViewallflightsComponent},
   { path:'updateflight/:flightnumber', component:UpdateflightComponent},
   { path:'deleteflight/:flightnumber', component:DeleteflightComponent},
-  { path:'AdminNavigation', component: AdminnavigationComponent}
+  { path:'AdminNavigation', component: AdminnavigationComponent},
+  { path: 'AdminLogin', component: AdminloginComponent}
 ];
 
 @NgModule({
