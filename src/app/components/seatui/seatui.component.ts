@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import Swal from 'sweetalert2';
 import {FetchSeatService} from '../../services/fetchseat.service'
+import {TransactionService} from '../../services/transaction.service'
 @Component({
   selector: 'app-seatui',
   templateUrl: './seatui.component.html',
@@ -7,7 +9,7 @@ import {FetchSeatService} from '../../services/fetchseat.service'
 })
 export class SeatuiComponent implements OnInit {
 
-  constructor(private seatService : FetchSeatService) {   }
+  constructor(private seatService : FetchSeatService, public TransactionService:TransactionService) {   }
 
   public row1=[];
   public row2=[];
@@ -74,9 +76,7 @@ export class SeatuiComponent implements OnInit {
       this.row6[this.k]=this.seatarray[j];
       this.k++;
     }
-    console.log(this.seatclass)
-    console.log(this.seatService.seatclass)
-    console.log(this.seatarray)
+   
   }
 
   
@@ -117,5 +117,18 @@ export class SeatuiComponent implements OnInit {
       }
 
   } 
+
+  onSubmit()
+  {
+    if(this.reservedSeatsArray.length == this.numberofseats)
+    {
+      this.TransactionService.seatArray = this.reservedSeatsArray
+      this.TransactionService.post()
+    }
+
+    else 
+    Swal.fire('oops', 'Select all seats', 'error')
+
+  }
   
 }
