@@ -9,12 +9,14 @@ import { DeleteflightComponent } from './components/deleteflight/deleteflight.co
 import { UpdateflightComponent } from './components/updateflight/updateflight.component';
 import { ViewallflightsComponent } from './components/viewallflights/viewallflights.component';
 import { AdminnavigationComponent } from './components/adminnavigation/adminnavigation.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 const routes: Routes = [
   { path: '', component:SearchComponent},
   { path: 'flight/search', component: DisplayflightComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'login', component: LoginComponent },
+  { path:'page-not-found' , component:PageNotFoundComponent},
   
   {path:'AddFlight', component: AddflightComponent},
   {path:'ViewAllFlights', component: ViewallflightsComponent},

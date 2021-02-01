@@ -33,6 +33,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { DisplayflightComponent } from './components/displayflight/displayflight.component';
 import { AdminloginComponent } from './components/adminlogin/adminlogin.component';
 import { AdminnavigationComponent } from './components/adminnavigation/adminnavigation.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+
 
 @NgModule({
   declarations: [
@@ -51,6 +53,8 @@ import { AdminnavigationComponent } from './components/adminnavigation/adminnavi
     ViewallflightsComponent,
     AdminloginComponent,
     AdminnavigationComponent,
+    PageNotFoundComponent,
+  
    
   ],
   imports: [
