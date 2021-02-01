@@ -1,0 +1,297 @@
+
+.passengercontainer
+{
+    background-color:  #fdfdfd;
+    min-height: 100vh;
+    padding: 2rem;
+}
+.passengerwrapper 
+{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.flight
+{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 2.5rem;
+    width: 70%;
+    padding: 1rem;
+}
+
+.fare 
+{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    margin-top: 2.5rem;
+    padding: 1rem;
+    width: 20%;
+}
+
+/***********Fare summary*************/
+.fare-section 
+{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    border-radius: 1rem;
+    margin-bottom: 3.5rem;
+    width: 100%;
+}
+.farewrappercard 
+{
+    width: 80%;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.15);
+    background-color: white;
+    width: 100%;
+    border-radius: 1rem;
+
+    
+}
+.fare-section--row
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e1e1e1;
+    padding:0 1.5rem;
+    padding-top: 1rem;
+}
+.fare-section--row> p
+{
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+.Total-Amount 
+{
+    height: 5rem;
+}
+.Total-Amount >p
+{
+    font-weight: 500;
+    font-size: 1.8rem;
+}
+/******/
+.section
+{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    border-radius: 1rem;
+    margin-bottom: 3.5rem;
+    width: 75%;
+}
+.heading
+{
+    font-size : 2rem;
+    font-weight:600; 
+    padding: 1rem;   
+}
+/********flight-details****************/
+
+.flight--summary
+{
+    height: 14rem;
+}
+
+.flight--summary-card
+{
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.15);
+    border-radius: 1rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    height: 10rem;
+    width: 100%;
+    background-color: white;
+    padding-left: 2rem;
+}
+
+.flight--summary-card>h3 
+{
+    font-size: 1.8rem !important;
+    font-weight: 500 !important;
+    padding-top: 0.8rem !important;
+    margin-bottom: 1rem !important;
+}
+.flight--summary-card>h4
+  {
+    font-size: 1.6rem !important;
+    font-weight: 400 !important;
+  }
+/********card-header****************/
+.passenger__summary__headingcontainer
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.passenger__summary__headingcontainer--count
+{
+    font-size: 1.5rem !important;
+    color:#065af3;
+    font-weight: 400 !important;
+
+}
+form
+{
+    width: 100%;
+}
+.details-wrapper
+{
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.15);
+    border-radius: 1rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    height: 20rem;
+    background-color: white;
+    margin-bottom: 1rem;
+}
+
+.card-heading
+{
+    border-bottom:  1px solid #eaebeb;
+    width: 100%;
+    height: 25%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+
+}
+.title
+{
+    padding-left:2rem ;
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: #333;
+    text-transform: uppercase;
+}
+.errormsg
+{
+    font-size: 11px;
+    font-weight: 500;
+    padding: 0 12px;
+    border-radius: 20px;
+    line-height: 18px;
+    height: 18px;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    background-image: linear-gradient(260deg,#ff3e5e,#ff7f3f);
+    right: 1rem;
+    font-family: 'poppins';
+}
+
+/************card-body***************/
+.card-body
+{
+    width: 100%;
+    padding: 2rem 1.5rem;
+    height: 75%;
+}
+.card-body--info
+{
+    font-size: 14px;
+    color: #000;
+    margin-bottom: 1.6rem;
+    font-weight: 500;
+}
+.card-body--details
+{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 90%;
+}
+
+.card-body--input>input
+{
+    border-radius: 4px;
+    border: 1px solid #9b9b9b;
+    padding: 8px 8px;
+    font-size: 16px;
+    color: #4a4a4a;
+    outline: 0;
+    margin-right: 1.5rem;
+}
+/***************Contact***********/
+
+.contactdetails
+{
+    height: 10rem;
+
+}
+
+.contactdetails--info
+{
+    width: 100%;
+    height: 25%;
+    padding-left:2rem ;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.contactdetails--info>h3 
+{
+    font-size:1.3rem
+}
+
+/***********Buttons************/
+
+.buttons 
+{
+    margin-top: 3.5rem;
+}
+
+.passengerdetails--addpassengers
+{
+    padding: 1rem 2rem;
+    border-radius: 0.4rem;
+    font-size: 1.5rem;
+    color:#065af3;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.passenger--submit
+{
+    background: linear-gradient(95deg,#53b2fe,#065af3) !important;
+    border-radius: 96px ;
+    color: #fff ;
+    font-size: 1.5rem ;
+    line-height: 3.2rem ;
+    height: 5rem;
+    padding: 0 2rem ;
+    text-align: center;
+    font-weight: 700;
+    outline: 0;
+    border: 0;
+    width: 15rem;
+    margin-left: 1.5rem;
+    cursor: pointer;
+   
+
+}
+/*******Hide Input arrows*****/
+/* input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+/* input[type=number] {
+  -moz-appearance: textfield;
+}  */

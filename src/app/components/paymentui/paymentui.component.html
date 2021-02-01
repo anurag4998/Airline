@@ -1,0 +1,121 @@
+<header>
+    <div class="logo">
+        <a [routerLink]="['/']"> LOGO </a>   
+     </div>
+ </header> 
+
+ <div class="paymentwrapper">
+     <div class="paymentcontainer">
+        <article class="card">
+            <div class="container">
+                <div class="card-title">
+                    <h2>Payment</h2>
+                </div>
+                <div class="card-body">
+                    <div class="payment-type">
+                        <h4>Choose payment method below</h4>
+                        <div class="types flex justify-space-between">
+                            <div class="type selected">
+                                <div class="logo">
+                                    <i class="fa fa-credit-card"></i>
+                                </div>
+                                <div class="text">
+                                    <p>Pay with Credit Card</p>
+                                </div>
+                            </div>
+                            <div class="type">
+                                <div class="logo">
+                                    <i class="fa fa-paypal"></i>
+                                </div>
+                                <div class="text">
+                                    <p>Pay with PayPal</p>
+                                </div>
+                            </div>
+                            <div class="type">
+                                <div class="logo">
+                                    <i class="fa fa-amazon"></i>
+                                </div>
+                                <div class="text">
+                                    <p>Pay with Amazon</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <form #paymentForm="ngForm" (ngSubmit)="submitForm(paymentForm)" novalidate>
+                        <div class="payment-info flex justify-space-between">
+                        
+                            <div class="column shipping">
+                                <div class="title">
+                                    <h4>Credit Card Info</h4>
+                                </div>
+                               
+                                <div class="field full">
+                                    <label for="name">Cardholder Name</label>
+                                    <input id="name" type="text" placeholder="Full Name" name="name" required #name="ngModel"
+                                    [(ngModel)]="payment.name">
+                                    <div
+                                        *ngIf="!name?.valid && (name?.dirty || name?.touched)" class="errors">
+                                        <div *ngIf="name.errors.required">
+                                        <span class="msg">&#9888; Enter Name</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="field full">
+                                    <label for="cardnumber">Card Number</label>
+                                    <input id="cardnumber" type="text" placeholder="xxxx-xxxx-xxxx-xxxx" required pattern="[0-9]{16}" maxlength="16" name="cardnumber" #cardnumber="ngModel"
+                                    [(ngModel)]="payment.cardnumber">
+                                    <div
+                                        *ngIf="!cardnumber?.valid && (cardnumber?.dirty || cardnumber?.touched)" class="errors">
+                                        <div *ngIf="cardnumber.errors.required">
+                                        <span class="msg">&#9888; Enter Cardnumber</span>
+                                        </div>
+                                        <div *ngIf="cardnumber.errors.pattern">
+                                            <span class="msg">&#9888; Enter 16 digits</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            
+                                <div class="flex justify-space-between">
+                                    <div class="field half">
+                                        <label for="city">Exp. Month</label>
+                                        <input id="city" type="text" placeholder="12">
+                                    </div>
+                                    <div class="field half">
+                                        <label for="state">Exp. Year</label>
+                                        <input id="state" type="text" placeholder="2021">
+                                    </div>
+                                </div>
+                                    
+                            </div>
+                                    </div>
+                                
+                                <div class="field txt">
+                                    <label for="cvc">CVC Number</label>
+                                    <input id="cvc" type="password" placeholder="xxx" required maxlength="3" pattern="[0-9]{3}" name="cvc" #cvc="ngModel"
+                                    [(ngModel)]="payment.cvc">
+                                    <div
+                                        *ngIf="!cvc?.valid && (cvc?.dirty || cvc?.touched)" class="errors">
+                                        <div *ngIf="cvc.errors.required">
+                                        <span class="msg">&#9888; Enter CVC Number</span>
+                                        </div>
+                                        <div *ngIf="cvc.errors.pattern">
+                                            <span class="msg">&#9888; Enter 3 digits</span>
+                                        </div>
+                                    </div>
+                                </div>
+                        
+                    
+                        
+                        <div class="card-actions flex justify-space-between">
+                        
+                            <div class="flex-end">
+                                <button class="button button-primary" [disabled]="!paymentForm.valid" [ngStyle]="{'cursor': (!paymentForm.valid? 'not-allowed':'pointer')}">Proceed</button>
+                            </div>
+                        </div>
+                    </form> 
+                </div>
+            </div>
+        </article>
+        
+     </div>
+ </div>

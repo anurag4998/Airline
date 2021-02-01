@@ -9,13 +9,16 @@ import { faEyeSlash, faEye } from '@fortawesome/free-solid-svg-icons';
 export class AdminloginComponent implements OnInit {
   verify=true;
   yes;
-  public adminlogin={"email":"","password":""};
+  public adminlogin;
   constructor() { }
   faEyeSlash = faEyeSlash;
   faEye=faEye;
   visible = false;
   ngOnInit(): void {
-    this.adminlogin={"email":"","password":""};
+    this.adminlogin={
+      email:'',
+      password:''
+    };
   }
   onClick()
   {
@@ -23,13 +26,17 @@ export class AdminloginComponent implements OnInit {
   }
   submitForm(AdminLoginForm)
   {
-    if(AdminLoginForm.email == "aditya@gmail.com" && AdminLoginForm.password == "regex123" )
+    console.log(AdminLoginForm.value);
+
+    if(this.adminlogin.email == "aditya@gmail.com" && this.adminlogin.password == "regex123" )
       {
         
-        
+        window.location.href = "http://localhost:4200/ViewAllFlights";
+        console.log("yes");
       }
      else 
       {
+        console.log("no");
         this.verify=false;
       }
 

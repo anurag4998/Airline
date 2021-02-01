@@ -31,10 +31,14 @@ import {Confirmvalidator} from '../app/shared/confirmvalidator.directive';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { DisplayflightComponent } from './components/displayflight/displayflight.component';
+import { PassengersComponent } from './components/passengers/passengers.component';
 import { AdminloginComponent } from './components/adminlogin/adminlogin.component';
 import { AdminnavigationComponent } from './components/adminnavigation/adminnavigation.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
+
+import { PaymentuiComponent } from './components/paymentui/paymentui.component';
+import { SeatuiComponent } from './components/seatui/seatui.component';
 
 @NgModule({
   declarations: [
@@ -51,10 +55,16 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     DeleteflightComponent,
     UpdateflightComponent,
     ViewallflightsComponent,
+    PassengersComponent,
     AdminloginComponent,
     AdminnavigationComponent,
+<<<<<<< HEAD
     PageNotFoundComponent,
   
+=======
+    SeatuiComponent,
+    PaymentuiComponent,
+>>>>>>> 49afecf6badef9229a3c87532e4c38521bb51def
    
   ],
   imports: [
