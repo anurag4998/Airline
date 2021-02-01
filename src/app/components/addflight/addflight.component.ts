@@ -15,7 +15,7 @@ export class AddflightComponent implements OnInit {
 
   ngOnInit(): void {
     this.addflight={
-      FlightNumber:null,
+      flight_number:null,
       departure_location:'',
       arrival_location:'',
       Monday:false,

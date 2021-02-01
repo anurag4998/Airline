@@ -15,7 +15,7 @@ export class DeleteflightComponent implements OnInit {
   ngOnInit(): void {
     this.service.getByflightnumber(this.router.snapshot.params['flightnumber']).subscribe((data)=>
     this.flight={
-      FlightNumber:data["FlightNumber"],
+      flight_number:data["flight_number"],
       departure_location:data["departure_location"],
       arrival_location:data["arrival_location"],
       Monday:data["Monday"],
