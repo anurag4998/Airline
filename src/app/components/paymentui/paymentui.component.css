@@ -2,11 +2,11 @@ header
 {
     display: flex;
     align-items: center;
-    height: 6.5rem;
+    height: 6.0rem;
     background-color: #111;
     width: 100%;
     color: white;
-    position: relative;
+    position: center;
 }
 
 .logo 
@@ -60,6 +60,10 @@ body a {
   .field.half {
     width: calc(50% - 12px);
   }
+  .field.txt{
+    width:45%;
+  }
+  
   .field label {
     display: block;
     text-transform: uppercase;
@@ -97,7 +101,7 @@ body a {
     box-shadow: 0 2px 4px 0 rgba(0,0,0,.15);
   }
   .card .container {
-    max-width: 700px;
+    max-width: 1000px;
     margin: 0 auto;
   }
   .card .card-title {
@@ -183,7 +187,7 @@ body a {
   }
   .card .card-body .payment-info .title {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
   }
   .card .card-body .payment-info .title .num {

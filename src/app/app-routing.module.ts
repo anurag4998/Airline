@@ -12,6 +12,7 @@ import {PassengersComponent} from './components/passengers/passengers.component'
 import{SeatuiComponent} from './components/seatui/seatui.component'
 
 import { AdminnavigationComponent } from './components/adminnavigation/adminnavigation.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AdminloginComponent } from './components/adminlogin/adminlogin.component';
 
 const routes: Routes = [
@@ -19,13 +20,15 @@ const routes: Routes = [
   { path: 'flight/search', component: DisplayflightComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'login', component: LoginComponent },
+  { path:'page-not-found' , component:PageNotFoundComponent},
+  
+  {path:'AddFlight', component: AddflightComponent},
+  {path:'ViewAllFlights', component: ViewallflightsComponent},
+  {path:'updateflight/:flightnumber', component:UpdateflightComponent},
+  {path:'deleteflight/:flightnumber', component:DeleteflightComponent},
+  {path:'AdminNavigation', component: AdminnavigationComponent},
   { path: 'flight/passengers', component: PassengersComponent },
   { path: 'flight/seats', component: SeatuiComponent },
-  { path:'AddFlight', component: AddflightComponent},
-  { path:'ViewAllFlights', component: ViewallflightsComponent},
-  { path:'updateflight/:flightnumber', component:UpdateflightComponent},
-  { path:'deleteflight/:flightnumber', component:DeleteflightComponent},
-  { path:'AdminNavigation', component: AdminnavigationComponent},
   { path: 'AdminLogin', component: AdminloginComponent}
 ];
 

@@ -34,6 +34,8 @@ import { DisplayflightComponent } from './components/displayflight/displayflight
 import { PassengersComponent } from './components/passengers/passengers.component';
 import { AdminloginComponent } from './components/adminlogin/adminlogin.component';
 import { AdminnavigationComponent } from './components/adminnavigation/adminnavigation.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+
 
 import { PaymentuiComponent } from './components/paymentui/paymentui.component';
 import { SeatuiComponent } from './components/seatui/seatui.component';
@@ -56,6 +58,8 @@ import { SeatuiComponent } from './components/seatui/seatui.component';
     PassengersComponent,
     AdminloginComponent,
     AdminnavigationComponent,
+    PageNotFoundComponent,
+  
     SeatuiComponent,
     PaymentuiComponent,
    
