@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FetchSeat} from '../../services/fetchseat.service'
+import {FetchSeatService} from '../../services/fetchseat.service'
 @Component({
   selector: 'app-seatui',
   templateUrl: './seatui.component.html',
@@ -7,9 +7,7 @@ import {FetchSeat} from '../../services/fetchseat.service'
 })
 export class SeatuiComponent implements OnInit {
 
-  constructor(private seatService : FetchSeat) {
-
-   }
+  constructor(private seatService : FetchSeatService) {   }
 
   public row1=[];
   public row2=[];
@@ -21,7 +19,8 @@ export class SeatuiComponent implements OnInit {
   public seatarray
   public n =20
   public k=0;
-  public numberofseats = 2
+  public numberofseats:number
+  public seatclass:string
 
   public reservedSeatsArray = []
 
@@ -32,6 +31,8 @@ export class SeatuiComponent implements OnInit {
     const currentDate = new Date().getDate();
     const date =`${currentYear}-${currentMonth+1}-${currentDate}`
     this.seatService.fetchseats(111,date)
+    this.numberofseats = this.seatService.number_of_seats
+    this.seatclass = this.seatService.seatclass
     this.setbooked()
 
   }
@@ -73,7 +74,9 @@ export class SeatuiComponent implements OnInit {
       this.row6[this.k]=this.seatarray[j];
       this.k++;
     }
-
+    console.log(this.seatclass)
+    console.log(this.seatService.seatclass)
+    console.log(this.seatarray)
   }
 
   
