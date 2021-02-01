@@ -14,6 +14,8 @@ export class PassengersComponent implements OnInit {
 
   public count :number;
   public flightselectobj:any
+  public seatprice:number
+  public totalprice:number
   passenger = new Passenger()
   public dataarray = []
  
@@ -22,9 +24,9 @@ export class PassengersComponent implements OnInit {
         this.flightselectobj = this.flightselected.flightobj
         this.dataarray.push(this.passenger)
         this.count =1;
-
+        this.fetchprice()
     }
-
+      
       onAdd()
       {
         
@@ -46,4 +48,11 @@ export class PassengersComponent implements OnInit {
 
         console.log(this.dataarray)
       }
+
+      async fetchprice() 
+      {
+        this.seatprice = await this.flightselected.getFlightPrice(this.flightselected.flight_number,this.flightselected.travel_status)
+        this.seatprice = this.seatprice*this.flightselectobj.number_of_seats
+        this.totalprice = this.seatprice+698+10
+      } 
 }

@@ -4,18 +4,79 @@
     background-color:  #fdfdfd;
     min-height: 100vh;
     padding: 2rem;
-
 }
-.passengerwrapper
+.passengerwrapper 
+{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.flight
 {
     display: flex;
     justify-content: flex-start;
     align-items: center;
     flex-direction: column;
     margin-top: 2.5rem;
+    width: 70%;
+    padding: 1rem;
 }
 
+.fare 
+{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    margin-top: 2.5rem;
+    padding: 1rem;
+    width: 20%;
+}
 
+/***********Fare summary*************/
+.fare-section 
+{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    border-radius: 1rem;
+    margin-bottom: 3.5rem;
+    width: 100%;
+}
+.farewrappercard 
+{
+    width: 80%;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.15);
+    background-color: white;
+    width: 100%;
+    border-radius: 1rem;
+
+    
+}
+.fare-section--row
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e1e1e1;
+    padding:0 1.5rem;
+    padding-top: 1rem;
+}
+.fare-section--row> p
+{
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+.Total-Amount 
+{
+    height: 5rem;
+}
+.Total-Amount >p
+{
+    font-weight: 500;
+    font-size: 1.8rem;
+}
+/******/
 .section
 {
     display: flex;
@@ -24,9 +85,7 @@
     flex-direction: column;
     border-radius: 1rem;
     margin-bottom: 3.5rem;
-    width: 50%;
-
-
+    width: 75%;
 }
 .heading
 {
