@@ -3,6 +3,7 @@ import {Passenger} from '../../models/passengers'
 import {SelectedFlightService} from '../../services/selectedflight.service'
 import {FetchSeatService} from '../../services/fetchseat.service'
 import { Router } from '@angular/router';
+import {TransactionService} from '../../services/transaction.service'
 @Component({
   selector: 'app-passengers',
   templateUrl: './passengers.component.html',
@@ -10,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class PassengersComponent implements OnInit {
 
-  constructor(public flightselected:SelectedFlightService, public fetchseats:FetchSeatService,public router : Router ) { }
+  constructor(public flightselected:SelectedFlightService, public fetchseats:FetchSeatService,public router : Router,public TransactionService:TransactionService ) { }
 
   public count :number;
   public flightselectobj:any
@@ -45,7 +46,7 @@ export class PassengersComponent implements OnInit {
         this.fetchseats.seatclass = this.flightselected.travel_status == true?"business":"economy"
         await this.fetchseats.fetchseats(this.flightselected.flight_number,this.flightselected.travel_date)
         this.router.navigate([`${'flight/seats'}`]);
-
+        this.TransactionService.passengers = this.dataarray
         console.log(this.dataarray)
       }
 

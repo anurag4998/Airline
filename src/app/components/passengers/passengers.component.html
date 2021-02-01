@@ -44,7 +44,7 @@
                     </div>
                     <div class="buttons">
                         <span (click) = "onAdd()" class="passengerdetails--addpassengers" *ngIf = "count<flightselected.number_of_seats">+ Add Passenger</span>
-                        <button type="submit" class="passenger--submit">Continue</button>
+                        <button type="submit" class="passenger--submit" [disabled] = "count!=flightselected.number_of_seats">Continue</button>
                     </div>
                     
                 </form>
