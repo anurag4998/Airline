@@ -12,35 +12,24 @@ import {PassengersComponent} from './components/passengers/passengers.component'
 import{SeatuiComponent} from './components/seatui/seatui.component'
 
 import { AdminnavigationComponent } from './components/adminnavigation/adminnavigation.component';
-<<<<<<< HEAD
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-=======
 import { AdminloginComponent } from './components/adminlogin/adminlogin.component';
->>>>>>> 49afecf6badef9229a3c87532e4c38521bb51def
 
 const routes: Routes = [
   { path: '', component:SearchComponent},
   { path: 'flight/search', component: DisplayflightComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'login', component: LoginComponent },
-<<<<<<< HEAD
   { path:'page-not-found' , component:PageNotFoundComponent},
   
   {path:'AddFlight', component: AddflightComponent},
   {path:'ViewAllFlights', component: ViewallflightsComponent},
   {path:'updateflight/:flightnumber', component:UpdateflightComponent},
   {path:'deleteflight/:flightnumber', component:DeleteflightComponent},
-  {path:'AdminNavigation', component: AdminnavigationComponent}
-=======
+  {path:'AdminNavigation', component: AdminnavigationComponent},
   { path: 'flight/passengers', component: PassengersComponent },
   { path: 'flight/seats', component: SeatuiComponent },
-  { path:'AddFlight', component: AddflightComponent},
-  { path:'ViewAllFlights', component: ViewallflightsComponent},
-  { path:'updateflight/:flightnumber', component:UpdateflightComponent},
-  { path:'deleteflight/:flightnumber', component:DeleteflightComponent},
-  { path:'AdminNavigation', component: AdminnavigationComponent},
   { path: 'AdminLogin', component: AdminloginComponent}
->>>>>>> 49afecf6badef9229a3c87532e4c38521bb51def
 ];
 
 @NgModule({

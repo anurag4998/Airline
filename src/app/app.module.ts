@@ -58,13 +58,10 @@ import { SeatuiComponent } from './components/seatui/seatui.component';
     PassengersComponent,
     AdminloginComponent,
     AdminnavigationComponent,
-<<<<<<< HEAD
     PageNotFoundComponent,
   
-=======
     SeatuiComponent,
     PaymentuiComponent,
->>>>>>> 49afecf6badef9229a3c87532e4c38521bb51def
    
   ],
   imports: [
