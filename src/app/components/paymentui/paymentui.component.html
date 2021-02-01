@@ -48,6 +48,7 @@
                                 <div class="title">
                                     <h4>Credit Card Info</h4>
                                 </div>
+                               
                                 <div class="field full">
                                     <label for="name">Cardholder Name</label>
                                     <input id="name" type="text" placeholder="Full Name" name="name" required #name="ngModel"
@@ -73,21 +74,22 @@
                                         </div>
                                     </div>
                                 </div>
-                                
-                                    <div class="field full">
-                                            <label for="exp">Exp. Month/year</label>
-                                            <input id="exp" type="month" placeholder="MM" min="2021-03" required name="exp" #exp="ngModel"
-                                            [(ngModel)]="payment.exp"> 
-                                        
-                                        <div 
-                                            *ngIf="!exp?.valid && (exp?.dirty || exp?.touched)" class="errors">
-                                            <div *ngIf="exp.errors.required">
-                                            <span class="msg">&#9888; Enter Expiring Month/Year</span>
-                                            </div>
-                                        </div>
+                            
+                                <div class="flex justify-space-between">
+                                    <div class="field half">
+                                        <label for="city">Exp. Month</label>
+                                        <input id="city" type="text" placeholder="12">
+                                    </div>
+                                    <div class="field half">
+                                        <label for="state">Exp. Year</label>
+                                        <input id="state" type="text" placeholder="2021">
+                                    </div>
+                                </div>
+                                    
+                            </div>
                                     </div>
                                 
-                                <div class="field full">
+                                <div class="field txt">
                                     <label for="cvc">CVC Number</label>
                                     <input id="cvc" type="password" placeholder="xxx" required maxlength="3" pattern="[0-9]{3}" name="cvc" #cvc="ngModel"
                                     [(ngModel)]="payment.cvc">
@@ -101,8 +103,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
+                        
                     
                         
                         <div class="card-actions flex justify-space-between">
