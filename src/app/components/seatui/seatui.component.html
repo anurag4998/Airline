@@ -1,63 +1,100 @@
-<div class="airplane-seatswrapper">
-    <div class="airplane-left">
-        <div class="row-wrapper">
-            <div *ngFor="let s of row1,let i = index;">
-                <button  [disabled] = "s.booked == 1 || s.class != seatclass"
-                [ngClass]="(s.booked==1)?'seat disabled' : ( s.class != seatclass) ? 'seat notallowed' :
-                 (s.reserved == 1) ? 'seat reserved' : 'seat'"
-                 (click) = "reserve(s.seatnumber)" >{{s.seatnumber}} </button>
-            </div>
+
+<div class="parent">
+    <div class="airplane-seatswrapper">   
+        <div class="cockpit"> 
+            <img src="../../../assets/cockpit.png">
         </div>
-        
-        <div class="row-wrapper">
-            <div *ngFor="let s of row2;">
-                <button  [disabled] = "s.booked == 1 || s.class != seatclass"
-                [ngClass]="(s.booked==1)?'seat disabled' : ( s.class != seatclass) ? 'seat notallowed' :
-                 (s.reserved == 1) ? 'seat reserved' : 'seat'"
-                 (click) = "reserve(s.seatnumber)" >{{s.seatnumber}} </button>
-            </div>
-        </div>
-        
-        <div class="row-wrapper">
-            <div *ngFor="let s of row3;">
-                <button  [disabled] = "s.booked == 1 || s.class != seatclass"
-                [ngClass]="(s.booked==1)?'seat disabled' : ( s.class != seatclass) ? 'seat notallowed' :
-                    (s.reserved == 1) ? 'seat reserved' : 'seat'"
-                 (click) = "reserve(s.seatnumber)" >{{s.seatnumber}} </button>
-            </div>
-        </div>
-        
-    </div>
-    
-    <div class="airplane-right">
-        <div class="airplane-left">
-            <div class="row-wrapper">
-                <div *ngFor="let s of row4;">
-                    <button  [disabled] = "s.booked == 1 || s.class != seatclass"
-                    [ngClass]="(s.booked==1)?'seat disabled' : ( s.class != seatclass) ? 'seat notallowed' :
+        <div class="seatwrapper">
+            <div class="airplane-left">
+                <div class="row-wrapper">
+                    <div *ngFor="let s of row1,let i = index;">
+                        <button  [disabled] = "s.booked == 1 || s.class != seatclass"
+                        [ngClass]="(s.booked==1)?'seat disabled' : ( s.class != seatclass) ? 'seat notallowed' :
                         (s.reserved == 1) ? 'seat reserved' : 'seat'"
-                     (click) = "reserve(s.seatnumber)" >{{s.seatnumber}} </button>
+                        (click) = "reserve(s.seatnumber)" >{{s.seatnumber}} </button>
+                    </div>
                 </div>
+                
+                <div class="row-wrapper">
+                    <div *ngFor="let s of row2;">
+                        <button  [disabled] = "s.booked == 1 || s.class != seatclass"
+                        [ngClass]="(s.booked==1)?'seat disabled' : ( s.class != seatclass) ? 'seat notallowed' :
+                        (s.reserved == 1) ? 'seat reserved' : 'seat'"
+                        (click) = "reserve(s.seatnumber)" >{{s.seatnumber}} </button>
+                    </div>
+                </div>
+                
+                <div class="row-wrapper">
+                    <div *ngFor="let s of row3;">
+                        <button  [disabled] = "s.booked == 1 || s.class != seatclass"
+                        [ngClass]="(s.booked==1)?'seat disabled' : ( s.class != seatclass) ? 'seat notallowed' :
+                            (s.reserved == 1) ? 'seat reserved' : 'seat'"
+                        (click) = "reserve(s.seatnumber)" >{{s.seatnumber}} </button>
+                    </div>
+                </div>
+                
             </div>
             
-            <div class="row-wrapper">
-                <div *ngFor="let s of row5;">
-                    <button  [disabled] = "s.booked == 1 || s.class != seatclass"
-                    [ngClass]="(s.booked==1)?'seat disabled' : ( s.class != seatclass) ? 'seat notallowed' :
-                        (s.reserved == 1) ? 'seat reserved' : 'seat'"
-                    (click) = "reserve(s.seatnumber)" >{{s.seatnumber}} </button>
-                </div>
+            <div class="airplane-right">
+                    <div class="row-wrapper">
+                        <div *ngFor="let s of row4;">
+                            <button  [disabled] = "s.booked == 1 || s.class != seatclass"
+                            [ngClass]="(s.booked==1)?'seat disabled' : ( s.class != seatclass) ? 'seat notallowed' :
+                                (s.reserved == 1) ? 'seat reserved' : 'seat'"
+                            (click) = "reserve(s.seatnumber)" >{{s.seatnumber}} </button>
+                        </div>
+                    </div>
+                    
+                    <div class="row-wrapper">
+                        <div *ngFor="let s of row5;">
+                            <button  [disabled] = "s.booked == 1 || s.class != seatclass"
+                            [ngClass]="(s.booked==1)?'seat disabled' : ( s.class != seatclass) ? 'seat notallowed' :
+                                (s.reserved == 1) ? 'seat reserved' : 'seat'"
+                            (click) = "reserve(s.seatnumber)" >{{s.seatnumber}} </button>
+                        </div>
+                    </div>
+                    
+                    <div class="row-wrapper">
+                        <div *ngFor="let s of row6;">
+                            <button  [disabled] = "s.booked == 1 || s.class != seatclass"
+                            [ngClass]="(s.booked==1)?'seat disabled' : ( s.class != seatclass) ? 'seat notallowed' :
+                                (s.reserved == 1) ? 'seat reserved' : 'seat'"
+                            (click) = "reserve(s.seatnumber)" >{{s.seatnumber}} </button>
+                        </div>
+                    </div>
+              </div>
+        </div>
+        <div class="tail"> 
+            <img src="../../../assets/tail.a786df74.png">
+        </div>
+
+    </div>
+</div> 
+<footer>
+    <div class="footer--left">
+        <span class="footer--title">Select Seat</span>
+    
+        <div class="seatlegends">
+            <div class="legendwrapper">
+                <div class="seatblock"></div>
+                <span>Booked</span>
+            </div>
+            <div class="legendwrapper">
+                <div class="seatblock" style="background-color: green;"></div>
+                <span>Reserved</span>
+            </div>
+            <div class="legendwrapper">
+                <div class="seatblock" style="background-color: white;"></div>
+                <span>Unreserved</span>
             </div>
             
-            <div class="row-wrapper">
-                <div *ngFor="let s of row6;">
-                    <button  [disabled] = "s.booked == 1 || s.class != seatclass"
-                    [ngClass]="(s.booked==1)?'seat disabled' : ( s.class != seatclass) ? 'seat notallowed' :
-                        (s.reserved == 1) ? 'seat reserved' : 'seat'"
-                    (click) = "reserve(s.seatnumber)" >{{s.seatnumber}} </button>
-                </div>
-            </div>
-        </div>   
+        </div>    
+
     </div>
-    
-</div>
+
+    <div class="footer--right">
+        <button class="confirmseat">Confirm Seats</button>
+    </div>
+</footer>
+
+

@@ -1,10 +1,60 @@
+.parent
+{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 100vw;
+   height: 90vh;
+   background-color: #e0e0e0;
+   overflow-y: hidden;
+
+
+}
 .airplane-seatswrapper
 {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    background-color: #e0e0e0;
+    transform: rotateZ(-90deg);
+    height: 300rem;
+    padding-top: 80rem;
+}
+.airplane-seatswrapper>div 
+{
+    margin-bottom: 3.5rem;
+}
+
+.cockpit,.tail 
+{
+    transform: rotateZ(90deg);
+    height: 40rem;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.airplane-left
+
+.cockpit>img 
+{
+    height:  100%;
+}
+
+.tail >img 
+{
+    height:100%;
+}
+
+.seatwrapper
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    width: 40rem;
+    padding: 1rem 0;
+}
+.airplane-left,.airplane-right
 {
     display: flex;
     justify-content: center;
@@ -28,6 +78,8 @@
     text-transform: capitalize;
     border: 1px solid #e1e1e1;
     cursor: pointer;
+    transform: rotateZ(90deg);
+
 }
 
 .notallowed
@@ -46,3 +98,74 @@
     background-color: green;
     color: floralwhite;
 }
+/***********Footer********/
+footer 
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 7rem;
+    padding: 0.5rem 5rem
+}
+
+.footer--left 
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer--left .footer--title
+{
+    margin-right: 4rem;
+    font-size: 1.6rem;
+    font-weight: 500;
+}
+.seatlegends,.legendwrapper
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+}
+.seatlegends
+{
+    margin-left: 5rem;
+}
+.seatblock 
+{
+    height: 2rem;
+    width: 2rem;
+    background-color: red;
+    border: 1px solid #e1e1e1;
+
+}
+.legendwrapper span
+{
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin: 0 1rem;
+   
+
+
+}
+.confirmseat
+{
+    width: 15rem;
+    line-height: 48px!important;
+    margin: 0 11px;
+    height: 48px!important;
+    background: #008cff;
+    border-radius: 96px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: 700;
+    background: linear-gradient(95deg,#53b2fe,#065af3)!important;
+    border-radius: 9.6remx;
+    font-size: 1.4rem;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
