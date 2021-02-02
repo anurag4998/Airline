@@ -129,3 +129,62 @@
       
         
     }
+
+
+@media screen and (max-width:768px)
+{
+    .bg
+    {
+        padding:1rem;
+    
+    }
+    .view
+    {
+        zoom:60%;
+        height:100%;
+        width: 60%;
+    }
+}
+@media screen and (max-width:768px)
+{
+    .bg
+    {
+        padding:1rem;
+    
+    }
+    .view
+    {
+    
+        height:1000px;
+      
+    }
+}
+@media screen and (max-width:540px)
+{
+    .bg
+    {
+        padding:0.8rem;
+    
+    }
+    .view
+    {
+        zoom:40%;
+        height:1000px;
+      
+    }
+}
+@media screen and (max-width:362px)
+{
+    .bg
+    {
+        padding:0.8rem;
+    
+    }
+    .view
+    {
+        
+        height:1000px;
+       
+    }
+}
+
