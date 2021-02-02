@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Adminflight } from 'src/app/models/adminflight';
 import { AdminflightcrudService } from 'src/app/services/adminflightcrud.service';
 
@@ -9,7 +9,7 @@ import { AdminflightcrudService } from 'src/app/services/adminflightcrud.service
   styleUrls: ['./deleteflight.component.css']
 })
 export class DeleteflightComponent implements OnInit {
-  constructor(private service:AdminflightcrudService, private router:ActivatedRoute) { }
+  constructor(private service:AdminflightcrudService, private router:ActivatedRoute, private routers: Router) { }
   flight:Adminflight;
 
   ngOnInit(): void {
@@ -34,5 +34,6 @@ export class DeleteflightComponent implements OnInit {
   delete(flightnumber)
   {
     this.service.deleteflight(flightnumber).subscribe(); 
+    this.routers.navigate([`${'ViewAllFlights'}`]);
   }
 }

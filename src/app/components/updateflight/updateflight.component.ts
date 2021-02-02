@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Adminflight } from 'src/app/models/adminflight';
 import { AdminflightcrudService } from 'src/app/services/adminflightcrud.service';
 import { AirportsService } from 'src/app/services/airports.service';
@@ -12,7 +12,7 @@ import { AirportsService } from 'src/app/services/airports.service';
 export class UpdateflightComponent implements OnInit {
   public citydata;
   updateflight:Adminflight;
-  constructor(private service:AdminflightcrudService,private router:ActivatedRoute,private airportservice : AirportsService) { }
+  constructor(private service:AdminflightcrudService,private router:ActivatedRoute,private airportservice : AirportsService, private routers: Router) { }
 
   ngOnInit(): void {
     this.service.getByflightnumber(this.router.snapshot.params['flightnumber']).subscribe((data)=>
@@ -41,6 +41,7 @@ export class UpdateflightComponent implements OnInit {
     this.service.updateflight(this.router.snapshot.params['flightnumber'],UpdateFlightForm.value).subscribe((data)=>
      console.log(data,"Flight Added")
    )
+   this.routers.navigate([`${'ViewAllFlights'}`]);
   
   }
 }

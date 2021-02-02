@@ -6,21 +6,10 @@
                 <div class="form-group">
                     <div class="row">
                         <label for="flight_number" class="col-sm-3 control-label">Flight Number</label>
-                        <div class="col-sm-9" id="flight_number" ><input type ="text" name="flight_number" class="form-control" placeholder="Flight Number" pattern="^[0-9]*$" required minlength="4" maxlength="4" #flight_number="ngModel"
+                        <div class="col-sm-9" id="flight_number" ><input type ="text" style="cursor: not-allowed;" disabled name="flight_number" class="form-control" placeholder="Flight Number" pattern="^[0-9]*$" required minlength="4" maxlength="4" #flight_number="ngModel"
                             [(ngModel)]="updateflight.flight_number">
-                        <div
-                        *ngIf="!flight_number?.valid && (flight_number?.dirty ||flight_number?.touched)" class="errors">
-                        <div *ngIf="flight_number.errors.required">
-                        <span class="msg">&#9888; Flight Number is required</span>
+                            
                         </div>
-                        <div *ngIf="flight_number.errors.minlength">
-                            <span class="msg">&#9888; Min Length is 4</span>
-                        </div>
-                        <div *ngIf="flight_number.errors.pattern">
-                            <span class="msg">&#9888; Enter only digits</span>
-                        </div>
-                        </div>
-                    </div>
                     </div><br>
 
                     <div class="row">
@@ -148,7 +137,7 @@
                     </div><br><br>
                     <div>
                         <div>
-                            <button class="bt add" type="submit" [disabled]="!UpdateFlightForm.valid" [ngStyle]="{'cursor': (!UpdateFlightForm.valid? 'not-allowed':'pointer')}" onclick="window.location='http://localhost:4200/ViewAllFlights';">Update Flight</button>
+                            <button class="bt add" type="submit" [disabled]="!UpdateFlightForm.valid" [ngStyle]="{'cursor': (!UpdateFlightForm.valid? 'not-allowed':'pointer')}">Update Flight</button>
                         </div>
                         <div>
                             <button class="bt" onclick="window.location='http://localhost:4200/ViewAllFlights'">Cancel</button>
