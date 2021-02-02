@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import {SearchComponent} from '../app/components/search/search.component'
 import {DisplayflightComponent} from '../app/components/displayflight/displayflight.component'
@@ -10,7 +10,7 @@ import { UpdateflightComponent } from './components/updateflight/updateflight.co
 import { ViewallflightsComponent } from './components/viewallflights/viewallflights.component';
 import {PassengersComponent} from './components/passengers/passengers.component'
 import{SeatuiComponent} from './components/seatui/seatui.component'
-
+import {PaymentuiComponent} from './components/paymentui/paymentui.component'
 import { AdminnavigationComponent } from './components/adminnavigation/adminnavigation.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { AdminloginComponent } from './components/adminlogin/adminlogin.component';
@@ -22,6 +22,7 @@ const routes: Routes = [
   { path: 'flight/search', component: DisplayflightComponent },
   { path: 'flight/passengers', component: PassengersComponent },
   { path: 'flight/seats', component: SeatuiComponent },
+  { path: 'flight/payment', component:PaymentuiComponent },
   { path:'page-not-found' , component:PageNotFoundComponent},
   
   { path: 'AdminLogin', component: AdminloginComponent},
