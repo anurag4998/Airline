@@ -12,7 +12,7 @@
 .view
  {
      margin-top: 10%;
-     margin-bottom: 11%;
+     margin-bottom: 13%;
  }  
  .h1
  {
@@ -79,4 +79,62 @@
  .delete{
      color:white;
    background-color: rgb(182, 69, 69);
+ }
+ @media screen and (max-width:1250px)
+ {
+     .bg
+     {
+         padding:1rem;
+     
+     }
+     .view
+     {
+        zoom:70%;
+         height:1000px;
+       
+     }
+ }
+
+ @media screen and (max-width:852px)
+ {
+     .bg
+     {
+         padding:1rem;
+     
+     }
+     .view
+     {
+        zoom:50%;
+         height:1000px;
+       
+     }
+ }
+ @media screen and (max-width:614px)
+ {
+     .bg
+     {
+         padding:0.8rem;
+     
+     }
+     .view
+     {
+        zoom:30%;
+         height:1500px;
+       
+     }
+     
+ }
+ @media screen and (max-width:384px)
+ {
+     .bg
+     {
+         padding:0.8rem;
+     
+     }
+     .view
+     {
+        zoom:20%;
+        height:2100px;
+        
+     }
  }

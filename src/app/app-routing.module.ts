@@ -23,15 +23,17 @@ const routes: Routes = [
   { path: 'flight/passengers', component: PassengersComponent },
   { path: 'flight/seats', component: SeatuiComponent },
   { path: 'flight/payment', component:PaymentuiComponent },
-  { path:'page-not-found' , component:PageNotFoundComponent},
+  
   
   { path: 'AdminLogin', component: AdminloginComponent},
   {path:'AddFlight', component: AddflightComponent},
   {path:'ViewAllFlights', component: ViewallflightsComponent},
   {path:'updateflight/:flightnumber', component:UpdateflightComponent},
   {path:'deleteflight/:flightnumber', component:DeleteflightComponent},
-  {path:'AdminNavigation', component: AdminnavigationComponent}
+  {path:'AdminNavigation', component: AdminnavigationComponent},
  
+
+  { path:'**' , component:PageNotFoundComponent}
 ];
 
 @NgModule({

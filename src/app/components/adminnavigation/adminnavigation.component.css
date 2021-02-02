@@ -125,10 +125,12 @@ footer
 
 @media screen and (max-width:768px)
 {
-     footer 
-     {
-       padding: 3rem 0.5rem;
-     }
+    footer, header
+    {
+      padding: 3rem 0.5rem;
+      width:auto;
+
+    }
     .Container 
     {
       width: 100%;
