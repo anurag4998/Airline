@@ -30,6 +30,8 @@ export class AirplanecardComponent implements OnInit {
       else
         return false;
     }
+    else 
+      return true;
   }
 
   calculate_price(price)

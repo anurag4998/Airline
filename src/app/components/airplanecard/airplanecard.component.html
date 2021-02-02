@@ -1,5 +1,5 @@
 <div class="card-wrapper" *ngFor = "let a of flightdetails">
-    <div class="card"  *ngIf = " checktime(a.departure_time)">
+    <div class="card"  *ngIf = "checktime(a.departure_time)">
         <div class="card__section card__flight" >
             <div class="card__flight--logo">
                 <img src="../../assets/logo.png" style="height: 6rem;">
