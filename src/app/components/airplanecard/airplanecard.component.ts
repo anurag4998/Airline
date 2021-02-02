@@ -32,14 +32,15 @@ export class AirplanecardComponent implements OnInit {
     }
   }
 
-  calculate_price(price:number)
+  calculate_price(price)
   {
     let current_date = new Date()
     let travel_date = new Date(this.date)
     // let difference_time = travel_date.getTime() - current_date.getTime()
     let difference_days = (travel_date.getTime() - current_date.getTime())/(1000*3600*24)
     difference_days = (Math.round(difference_days))
-    if(difference_days == 0)
+    console.log(difference_days)
+    if(difference_days <= 0)
       return price * 2; 
     else 
     return (price + price/difference_days).toFixed(0)

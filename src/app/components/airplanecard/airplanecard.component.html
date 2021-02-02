@@ -1,43 +1,45 @@
-<div class="card" *ngFor = "let a of flightdetails">
-    <div class="card__section card__flight" *ngIf = "checktime(a.departure_time)">
-        <div class="card__flight--logo">
-            <img src="../../assets/logo.png" style="height: 6rem;">
+<div class="card-wrapper" *ngFor = "let a of flightdetails">
+    <div class="card"  *ngIf = " checktime(a.departure_time)">
+        <div class="card__section card__flight" >
+            <div class="card__flight--logo">
+                <img src="../../assets/logo.png" style="height: 6rem;">
+            </div>
+            <div class="card__flight--number">
+                {{'AI'+a.flight_number}}
+            </div>
         </div>
-        <div class="card__flight--number">
-            {{'AI'+a.flight_number}}
+        <div class = "card__location card__section">
+            <div class="card__location--time">
+                {{a.departure_time}}
+            </div> 
+            <div class="card__location--place">
+                {{a.departure_location}}
+            </div> 
+        
         </div>
-    </div>
-    <div class = "card__location card__section">
-        <div class="card__location--time">
-            {{a.departure_time}}
-        </div> 
-        <div class="card__location--place">
-            {{a.departure_location}}
-        </div> 
-       
-    </div>
-    <div class="card__section card__duration">
-        <div class="card__duration--name">Lorem Ipsum</div>
-        <div class="card__duration--time">{{a.duration}}</div>
-        <div class="card__duration--type">NON-STOP</div>
-    </div>
-    <div class = "card__location card__section">
-        <div class="card__location--time">
-            {{a.arrival_time}}
-        </div> 
-        <div class="card__location--place">
-           {{a.arrival_location}}
-        </div> 
-    </div>
-    <div class="card__section card__booking">
-        <div class="card__booking--price" *ngIf = "classstate==false">
-           ₹ {{calculate_price(a.economy_price)}}
+        <div class="card__section card__duration">
+            <div class="card__duration--name">Lorem Ipsum</div>
+            <div class="card__duration--time">{{a.duration}}</div>
+            <div class="card__duration--type">NON-STOP</div>
         </div>
-        <div class="card__booking--price" *ngIf = "classstate==true">
-            ₹ {{calculate_price(a.business_price)}}
-         </div>
-        <div class="card__booking--book">
-            <button class="book" (click) = "onBookNow(a.flight_number,a.departure_location,a.arrival_location)">Book Now</button>
+        <div class = "card__location card__section">
+            <div class="card__location--time">
+                {{a.arrival_time}}
+            </div> 
+            <div class="card__location--place">
+            {{a.arrival_location}}
+            </div> 
+        </div>
+        <div class="card__section card__booking">
+            <div class="card__booking--price" *ngIf = "classstate==false">
+            ₹ {{calculate_price(a.economy_price)}}
+            </div>
+            <div class="card__booking--price" *ngIf = "classstate==true">
+                ₹ {{calculate_price(a.business_price)}}
+            </div>
+            <div class="card__booking--book">
+                <button class="book" (click) = "onBookNow(a.flight_number,a.departure_location,a.arrival_location)">Book Now</button>
+            </div>
         </div>
     </div>
 </div>

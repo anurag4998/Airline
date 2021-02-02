@@ -6,7 +6,13 @@
     height: 100vh;
     background-color:  #6c5ce7;
 }
-
+.card-wrapper
+{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .card
 {
     display: flex;
