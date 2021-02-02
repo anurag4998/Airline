@@ -15,10 +15,13 @@ export class TransactionService {
       public flightselectedobj:any
       public passengers:any
       public seatArray = []
+      public current_date : string
+      public final_amount:number
       //a variable for booking date
 
     constructor(private httpClient: HttpClient, private SelectedFlightService: SelectedFlightService) { 
             this.flightselectedobj = SelectedFlightService.flightobj
+            this.current_date = `${new Date().getFullYear()}-${new Date().getMonth()}-${new Date().getDate()}`
     }   
 
     post()
@@ -26,5 +29,6 @@ export class TransactionService {
         console.log(this.flightselectedobj)
         console.log(this.passengers)
         console.log(this.seatArray)
+        console.log(this.final_amount)
     }
 }
