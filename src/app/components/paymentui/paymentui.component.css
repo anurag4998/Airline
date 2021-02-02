@@ -11,7 +11,7 @@ header
 
 .logo 
 {
-    padding-left: 3rem;
+    margin-bottom: 1.5rem;
 }
 
 .logo>a
@@ -21,9 +21,10 @@ header
 }
 
 .msg{
-    
-  color:red;
-  font-weight: 700;
+  
+  margin-top: 1rem;
+  font-weight: 500;
+
 }
 .paymentwrapper
 {
@@ -67,8 +68,8 @@ body a {
   .field label {
     display: block;
     text-transform: uppercase;
-    font-size: 12px;
-    margin-bottom: 8px;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
   }
   .field input {
     padding: 12px;
@@ -99,9 +100,10 @@ body a {
     border-radius: 6px;
     box-sizing: border-box;
     box-shadow: 0 2px 4px 0 rgba(0,0,0,.15);
+    font-family: 'Poppins';
   }
   .card .container {
-    max-width: 1000px;
+    max-width: 900px;
     margin: 0 auto;
   }
   .card .card-title {
@@ -109,16 +111,22 @@ body a {
   }
   .card .card-title h2 {
     margin: 0;
+    font-family: 'Poppins';
+    font-size: 2.8rem;
+    font-weight: 600;
   }
   .card .card-body .payment-type,
   .card .card-body .payment-info {
-    margin-bottom: 25px;
+    margin-bottom: 2.5rem;
+    
   }
   .card .card-body .payment-type h4 {
     margin: 0;
+    font-weight: 500;
+    font-size: 1.6rem;
   }
   .card .card-body .payment-type .types {
-    margin: 25px 0;
+    margin: 3.5rem 0;
   }
   .card .card-body .payment-type .types .type {
     width: 30%;
@@ -138,6 +146,8 @@ body a {
   .card .card-body .payment-type .types .type:hover .logo,
   .card .card-body .payment-type .types .type:hover p {
     color: #28333b;
+    font-family: 'Poppins';
+
   }
   .card .card-body .payment-type .types .type.selected {
     border-color: #40b3ff;
@@ -148,6 +158,8 @@ body a {
   }
   .card .card-body .payment-type .types .type.selected p {
     color: #28333b;
+    font-family: 'Poppins';
+
   }
   .card .card-body .payment-type .types .type.selected::after {
     content: "\f00c";
@@ -171,24 +183,31 @@ body a {
     transition: all 0.5s ease;
   }
   .card .card-body .payment-type .types .type .logo {
-    font-size: 48px;
+    font-size: 3rem;
     color: #8a959c;
+  
+
   }
   .card .card-body .payment-type .types .type p {
     margin-bottom: 0;
-    font-size: 10px;
     text-transform: uppercase;
     font-weight: 600;
     letter-spacing: 0.5px;
     color: #8a959c;
+    font-size: 1.3rem;
   }
   .card .card-body .payment-info .column {
-    width: calc(50% - 25px);
+    width: 100%
   }
   .card .card-body .payment-info .title {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
+  }
+  .title h4 
+  {
+    font-size: 1.8rem;
+    font-weight: 500;
   }
   .card .card-body .payment-info .title .num {
     height: 24px;

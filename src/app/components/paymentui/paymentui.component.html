@@ -56,7 +56,7 @@
                                     <div
                                         *ngIf="!name?.valid && (name?.dirty || name?.touched)" class="errors">
                                         <div *ngIf="name.errors.required">
-                                        <span class="msg">&#9888; Enter Name</span>
+                                        <span class="msg">Name is required</span>
                                         </div>
                                     </div>
                                 </div>
@@ -67,10 +67,10 @@
                                     <div
                                         *ngIf="!cardnumber?.valid && (cardnumber?.dirty || cardnumber?.touched)" class="errors">
                                         <div *ngIf="cardnumber.errors.required">
-                                        <span class="msg">&#9888; Enter Cardnumber</span>
+                                        <span class="msg">Enter a Cardnumber</span>
                                         </div>
                                         <div *ngIf="cardnumber.errors.pattern">
-                                            <span class="msg">&#9888; Enter 16 digits</span>
+                                            <span class="msg">Cardnumber should be 16 digits</span>
                                         </div>
                                     </div>
                                 </div>
@@ -90,16 +90,16 @@
                                     </div>
                                 
                                 <div class="field txt">
-                                    <label for="cvc">CVC Number</label>
+                                    <label for="cvc">CVV Number</label>
                                     <input id="cvc" type="password" placeholder="xxx" required maxlength="3" pattern="[0-9]{3}" name="cvc" #cvc="ngModel"
                                     [(ngModel)]="payment.cvc">
                                     <div
                                         *ngIf="!cvc?.valid && (cvc?.dirty || cvc?.touched)" class="errors">
                                         <div *ngIf="cvc.errors.required">
-                                        <span class="msg">&#9888; Enter CVC Number</span>
+                                        <span class="msg">Enter CVV Number</span>
                                         </div>
                                         <div *ngIf="cvc.errors.pattern">
-                                            <span class="msg">&#9888; Enter 3 digits</span>
+                                            <span class="msg">CVV must 3 digits</span>
                                         </div>
                                     </div>
                                 </div>
