@@ -20,7 +20,7 @@ const routes: Routes = [
   { path: 'flight/search', component: DisplayflightComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'login', component: LoginComponent },
-  { path:'page-not-found' , component:PageNotFoundComponent},
+  
   
   {path:'AddFlight', component: AddflightComponent},
   {path:'ViewAllFlights', component: ViewallflightsComponent},
@@ -29,7 +29,10 @@ const routes: Routes = [
   {path:'AdminNavigation', component: AdminnavigationComponent},
   { path: 'flight/passengers', component: PassengersComponent },
   { path: 'flight/seats', component: SeatuiComponent },
-  { path: 'AdminLogin', component: AdminloginComponent}
+  { path: 'AdminLogin', component: AdminloginComponent},
+
+
+  { path:'**' , component:PageNotFoundComponent}
 ];
 
 @NgModule({
