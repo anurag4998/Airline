@@ -15,7 +15,7 @@ export class PassengersComponent implements OnInit {
 
   public count :number;
   public flightselectobj:any
-  public seatprice:number
+  public seatprice
   public totalprice:number
   passenger = new Passenger()
   public dataarray = []
@@ -47,12 +47,23 @@ export class PassengersComponent implements OnInit {
         await this.fetchseats.fetchseats(this.flightselected.flight_number,this.flightselected.travel_date)
         this.router.navigate([`${'flight/seats'}`]);
         this.TransactionService.passengers = this.dataarray
-        console.log(this.dataarray)
+        this.TransactionService.final_amount = this.totalprice
       }
 
       async fetchprice() 
       {
         this.seatprice = await this.flightselected.getFlightPrice(this.flightselected.flight_number,this.flightselected.travel_status)
+
+        console.log(this.flightselected.travel_date)
+        let current_date = new Date()
+        let travel_date = new Date(this.flightselected.travel_date)
+        let difference_days = (travel_date.getTime() - current_date.getTime())/(1000*3600*24)
+        difference_days = (Math.round(difference_days))
+        if(difference_days == 0) 
+          this.seatprice = this.seatprice * 2
+        else 
+          this.seatprice = (this.seatprice + (this.seatprice/difference_days)).toFixed(0)
+
         this.seatprice = this.seatprice*this.flightselectobj.number_of_seats
         this.totalprice = this.seatprice+698+10
       } 
