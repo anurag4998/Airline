@@ -24,6 +24,8 @@ import { AddflightComponent } from './components/addflight/addflight.component'
 import { DeleteflightComponent } from './components/deleteflight/deleteflight.component';
 import { UpdateflightComponent } from './components/updateflight/updateflight.component';
 import { ViewallflightsComponent } from './components/viewallflights/viewallflights.component';
+import { AdminloginComponent } from './components/adminlogin/adminlogin.component';
+import { AdminnavigationComponent } from './components/adminnavigation/adminnavigation.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 
@@ -32,11 +34,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { DisplayflightComponent } from './components/displayflight/displayflight.component';
 import { PassengersComponent } from './components/passengers/passengers.component';
-import { AdminloginComponent } from './components/adminlogin/adminlogin.component';
-import { AdminnavigationComponent } from './components/adminnavigation/adminnavigation.component';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-
-
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { PaymentuiComponent } from './components/paymentui/paymentui.component';
 import { SeatuiComponent } from './components/seatui/seatui.component';
 
