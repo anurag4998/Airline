@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 import {FetchSeatService} from '../../services/fetchseat.service'
 import {TransactionService} from '../../services/transaction.service'
@@ -9,7 +10,7 @@ import {TransactionService} from '../../services/transaction.service'
 })
 export class SeatuiComponent implements OnInit {
 
-  constructor(private seatService : FetchSeatService, public TransactionService:TransactionService) {   }
+  constructor(private seatService : FetchSeatService, public TransactionService:TransactionService, public router: Router) {   }
 
   public row1=[];
   public row2=[];
@@ -124,6 +125,8 @@ export class SeatuiComponent implements OnInit {
     {
       this.TransactionService.seatArray = this.reservedSeatsArray
       this.TransactionService.post()
+      this.router.navigate([`${'flight/payment'}`]);
+
     }
 
     else 
