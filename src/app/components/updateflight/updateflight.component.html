@@ -3,13 +3,13 @@
         <div *ngIf="updateflight">
             <form class="dim" #UpdateFlightForm="ngForm" (ngSubmit)="submitForm(UpdateFlightForm)" novalidate>
                 <h2 class="h2">Update Flight</h2><br>
+                
                 <div class="form-group">
                     <div class="row">
                         <label for="flight_number" class="col-sm-3 control-label">Flight Number</label>
-                        <div class="col-sm-9" id="flight_number" ><input type ="text" style="cursor: not-allowed;" disabled name="flight_number" class="form-control" placeholder="Flight Number" pattern="^[0-9]*$" required minlength="4" maxlength="4" #flight_number="ngModel"
-                            [(ngModel)]="updateflight.flight_number">
-                            
-                        </div>
+                        <div class="col-sm-9" id="flight_number" ><input type ="text" name="flight_number" style="cursor:not-allowed;" disabled class="form-control" placeholder="Flight Number" #flight_number="ngModel"
+                            [(ngModel)]="updateflight.flight_number">    
+                            </div>
                     </div><br>
 
                     <div class="row">

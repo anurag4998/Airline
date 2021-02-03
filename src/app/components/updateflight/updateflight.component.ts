@@ -37,6 +37,8 @@ export class UpdateflightComponent implements OnInit {
   }
  
   submitForm(UpdateFlightForm) {
+    UpdateFlightForm.value.flight_number=this.updateflight.flight_number;
+    console.log(UpdateFlightForm.value);
     
     this.service.updateflight(this.router.snapshot.params['flightnumber'],UpdateFlightForm.value).subscribe((data)=>
      console.log(data,"Flight Added")
