@@ -8,7 +8,7 @@ import { Adminflight } from '../models/adminflight';
   providedIn: 'root'
 })
 export class AdminflightcrudService {
-  private apiServer = environment.url;
+  private apiServer = environment.url+"admin/";
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json'
@@ -17,22 +17,22 @@ export class AdminflightcrudService {
   constructor(private httpClient: HttpClient) { }
   
   getAll(): Observable<Adminflight[]> {
-    return this.httpClient.get<Adminflight[]>(this.apiServer + '/Flight_Master/')
+    return this.httpClient.get<Adminflight[]>(this.apiServer)
   }
 
   deleteflight(flightnumber){
-    return this.httpClient.delete<Adminflight>(this.apiServer + '/Flight_Master/' + flightnumber, this.httpOptions)  
+    return this.httpClient.delete<Adminflight>(this.apiServer + flightnumber, this.httpOptions)  
   }
 
   getByflightnumber(flightnumber): Observable<Adminflight> {
-    return this.httpClient.get<Adminflight>(this.apiServer + '/Flight_Master/' + flightnumber)
+    return this.httpClient.get<Adminflight>(this.apiServer+ flightnumber)
   } 
  
   updateflight(flightnumber, flight): Observable<Adminflight> {
-    return this.httpClient.put<Adminflight>(this.apiServer + '/Flight_Master/' + flightnumber, JSON.stringify(flight), this.httpOptions)
+    return this.httpClient.put<Adminflight>(this.apiServer+ flightnumber, JSON.stringify(flight), this.httpOptions)
   }  
   
   addflight(flight): Observable<Adminflight> {
-    return this.httpClient.post<Adminflight>(this.apiServer + '/Flight_Master/', JSON.stringify(flight), this.httpOptions)
+    return this.httpClient.post<Adminflight>(this.apiServer, JSON.stringify(flight), this.httpOptions)
   }
 }
