@@ -14,6 +14,7 @@ import {PaymentuiComponent} from './components/paymentui/paymentui.component'
 import { AdminnavigationComponent } from './components/adminnavigation/adminnavigation.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { AdminloginComponent } from './components/adminlogin/adminlogin.component';
+import { ResetpasswordComponent } from './components/resetpassword/resetpassword.component';
 
 const routes: Routes = [
   { path: '', component:SearchComponent},
@@ -31,6 +32,7 @@ const routes: Routes = [
   {path:'updateflight/:flightnumber', component:UpdateflightComponent},
   {path:'deleteflight/:flightnumber', component:DeleteflightComponent},
   {path:'AdminNavigation', component: AdminnavigationComponent},
+  {path:'forgotpassword/resetpassword', component:ResetpasswordComponent },
  
 
   { path:'**' , component:PageNotFoundComponent}
