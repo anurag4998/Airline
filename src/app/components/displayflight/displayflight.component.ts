@@ -14,7 +14,13 @@ export class DisplayflightComponent implements OnInit {
   public arrival:String
   public classstate:boolean= false
   faUser=faUser
+  public isLoggedIn: boolean
   ngOnInit(): void {
+    if(!sessionStorage.getItem('user'))
+    {
+        this.isLoggedIn = true
+    }
+    
    this.flights = this.service.flightdata
    this.departure = this.service.departure_location
    this.arrival = this.service.arrival_location  
