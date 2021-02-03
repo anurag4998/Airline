@@ -56,6 +56,19 @@
     margin-bottom: 0.5rem;
 }
 
+.login {
+    padding-left:10px;
+    padding-top:30px;
+    font-size: small;
+}
+.fa-arrow-circle-right
+{ 
+    padding:5px;
+}
+.bt{
+    text-align: center;
+}
+
 .input--style-4 
 {
     line-height: 5rem;
@@ -74,6 +87,10 @@
     -moz-transition: all 0.4s ease;
     transition: all 0.4s ease;
     border: none;
+}
+.fa-arrow-circle-right
+{ 
+    padding:5px;
 }
 
 .pwdcontainer
