@@ -7,7 +7,7 @@
  
 }
 
-header 
+/* header 
 {
     display: flex;
     align-items: center;
@@ -69,7 +69,7 @@ ul {
   a:hover:after { 
     width: 90%; 
     left: 1rem; 
-  }
+  } */
 /* *********SEARCH DETAILS***************** */
 
 .search-details

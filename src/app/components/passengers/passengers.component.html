@@ -1,4 +1,5 @@
-<app-header></app-header>
+<app-header *ngIf="!isLoggedIn"></app-header>
+ <app-loggedinheader *ngIf="isLoggedIn == true"></app-loggedinheader>
 
 <div class="passengercontainer">
     <div class="passengerwrapper">
