@@ -2,12 +2,13 @@
 {
     height: 90vh;
     display: flex;
-    background-image: url('../../../assets/2822.jpg');
+    background-image: url('../../../assets/headernew.jpg');
     background-repeat: no-repeat;
     background-size: cover;    
     background-color: #4834d4;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 .navbar 
 {
@@ -56,15 +57,41 @@
     margin-right: 0 !important;
     margin-left: 0 !important;
 }
+.herotext
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 40%;
+}
+.hero--subtext
+{
+    font-size: 2rem;
+    font-weight: 500;
+    font-family: 'poppins';
+}
+.hero--maintext
+{
+    font-size: 3rem;
+    font-weight: 600;
+    font-family: 'poppins';
+    margin-bottom:5rem 0;
+    color: #333;
+}
 .wrapper
 {
-    min-height: 60%;
+    max-height: 40%;
     min-width: 80%;
     background-color: rgba(255, 255, 255, 0.945);
-    border-radius: 1rem;
+    border-radius: 3rem;
     padding: 1rem;
 }
 
+form 
+{
+    height: 100%;
+}
 .form__heading
 {
     font-size: 1.8rem;

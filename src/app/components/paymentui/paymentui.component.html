@@ -41,7 +41,7 @@
                             </div>
                         </div>
                     </div>
-                    <form #paymentForm="ngForm" (ngSubmit)="submitForm(paymentForm)" novalidate>
+                    <form #paymentForm="ngForm" (ngSubmit)="submitForm(paymentForm.value)" novalidate>
                         <div class="payment-info flex justify-space-between">
                         
                             <div class="column shipping">
@@ -62,7 +62,7 @@
                                 </div>
                                 <div class="field full">
                                     <label for="cardnumber">Card Number</label>
-                                    <input id="cardnumber" type="text" placeholder="xxxx-xxxx-xxxx-xxxx" required pattern="[0-9]{16}" maxlength="16" name="cardnumber" #cardnumber="ngModel"
+                                    <input id="cardnumber" type="text" placeholder="xxxx-xxxx-xxxx-xxxx" required pattern="[0-9]{16}" minlength="16" maxlength="16" name="cardnumber" #cardnumber="ngModel"
                                     [(ngModel)]="payment.cardnumber">
                                     <div
                                         *ngIf="!cardnumber?.valid && (cardnumber?.dirty || cardnumber?.touched)" class="errors">
@@ -70,7 +70,10 @@
                                         <span class="msg">Enter a Cardnumber</span>
                                         </div>
                                         <div *ngIf="cardnumber.errors.pattern">
-                                            <span class="msg">Cardnumber should be 16 digits</span>
+                                            <span class="msg">Cardnumber should be digits only</span>
+                                        </div>
+                                        <div *ngIf="cardnumber.errors.length">
+                                            <span class="msg">Cardnumber should be of 16 digits</span>
                                         </div>
                                     </div>
                                 </div>
@@ -78,11 +81,13 @@
                                 <div class="flex justify-space-between">
                                     <div class="field half">
                                         <label for="city">Exp. Month</label>
-                                        <input id="city" type="text" placeholder="12">
+                                        <input id="city" type="text" placeholder="12"  name="expmonth" #expmonth="ngModel" required pattern="[0-9]{2}"
+                                        [(ngModel)]="payment.expmonth">
                                     </div>
                                     <div class="field half">
                                         <label for="state">Exp. Year</label>
-                                        <input id="state" type="text" placeholder="2021">
+                                        <input id="state" type="text" placeholder="2021" name="expyear" #expyear="ngModel" required pattern="[0-9]{2}"
+                                        [(ngModel)]="payment.expyear">
                                     </div>
                                 </div>
                                     
@@ -92,7 +97,7 @@
                                 <div class="field txt">
                                     <label for="cvc">CVV Number</label>
                                     <input id="cvc" type="password" placeholder="xxx" required maxlength="3" pattern="[0-9]{3}" name="cvc" #cvc="ngModel"
-                                    [(ngModel)]="payment.cvc">
+                                    [(ngModel)]="payment.cvv">
                                     <div
                                         *ngIf="!cvc?.valid && (cvc?.dirty || cvc?.touched)" class="errors">
                                         <div *ngIf="cvc.errors.required">

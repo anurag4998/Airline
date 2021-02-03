@@ -11,14 +11,15 @@
       </div>
 
   </nav>
-    <div class="wrapper col-10 ">
-      <form class="form" #flightsearchform = "ngForm" (ngSubmit) = "onSubmit()" novalidate>
-
-              <h2 class="form__heading">
-                  Book Flight Tickets
-              </h2>
-              <div class="form__details">
+  <div class="herotext">
+    <h2 class="hero--subtext"> Plan your travel with Us</h2>
+     <h1 class="hero--maintext">Where are you going?</h1>
+  </div>
   
+
+    <div class="wrapper col-10 ">
+      <form class="form" #flightsearchform = "ngForm" (ngSubmit) = "onSubmit()" novalidate>              
+              <div class="form__details">
                   <div class="row">
                       <div class="form__radio">
                           <input type="radio" value="one-way" name="journey" [(ngModel)] = model.direction/>

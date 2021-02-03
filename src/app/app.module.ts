@@ -37,9 +37,11 @@ import { PassengersComponent } from './components/passengers/passengers.componen
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { PaymentuiComponent } from './components/paymentui/paymentui.component';
 import { SeatuiComponent } from './components/seatui/seatui.component';
-import { UserdashboardComponent } from './components/userdashboard/userdashboard.component';
 import { ForgotpasswordComponent } from './components/forgotpassword/forgotpassword.component';
 import { ResetpasswordComponent } from './components/resetpassword/resetpassword.component';
+import { FlightdataComponent } from './components/dashboard/flightdata/flightdata.component';
+import { SidebarComponent } from './components/dashboard/sidebar/sidebar.component';
+import { LoggedinheaderComponent } from './components/loggedinheader/loggedinheader.component'
 
 @NgModule({
   declarations: [
@@ -63,9 +65,11 @@ import { ResetpasswordComponent } from './components/resetpassword/resetpassword
   
     SeatuiComponent,
     PaymentuiComponent,
-    UserdashboardComponent,
     ForgotpasswordComponent,
     ResetpasswordComponent,
+    FlightdataComponent,
+    SidebarComponent,
+    LoggedinheaderComponent,
    
   ],
   imports: [
