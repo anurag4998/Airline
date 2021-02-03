@@ -135,7 +135,6 @@ export class SeatuiComponent implements OnInit {
     if(this.reservedSeatsArray.length == this.numberofseats)
     {
       this.TransactionService.seatArray = this.reservedSeatsArray
-      this.TransactionService.post()
       this.router.navigate([`${'flight/payment'}`]);
 
     }

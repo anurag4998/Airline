@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
+import {TransactionService} from '../../services/transaction.service'
 @Component({
   selector: 'app-paymentui',
   templateUrl: './paymentui.component.html',
@@ -8,7 +9,7 @@ import Swal from 'sweetalert2';
 })
 export class PaymentuiComponent implements OnInit {
 
-  constructor(private router:Router) { }
+  constructor(private router:Router, private TransactionService:TransactionService) { }
   public payment
 
   ngOnInit(): void {
@@ -25,13 +26,19 @@ export class PaymentuiComponent implements OnInit {
     this.payment={
       name:'',
       cardnumber:null,
-      exp:null,
-      cvc:null
+      expmonth:null,
+      expyear:null,
+      cvv:null
     }
   }
 
   submitForm(paymentForm)
   {
+      console.log(paymentForm)
+      delete paymentForm.cvv
+      delete paymentForm.name
+      this.TransactionService.card_details = paymentForm
+      this.TransactionService.post()
 
   }
 }

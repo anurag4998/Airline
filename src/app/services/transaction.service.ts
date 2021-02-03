@@ -12,32 +12,38 @@ export class TransactionService {
         })
       }
 
-      public flightselectedobj:any
       public passengers:any
       public seatArray = []
       public current_date : string
       public final_amount:number
-
+      public card_details
+      public useremail:string
+      public seat_type:string
       public body:any
-      //a variable for booking date
 
     constructor(private httpClient: HttpClient, private SelectedFlightService: SelectedFlightService) { 
-            this.flightselectedobj = SelectedFlightService.flightobj
             this.current_date = `${new Date().getFullYear()}-${new Date().getMonth()}-${new Date().getDate()}`
+            this.useremail = sessionStorage.getItem('user')
+            this.seat_type = this.SelectedFlightService.travel_status ? "business":"economy"
     }   
 
     post()
     {
 
         this.body = {
+            "email": this.useremail,
+            "flight_number": this.SelectedFlightService.flight_number,
+            "travel_date":this.SelectedFlightService.travel_date,
+            "number_of_seats":this.SelectedFlightService.number_of_seats,
+            "seat_type":this.seat_type,
             "booking_date" : this.current_date,
-            "flight_number": this.flightselectedobj.flight_number
-            
+            "amount":this.final_amount,
+            "seatarray":this.seatArray,
+            "passengers":this.passengers,
+            "carddetails":this.card_details            
         }
 
-        console.log(this.flightselectedobj)
-        console.log(this.passengers)
-        console.log(this.seatArray)
-        console.log(this.final_amount)
+        console.log(this.body)
+      
     }
 }
