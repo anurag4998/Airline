@@ -4,6 +4,7 @@ import {SelectedFlightService} from '../../services/selectedflight.service'
 import {FetchSeatService} from '../../services/fetchseat.service'
 import { Router } from '@angular/router';
 import {TransactionService} from '../../services/transaction.service'
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-passengers',
   templateUrl: './passengers.component.html',
@@ -21,7 +22,18 @@ export class PassengersComponent implements OnInit {
   public dataarray = []
  
     ngOnInit(): void {
-
+      if(!sessionStorage.getItem('user'))
+      {
+        Swal.fire({
+          title: 'Oops!',
+          text: 'Login to Continue!',
+          icon: 'warning',
+         
+        })
+        this.router.navigate([`${'/login'}`]);
+      }
+        
+      
         this.flightselectobj = this.flightselected.flightobj
         this.dataarray.push(this.passenger)
         this.count =1;
