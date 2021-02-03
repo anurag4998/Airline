@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { UserdashboardComponent } from './userdashboard.component';
+import { FlightdataComponent } from './flightdata.component';
 
-describe('UserdashboardComponent', () => {
-  let component: UserdashboardComponent;
-  let fixture: ComponentFixture<UserdashboardComponent>;
+describe('FlightdataComponent', () => {
+  let component: FlightdataComponent;
+  let fixture: ComponentFixture<FlightdataComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ UserdashboardComponent ]
+      declarations: [ FlightdataComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(UserdashboardComponent);
+    fixture = TestBed.createComponent(FlightdataComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
