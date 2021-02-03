@@ -29,6 +29,17 @@ export class SeatuiComponent implements OnInit {
 
 
   ngOnInit(): void {
+    if(!sessionStorage.getItem('user'))
+    {
+      Swal.fire({
+        title: 'Oops!',
+        text: 'Login to Continue!',
+        icon: 'warning',
+       
+      })
+      this.router.navigate([`${'/login'}`]);
+    }
+
     const currentYear = new Date().getFullYear();
     const currentMonth = new Date().getMonth();
     const currentDate = new Date().getDate();

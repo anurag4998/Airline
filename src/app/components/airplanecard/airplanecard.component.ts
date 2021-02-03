@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 import {SearchflightService} from '../../services/searchflight.service'
 import {SelectedFlightService} from '../../services/selectedflight.service'
 
@@ -50,6 +51,8 @@ export class AirplanecardComponent implements OnInit {
   }
   async onBookNow(flight_number:number,departure:string,arrival:string)
   {
+    if(sessionStorage.getItem('user'))
+    {
       await this.flightselected.postdata(
         {
           "departure_location":departure,
@@ -61,6 +64,12 @@ export class AirplanecardComponent implements OnInit {
         })
 
         this.router.navigate([`${'flight/passengers'}`]);
+    }
+    else {
+      Swal.fire('Login To Continue')
+      this.router.navigate([`${'/login'}`]);
+     
+    }
 
   }
 }

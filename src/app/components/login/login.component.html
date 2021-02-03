@@ -2,9 +2,12 @@
     <div class="logincontainer">
         <h1 class='loginform__heading'>Login</h1>
         <form class="loginform" #f="ngForm" novalidate (ngSubmit)="f.form.valid && onSubmit(f.value)" >
+            <div *ngIf = "response!=null && timer == true ? true : false" class="error-msg">
+                {{response}}
+            </div>
             <div class="inputcontainer">
                 <label class="label">Email</label>
-                <input type='email' class='loginform__input' name="username" autoComplete="off" required ngModel
+                <input type='email' class='loginform__input' name="email" autoComplete="off" required ngModel
                     #email_id="ngModel" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" />
                 <div *ngIf="email_id.invalid && (email_id.dirty || email_id.touched ||f.submitted)">
                     <small>
