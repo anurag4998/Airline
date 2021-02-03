@@ -1,0 +1,21 @@
+.left
+{
+    padding:30px;
+    
+}
+.right{
+    padding:40px;
+}
+.contain{
+    margin: auto;
+}
+.lrow
+{   width:200px;
+    padding: 20px;
+    border: solid rgb(73, 70, 70);
+    border-width: 1px;
+}
+.ico
+{
+    font-size: 20px;
+}
