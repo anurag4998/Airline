@@ -17,6 +17,8 @@ export class TransactionService {
       public seatArray = []
       public current_date : string
       public final_amount:number
+
+      public body:any
       //a variable for booking date
 
     constructor(private httpClient: HttpClient, private SelectedFlightService: SelectedFlightService) { 
@@ -26,6 +28,13 @@ export class TransactionService {
 
     post()
     {
+
+        this.body = {
+            "booking_date" : this.current_date,
+            "flight_number": this.flightselectedobj.flight_number
+            
+        }
+
         console.log(this.flightselectedobj)
         console.log(this.passengers)
         console.log(this.seatArray)
