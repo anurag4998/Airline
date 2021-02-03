@@ -3,10 +3,13 @@
         
         <form class="dim" #AddFlightForm="ngForm" (ngSubmit)="submitForm(AddFlightForm)" novalidate>
             <h2 class="h2">Register Flight</h2><br>
+            <div class = "check" *ngIf="!flightcheck">
+                <span class="msg">&#10687; Flight Number Already Exist </span>
+            </div>
             <div class="form-group">
                 <div class="row">
                     <label for="flight_number" class="col-sm-3 control-label">Flight Number</label>
-                    <div class="col-sm-9" id="flight_number" ><input type ="text" name="flight_number" class="form-control" placeholder="Flight Number" pattern="^[0-9]*$" required minlength="4" maxlength="4" #flight_number="ngModel"
+                    <div class="col-sm-9" id="flight_number" ><input type ="text" (click)="onclickfn()" name="flight_number" class="form-control" placeholder="Flight Number" pattern="^[0-9]*$" required minlength="4" maxlength="4" #flight_number="ngModel"
                         [(ngModel)]="addflight.flight_number">
                     <div
                     *ngIf="!flight_number?.valid && (flight_number?.dirty ||flight_number?.touched)" class="errors">
@@ -147,7 +150,7 @@
                 </div><br><br>
                 <div>
                     <div>
-                        <button class="bt add" type="submit" [disabled]="!AddFlightForm.valid" [ngStyle]="{'cursor': (!AddFlightForm.valid? 'not-allowed':'pointer')}" onclick="window.location='http://localhost:4200/ViewAllFlights';" >Add Flight</button>
+                        <button class="bt add" type="submit" [disabled]="!AddFlightForm.valid" [ngStyle]="{'cursor': (!AddFlightForm.valid? 'not-allowed':'pointer')}" >Add Flight</button>
                     </div>
                     <div>
                         <button class="bt" onclick="window.location='http://localhost:4200/ViewAllFlights';">Cancel</button>

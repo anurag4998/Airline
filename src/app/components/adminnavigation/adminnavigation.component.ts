@@ -14,9 +14,6 @@ export class AdminnavigationComponent implements OnInit {
   ngOnInit(): void {
 
   }
-  toggle()
-  {
-     this.classstate =  !this.classstate
-  }
+  
 
 }

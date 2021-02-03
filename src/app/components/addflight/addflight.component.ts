@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Adminflight } from 'src/app/models/adminflight';
 import { AdminflightcrudService } from 'src/app/services/adminflightcrud.service';
 import { AirportsService } from 'src/app/services/airports.service';
+import { AdminloginComponent } from '../adminlogin/adminlogin.component';
 
 @Component({
   selector: 'app-addflight',
@@ -11,7 +13,10 @@ import { AirportsService } from 'src/app/services/airports.service';
 export class AddflightComponent implements OnInit {
   public citydata;
   addflight:Adminflight;
-  constructor(private service:AdminflightcrudService, private airportservice : AirportsService) { }
+  flights;
+  flightcheck=true;
+  v:Adminflight;
+  constructor(private service:AdminflightcrudService, private airportservice : AirportsService, private router: Router) { }
 
   ngOnInit(): void {
     this.addflight={
@@ -30,14 +35,40 @@ export class AddflightComponent implements OnInit {
       duration:null
     }
     this.citydata = this.airportservice.airports;
+    this.flightcheck=true;
+    this.service.getAll().subscribe((data: Adminflight[])=>{
+      this.flights = data;
+     
+  }) 
+  }
+  onclickfn()
+  {
+    this.flightcheck=true;
   }
   
   
  
   submitForm(AddFlightForm) {
-    console.log(AddFlightForm.value);
-    this.service.addflight(AddFlightForm.value).subscribe((data)=>
-     console.log(data,"Flight Added")
-    )
+   
+  for(let i=0;i<this.flights.length;i++)
+  {
+    if(this.flights[i].flight_number==AddFlightForm.value.flight_number)
+      {
+        this.flightcheck=false;
+      }
   }
+
+  console.log(this.flightcheck);
+    
+    if(this.flightcheck==true)
+    {
+      console.log(AddFlightForm.value);
+      this.service.addflight(AddFlightForm.value).subscribe((data)=>
+      console.log(data,"Flight Added")
+      )
+    this.router.navigate([`${'ViewAllFlights'}`]);
+    }
+   
+   }
+   
 }

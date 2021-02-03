@@ -8,10 +8,12 @@ import { AdminflightcrudService } from 'src/app/services/adminflightcrud.service
   styleUrls: ['./viewallflights.component.css']
 })
 export class ViewallflightsComponent implements OnInit {
-
+  
   flights:Adminflight[];
   searchText;
-  constructor(private service:AdminflightcrudService) { }
+  constructor(private service:AdminflightcrudService,) {
+    
+   }
 
   ngOnInit() {
     
