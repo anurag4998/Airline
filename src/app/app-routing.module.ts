@@ -14,6 +14,8 @@ import {PaymentuiComponent} from './components/paymentui/paymentui.component'
 import { AdminnavigationComponent } from './components/adminnavigation/adminnavigation.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { AdminloginComponent } from './components/adminlogin/adminlogin.component';
+import { FlightdataComponent } from './components/dashboard/flightdata/flightdata.component';
+
 
 const routes: Routes = [
   { path: '', component:SearchComponent},
@@ -23,6 +25,7 @@ const routes: Routes = [
   { path: 'flight/passengers', component: PassengersComponent },
   { path: 'flight/seats', component: SeatuiComponent },
   { path: 'flight/payment', component:PaymentuiComponent },
+  {path : 'flight/user/dashboard', component:FlightdataComponent },
   
   
   { path: 'AdminLogin', component: AdminloginComponent},
