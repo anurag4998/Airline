@@ -37,7 +37,7 @@ import { PassengersComponent } from './components/passengers/passengers.componen
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { PaymentuiComponent } from './components/paymentui/paymentui.component';
 import { SeatuiComponent } from './components/seatui/seatui.component';
-import { UserdashboardComponent } from './userdashboard/userdashboard.component';
+import { UserdashboardComponent } from './components/userdashboard/userdashboard.component';
 
 @NgModule({
   declarations: [
