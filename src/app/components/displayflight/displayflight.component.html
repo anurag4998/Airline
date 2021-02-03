@@ -1,5 +1,16 @@
  <app-header></app-header>
-
+ <header class="logged-in-header">
+    <div class="logo">
+        <a [routerLink]="['/']"> LOGO </a>   
+     </div>
+    <div class="nav-items">
+        <ul>
+            <li><a [routerLink]="['/flight/search']">Search</a></li>
+            <li><a [routerLink]="['/login']">Login</a></li>
+            <li><a [routerLink]="['/signup']" class="avatar"><fa-icon [icon]="faUser"></fa-icon></a></li>
+          </ul>
+    </div>
+ </header> 
  <div class="search-details">
     <div class="heading">
         <h2 class="heading--title">Search Results</h2>

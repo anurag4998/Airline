@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {SearchflightService} from '../../services/searchflight.service'
+import { faUser } from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'app-displayflight',
   templateUrl: './displayflight.component.html',
@@ -12,6 +13,7 @@ export class DisplayflightComponent implements OnInit {
   public departure:string
   public arrival:String
   public classstate:boolean= false
+  faUser=faUser
   ngOnInit(): void {
    this.flights = this.service.flightdata
    this.departure = this.service.departure_location
