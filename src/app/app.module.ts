@@ -38,6 +38,8 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { PaymentuiComponent } from './components/paymentui/paymentui.component';
 import { SeatuiComponent } from './components/seatui/seatui.component';
 import { UserdashboardComponent } from './components/userdashboard/userdashboard.component';
+import { ForgotpasswordComponent } from './components/forgotpassword/forgotpassword.component';
+import { ResetpasswordComponent } from './components/resetpassword/resetpassword.component';
 
 @NgModule({
   declarations: [
@@ -62,6 +64,8 @@ import { UserdashboardComponent } from './components/userdashboard/userdashboard
     SeatuiComponent,
     PaymentuiComponent,
     UserdashboardComponent,
+    ForgotpasswordComponent,
+    ResetpasswordComponent,
    
   ],
   imports: [
