@@ -63,7 +63,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    flex: 0 0 0.3;
+    height: 40%;
 }
 .hero--subtext
 {
