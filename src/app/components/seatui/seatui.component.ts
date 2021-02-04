@@ -24,7 +24,8 @@ export class SeatuiComponent implements OnInit {
   public k=0;
   public numberofseats:number
   public seatclass:string
-
+  public mobile:string
+  public email:string
   public reservedSeatsArray = []
 
 
@@ -132,15 +133,28 @@ export class SeatuiComponent implements OnInit {
 
   onSubmit()
   {
-    if(this.reservedSeatsArray.length == this.numberofseats)
+ 
+    if(!this.email || !this.mobile)
     {
-      this.TransactionService.seatArray = this.reservedSeatsArray
-      this.router.navigate([`${'flight/payment'}`]);
-
+        Swal.fire('oops', 'Enter contact details', 'error')
+        return
     }
+    
+    else
+    {
+      if(this.reservedSeatsArray.length == this.numberofseats)
+        {
+          this.TransactionService.seatArray = this.reservedSeatsArray
+          this.TransactionService.contact_no = this.mobile
+          this.TransactionService.contact_email = this.email
+          this.router.navigate([`${'flight/payment'}`]);
 
-    else 
-    Swal.fire('oops', 'Select all seats', 'error')
+        }
+
+        else 
+        Swal.fire('oops', 'Select all seats', 'error')
+        }
+        
 
   }
   

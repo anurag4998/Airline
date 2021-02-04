@@ -105,7 +105,7 @@ footer
     justify-content: space-between;
     align-items: center;
     height: 7rem;
-    padding: 0.5rem 5rem
+    padding: 1rem 5rem
 }
 
 .footer--left 
@@ -169,3 +169,55 @@ footer
     cursor: pointer;
 }
 
+/**********Contact details********/
+
+form
+{
+    margin:1.5rem 0;
+    border-bottom: 1px solid #e1e1e1;
+}
+.details-wrapper
+{
+    width: 100vw;
+    padding: 0 2rem;
+}
+.contactdetails--info
+{
+    padding: 0 2rem;
+}
+.contactdetails--info > h3 
+{
+    font-weight: 600;
+    font-size: 1.6rem;
+}
+.card-body
+{
+    width: 100%;
+    padding: 2rem 1.5rem;
+    height: 75%;
+}
+.card-body--info
+{
+    font-size: 14px;
+    color: #000;
+    margin-bottom: 1.6rem;
+    font-weight: 500;
+}
+.card-body--details
+{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 90%;
+}
+
+.card-body--input>input
+{
+    border-radius: 4px;
+    border: 1px solid #9b9b9b;
+    padding: 8px 8px;
+    font-size: 16px;
+    color: #4a4a4a;
+    outline: 0;
+    margin-right: 1.5rem;
+}
