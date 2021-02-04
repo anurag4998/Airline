@@ -11,9 +11,9 @@ import { ViewallflightsComponent } from './components/viewallflights/viewallflig
 import {PassengersComponent} from './components/passengers/passengers.component'
 import{SeatuiComponent} from './components/seatui/seatui.component'
 import {PaymentuiComponent} from './components/paymentui/paymentui.component'
-import { AdminnavigationComponent } from './components/adminnavigation/adminnavigation.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { AdminloginComponent } from './components/adminlogin/adminlogin.component';
+import { ForgotpasswordComponent } from './components/forgotpassword/forgotpassword.component';
 import { ResetpasswordComponent } from './components/resetpassword/resetpassword.component';
 import { FlightdataComponent } from './components/dashboard/flightdata/flightdata.component';
 import { CancellationsComponent } from './components/dashboard/cancellations/cancellations.component';
@@ -27,6 +27,9 @@ const routes: Routes = [
   { path: 'flight/seats', component: SeatuiComponent },
   { path: 'flight/payment', component:PaymentuiComponent },
   {path : 'flight/user/dashboard', component:FlightdataComponent },
+  {path :'user/forgotpassword', component:ForgotpasswordComponent},
+  {path :'user/resetpassword', component:ResetpasswordComponent},
+
   {path : 'flight/user/dashboard/cancelled', component:CancellationsComponent },
 
   
@@ -36,7 +39,6 @@ const routes: Routes = [
   {path:'ViewAllFlights', component: ViewallflightsComponent},
   {path:'updateflight/:flightnumber', component:UpdateflightComponent},
   {path:'deleteflight/:flightnumber', component:DeleteflightComponent},
-  {path:'forgotpassword/resetpassword', component:ResetpasswordComponent },
  
 
   { path:'**' , component:PageNotFoundComponent}
