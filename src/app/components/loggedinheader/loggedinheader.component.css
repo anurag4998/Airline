@@ -45,6 +45,7 @@ ul {
     display: inline-block;
     padding: 15px 20px;
     position: relative;
+    cursor: pointer;
   }
   a:after {    
     background: none repeat scroll 0 0 transparent;
