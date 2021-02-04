@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
     console.log(response)
     if(response == "Verified")
       {
-        this.router.navigate([`${'flight/search'}`]);
+        this.router.navigate([`${''}`]);
         sessionStorage.setItem('user',data.email)
 
       }

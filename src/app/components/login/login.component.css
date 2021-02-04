@@ -93,11 +93,12 @@
     font-size: 1.6rem;
     margin-top: 3rem;
 }
-.create
+.loginsignupbtn
 { 
     padding-left:10px;
     padding-top:30px;
     font-size: small;
+    text-decoration: none;
 }
 .fa-arrow-circle-right
 { 
