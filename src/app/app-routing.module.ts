@@ -16,7 +16,7 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { AdminloginComponent } from './components/adminlogin/adminlogin.component';
 import { ResetpasswordComponent } from './components/resetpassword/resetpassword.component';
 import { FlightdataComponent } from './components/dashboard/flightdata/flightdata.component';
-
+import { CancellationsComponent } from './components/dashboard/cancellations/cancellations.component';
 
 const routes: Routes = [
   { path: '', component:SearchComponent},
@@ -27,6 +27,8 @@ const routes: Routes = [
   { path: 'flight/seats', component: SeatuiComponent },
   { path: 'flight/payment', component:PaymentuiComponent },
   {path : 'flight/user/dashboard', component:FlightdataComponent },
+  {path : 'flight/user/dashboard/cancelled', component:CancellationsComponent },
+
   
   
   { path: 'AdminLogin', component: AdminloginComponent},
@@ -34,7 +36,6 @@ const routes: Routes = [
   {path:'ViewAllFlights', component: ViewallflightsComponent},
   {path:'updateflight/:flightnumber', component:UpdateflightComponent},
   {path:'deleteflight/:flightnumber', component:DeleteflightComponent},
-  {path:'AdminNavigation', component: AdminnavigationComponent},
   {path:'forgotpassword/resetpassword', component:ResetpasswordComponent },
  
 

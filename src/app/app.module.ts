@@ -41,7 +41,8 @@ import { ForgotpasswordComponent } from './components/forgotpassword/forgotpassw
 import { ResetpasswordComponent } from './components/resetpassword/resetpassword.component';
 import { FlightdataComponent } from './components/dashboard/flightdata/flightdata.component';
 import { SidebarComponent } from './components/dashboard/sidebar/sidebar.component';
-import { LoggedinheaderComponent } from './components/loggedinheader/loggedinheader.component'
+import { LoggedinheaderComponent } from './components/loggedinheader/loggedinheader.component';
+import { CancellationsComponent } from './components/dashboard/cancellations/cancellations.component'
 
 @NgModule({
   declarations: [
@@ -70,6 +71,7 @@ import { LoggedinheaderComponent } from './components/loggedinheader/loggedinhea
     FlightdataComponent,
     SidebarComponent,
     LoggedinheaderComponent,
+    CancellationsComponent,
    
   ],
   imports: [
