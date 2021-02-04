@@ -3,6 +3,7 @@ import {AirportsService} from '../../services/airports.service';
 import {SearchflightService} from '../../services/searchflight.service'
 import {Searchflight} from '../../models/searchflight'
 import { Router } from '@angular/router';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -19,9 +20,15 @@ export class SearchComponent implements OnInit {
     this.minDate = new Date(currentYear,currentMonth,currentDate)
     this.maxDate = new Date(currentYear,currentMonth+2,currentDate)
   }
+  public loggedIn : boolean = false
+  faUser = faUser
 
   ngOnInit(): void {
-
+    if(sessionStorage.getItem('user'))
+    {
+      this.loggedIn = true
+    }
+    
     this.data = this.service.airports
 
   }
@@ -37,7 +44,12 @@ export class SearchComponent implements OnInit {
   model = new Searchflight("one-way","Delhi", '', new Date(), new Date() , 1);
   
   
-   
+  handlelogout() 
+  {
+    sessionStorage.removeItem('user')
+    this.loggedIn=false
+    this.router.navigate([`${'/'}`]);
+  }
   async onSubmit()
   {
     Swal.fire('Fetching Your Flights');    Swal.showLoading();

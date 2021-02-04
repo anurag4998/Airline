@@ -1,5 +1,5 @@
  <div class="header row">
-  <nav class="navbar">
+  <nav class="navbar" *ngIf = "loggedIn == false">
         <div class="logo">
           <a [routerLink]="['/']"> LOGO </a>   
         </div>
@@ -11,6 +11,16 @@
       </div>
 
   </nav>
+  <nav class="navbar" *ngIf = "loggedIn == true">
+    <div class="logo">
+      <a [routerLink]="['/']"> LOGO </a>   
+    </div>
+    <div class="nav-items">
+        <a (click) = "handlelogout()">Logout</a>
+        <li><a [routerLink]="['/flight/user/dashboard']" class="avatar"><fa-icon [icon]="faUser"></fa-icon></a></li>  
+      </div>
+  </nav>
+
   <div class="herotext">
     <h2 class="hero--subtext"> Plan your travel with Us</h2>
      <h1 class="hero--maintext">Where are you going?</h1>
