@@ -48,8 +48,16 @@ export class TransactionService {
             "contact_no":this.contact_no,
             "carddetails":this.card_details            
         }
-        let a = await this.httpClient.post(this.apiServer,this.body,this.httpOptions).toPromise()
-        console.log(this.body)
+        try 
+        {
+          let a = await this.httpClient.post(this.apiServer,this.body,this.httpOptions).toPromise()
+          return true;
+        } 
+        catch(error)
+        {
+          return false;
+        }
+        
       
     }
 }

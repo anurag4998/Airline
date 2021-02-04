@@ -32,13 +32,30 @@ export class PaymentuiComponent implements OnInit {
     }
   }
 
-  submitForm(paymentForm)
+  async submitForm(paymentForm)
   {
-      console.log(paymentForm)
       delete paymentForm.cvv
       delete paymentForm.name
       this.TransactionService.card_details = paymentForm
-      this.TransactionService.post()
+      let result = this.TransactionService.post()
+      if(result)
+      {
+        Swal.fire(
+          'Woohoo',
+          'Your Tickets are booked :)',
+          'success'
+        )
+        this.router.navigate([`${'/flight/user/dashboard'}`]);
 
+      }
+      else 
+      {
+        
+          Swal.fire(
+            'Transaction Failed',
+            'Try again later :(',
+            'error'
+          )
+      }
   }
 }
