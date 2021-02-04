@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpHeaders,HttpParams } from "@angular/common/http";
 import {SelectedFlightService} from '../services/selectedflight.service'
+import { environment } from 'src/environments/environment';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -11,7 +13,7 @@ export class TransactionService {
           'Content-Type': 'application/json'
         })
       }
-
+      private apiServer = environment.url + "Transaction";
       public passengers:any
       public seatArray = []
       public current_date : string
@@ -20,6 +22,8 @@ export class TransactionService {
       public useremail:string
       public seat_type:string
       public body:any
+      public contact_email:string
+      public contact_no:string
 
     constructor(private httpClient: HttpClient, private SelectedFlightService: SelectedFlightService) { 
             this.current_date = `${new Date().getFullYear()}-${new Date().getMonth()}-${new Date().getDate()}`
@@ -27,7 +31,7 @@ export class TransactionService {
             this.seat_type = this.SelectedFlightService.travel_status ? "business":"economy"
     }   
 
-    post()
+    async post()
     {
 
         this.body = {
@@ -40,9 +44,11 @@ export class TransactionService {
             "amount":this.final_amount,
             "seatarray":this.seatArray,
             "passengers":this.passengers,
+            "contact_email":this.contact_email,
+            "contact_no":this.contact_no,
             "carddetails":this.card_details            
         }
-
+        let a = await this.httpClient.post(this.apiServer,this.body,this.httpOptions).toPromise()
         console.log(this.body)
       
     }
