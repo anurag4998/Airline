@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-loggedinheader',
@@ -8,9 +9,13 @@ import { faUser } from '@fortawesome/free-solid-svg-icons';
 })
 export class LoggedinheaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
   faUser = faUser
   ngOnInit(): void {
   }
-
+  handlelogout = () => 
+  {
+    sessionStorage.removeItem('user')
+    this.router.navigate([`${'/login'}`]);
+  }
 }
