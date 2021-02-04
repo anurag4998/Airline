@@ -26,7 +26,7 @@ export class TransactionService {
       public contact_no:string
 
     constructor(private httpClient: HttpClient, private SelectedFlightService: SelectedFlightService) { 
-            this.current_date = `${new Date().getFullYear()}-${new Date().getMonth()}-${new Date().getDate()}`
+            this.current_date = `${new Date().getFullYear()}-${new Date().getMonth()+1}-${new Date().getDate()}`
             this.useremail = sessionStorage.getItem('user')
             this.seat_type = this.SelectedFlightService.travel_status ? "business":"economy"
     }   
