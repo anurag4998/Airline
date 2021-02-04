@@ -93,6 +93,11 @@
     font-size: 1.6rem;
     margin-top: 3rem;
 }
+small 
+{
+    font-size: 1.3rem;
+    color: red;
+}
 .loginsignupbtn
 { 
     padding-left:10px;
