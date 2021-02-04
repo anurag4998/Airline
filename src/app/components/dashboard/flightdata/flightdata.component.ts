@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 import {BookingHistoryService} from '../../../services/bookinghistory.service'
 @Component({
@@ -8,12 +9,21 @@ import {BookingHistoryService} from '../../../services/bookinghistory.service'
 })
 export class FlightdataComponent implements OnInit {
 
-  constructor(private bookinghistoryservice : BookingHistoryService) { }
+  constructor(private bookinghistoryservice : BookingHistoryService,private router:Router) { }
   public bookedtickets = []
   async ngOnInit() {
+    if(!sessionStorage.getItem('user'))
+    {
+      Swal.fire({
+        title: 'Oops!',
+        text: 'Login to Continue!',
+        icon: 'warning',
+       
+      })
+      this.router.navigate([`${'/login'}`]);
+    }
     await this.bookinghistoryservice.getbookeddata()
     this.bookedtickets = this.bookinghistoryservice.bookedtickets
-    console.log(this.bookedtickets)
   }
   async oncancel(id)   {
     console.log(id)
