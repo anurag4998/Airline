@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import Swal from 'sweetalert2';
+import {BookingHistoryService} from '../../../services/bookinghistory.service'
 @Component({
   selector: 'app-flightdata',
   templateUrl: './flightdata.component.html',
@@ -7,9 +8,67 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FlightdataComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor(private bookinghistoryservice : BookingHistoryService) { }
+  public bookedtickets = []
+  async ngOnInit() {
+    await this.bookinghistoryservice.getbookeddata()
+    this.bookedtickets = this.bookinghistoryservice.bookedtickets
+    console.log(this.bookedtickets)
   }
+  async oncancel(id)   {
+    console.log(id)
+    let current_date = `${new Date().getFullYear()}-${new Date().getMonth()+1}-${new Date().getDate()}`
+    Swal.fire({
+      icon:'warning',
+      title: 'Are you sure to Delete this ticket?',
+      text: 'You will not be able to revert this ',
+      showCancelButton: true,
+      confirmButtonColor: '#049F0C',
+      cancelButtonColor:'#ff0000',
+      confirmButtonText: 'Yes, delete it!',
+      cancelButtonText: 'No, keep it'
+    }).then(async(result) => {
+      console.log(result)
+      if(result.value)
+      {
+        let a = await this.bookinghistoryservice.cancelticket(id,current_date)
+        await this.bookinghistoryservice.getbookeddata()
+        this.bookedtickets = this.bookinghistoryservice.bookedtickets
+        if(a==false)
+        {
+          Swal.fire(
+            'Oops',
+            'Your Ticket was not deleted ! try again later :)',
+            'error'
+          )
+        }
+      }
+      
+      else if(result.dismiss === Swal.DismissReason.cancel) 
+        {
+          Swal.fire(
+            'Woohoo',
+            'Your Travel is still on :)',
+            'success'
+          )
+        }
+    })
 
+
+    
+
+
+  }
+  checktime(departure_time,travel_date)
+  { 
+    if(new Date(travel_date).getDate() < new Date().getDate())
+      return false;
+    if(new Date(travel_date).getDate() == new Date().getDate())
+      {
+        if( parseInt(departure_time.substring(0,2)) - new Date().getHours() > 3)
+        return false;
+      }
+      else
+        return true
+  }
 }

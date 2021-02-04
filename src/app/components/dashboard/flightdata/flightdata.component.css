@@ -1,4 +1,180 @@
 .wrapper
 {
-    width: 82%;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
 }
+
+.cardwrapper
+{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.menu
+{
+    width: 100%;
+    max-height: 100vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    padding: 3rem;
+    overflow-y: scroll;
+}
+
+.Heading>h1
+{
+    padding: 2rem;
+    font-family: 'Poppins';
+    font-weight: 600;
+}
+
+.bookedflightcard
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 50%;
+    background-color: #f3f3f3;
+    border-radius: 2rem;
+    margin-bottom: 2rem;
+}
+/*********Title*********/
+.title 
+{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem;
+
+
+}
+
+.titleheader
+{
+    padding:1rem 2rem;
+    text-transform: capitalize;
+    color: white;
+}
+
+.titleheader>h3 
+{
+    margin: 0;
+}
+/******Details*************/
+.flightdetail 
+{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 15rem;
+    text-align: left;
+}
+/******Location Row****************/
+.Location
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 5rem;
+    background-color: #f2f2f2;
+    width: 100%;
+    position: relative;
+}
+.city
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.city h3 
+{
+    margin: 0;
+    font-size: 2.5rem;
+    font-weight: 500;
+
+}
+/**************Flight body******************/
+.flightcardbody
+{
+    width: 100%;
+    padding: 1rem;
+}
+
+.bodyrow 
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding:1rem
+    
+}
+/*******Timecontainer*************/
+.timecontainer
+{
+    padding:0 1.5rem
+}
+.locationcontainer
+{
+    padding:0 1.5rem
+}
+/*****Submit*************/
+.ticketstatus
+{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 60%;
+    padding: 0 1.5rem;
+}
+
+.ticketstatus>div
+{
+    margin-right: 15%;
+}
+
+.cancelbtn
+{
+    margin-right: 1.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    border: 1px solid red;
+    background-color: white;
+    font-weight: 600;
+    color: red;
+    outline: none;
+    cursor: pointer;
+}
+
+.airplane {
+    position: absolute;
+    width: 30px;
+    height: 25px;
+    top: 51%;
+    left: 33%;
+    opacity: 0;
+    transform: translate(-50%, -50%);
+    animation: move 3s infinite;
+  }
+
+  @keyframes move {
+    40% {
+      left: 50%;
+      opacity: 1;
+    }
+    100% {
+      left: 70%;
+      opacity: 0;
+    }
+  }
+
