@@ -28,7 +28,7 @@
                     <small *ngIf="password.errors?.required">Password is required</small>
                     <small *ngIf="password.errors?.minlength">Password must be at least 8 charachters</small>
                 </div>
-
+                <div class="forgotpwd" [routerLink]="['/user/forgotpassword']">Forgot password?</div>
             </div>
             <button type="submit" class="submitbtn"> Login </button>
             <a class="loginsignupbtn" [routerLink]="['/signup']">Create Account<i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>

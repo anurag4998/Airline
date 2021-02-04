@@ -109,6 +109,17 @@ small
 { 
     padding:5px;
 }
+
+.forgotpwd
+{
+    font-size: 1.3rem;
+    position: absolute;
+    top: 9rem;
+    right: 0rem;
+    cursor: pointer;
+    margin-bottom: 2rem;
+    outline: none;
+}
 /**********************************************/
 @media screen and (max-width:500px)
 {
