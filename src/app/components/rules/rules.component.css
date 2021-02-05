@@ -1,0 +1,60 @@
+.wrapper
+{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+    max-height: calc(100% - 6.5rem);
+}
+
+.menu
+{
+    width: 100%;
+    min-height: 100vh;
+    max-height: 95vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    padding: 3rem 3rem 1rem 3rem;
+    overflow-y: scroll;
+}
+
+.Headingcontainer>h1
+{
+    font-size: 3.5rem;
+    font-family: 'Poppins', sans-serif;
+    padding: 3rem 0;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100rem;
+    background-color: white;
+    border-radius: 1rem;
+    padding: 3rem;
+}
+.inputcontainer{
+    font-display: absolute;
+    font-family: 'Poppins', sans-serif;
+    align-items: flex-start;
+    width: 100rem;
+    border-radius: 1rem;
+    padding: 3rem;
+    font-size: large;
+}
+.label {
+    font-size: 2rem;
+    
+    font-family: 'Poppins', sans-serif;
+  color: black;
+    
+    
+    text-align:start;
+    text-transform: capitalize;
+    display: block;
+    margin-right: 50px;
+    margin-bottom: 0.5rem;
+}

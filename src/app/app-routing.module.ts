@@ -17,6 +17,7 @@ import { ForgotpasswordComponent } from './components/forgotpassword/forgotpassw
 import { ResetpasswordComponent } from './components/resetpassword/resetpassword.component';
 import { FlightdataComponent } from './components/dashboard/flightdata/flightdata.component';
 import { CancellationsComponent } from './components/dashboard/cancellations/cancellations.component';
+import { RulesComponent} from './components/rules/rules.component';
 
 const routes: Routes = [
   { path: '', component:SearchComponent},
@@ -29,7 +30,7 @@ const routes: Routes = [
   {path : 'flight/user/dashboard', component:FlightdataComponent },
   {path :'user/forgotpassword', component:ForgotpasswordComponent},
   {path :'user/resetpassword', component:ResetpasswordComponent},
-
+  {path:'rules',component:RulesComponent},
   {path : 'flight/user/dashboard/cancelled', component:CancellationsComponent },
 
   

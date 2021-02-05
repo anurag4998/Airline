@@ -42,7 +42,8 @@ import { ResetpasswordComponent } from './components/resetpassword/resetpassword
 import { FlightdataComponent } from './components/dashboard/flightdata/flightdata.component';
 import { SidebarComponent } from './components/dashboard/sidebar/sidebar.component';
 import { LoggedinheaderComponent } from './components/loggedinheader/loggedinheader.component';
-import { CancellationsComponent } from './components/dashboard/cancellations/cancellations.component'
+import { CancellationsComponent } from './components/dashboard/cancellations/cancellations.component';
+import { RulesComponent } from './components/rules/rules.component'
 
 @NgModule({
   declarations: [
@@ -72,6 +73,7 @@ import { CancellationsComponent } from './components/dashboard/cancellations/can
     SidebarComponent,
     LoggedinheaderComponent,
     CancellationsComponent,
+    RulesComponent,
    
   ],
   imports: [
