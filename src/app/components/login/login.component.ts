@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 import { faEye } from '@fortawesome/free-solid-svg-icons';
+import Swal from 'sweetalert2';
 import {Loginservice} from '../../services/login.service'
 
 @Component({
@@ -26,8 +27,9 @@ export class LoginComponent implements OnInit {
   }
   async onSubmit(data) {
     this.timer = true
+    Swal.fire('Logging In');    Swal.showLoading();
     let response = await this.loginservice.login(data)
-    console.log(response)
+    Swal.close()
     if(response == "Verified")
       {
         this.router.navigate([`${''}`]);

@@ -24,7 +24,9 @@ export class ForgotpasswordComponent implements OnInit {
       if(!value.otp)
       {
         this.timer = true
+        Swal.fire('Verifying');    Swal.showLoading();
         let response = await this.forgotpassword.sendotp(value)
+        Swal.close()
         if(response.response == 'false')
         {
           this.errormsg = response
