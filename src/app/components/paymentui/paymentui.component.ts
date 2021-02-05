@@ -37,7 +37,7 @@ export class PaymentuiComponent implements OnInit {
       delete paymentForm.cvv
       delete paymentForm.name
       this.TransactionService.card_details = paymentForm
-      let result = this.TransactionService.post()
+      let result = await this.TransactionService.post()
       if(result)
       {
         Swal.fire(
