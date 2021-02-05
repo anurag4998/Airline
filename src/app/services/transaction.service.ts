@@ -25,6 +25,8 @@ export class TransactionService {
       public contact_email:string
       public contact_no:string
 
+      public booked_information
+
     constructor(private httpClient: HttpClient, private SelectedFlightService: SelectedFlightService) { 
             this.current_date = `${new Date().getFullYear()}-${new Date().getMonth()+1}-${new Date().getDate()}`
             this.useremail = sessionStorage.getItem('user')
@@ -51,6 +53,7 @@ export class TransactionService {
         try 
         {
           let a = await this.httpClient.post(this.apiServer,this.body,this.httpOptions).toPromise()
+          this.booked_information = a
           return true;
         } 
         catch(error)
