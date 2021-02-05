@@ -7,6 +7,7 @@
     min-height: 100vh;
     padding: 2rem;
     background-image:url(../../../assets/adminbg.jpg);
+    background-size: cover;
     
 }
 .logincontainer
@@ -111,10 +112,9 @@
     margin-bottom: 5px;
     background-color: #4772af;
     color:white;
-     
-
 
 }
+
 
 @media screen and (max-width:500px)
 {

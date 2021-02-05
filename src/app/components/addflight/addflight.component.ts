@@ -3,7 +3,8 @@ import { Router } from '@angular/router';
 import { Adminflight } from 'src/app/models/adminflight';
 import { AdminflightcrudService } from 'src/app/services/adminflightcrud.service';
 import { AirportsService } from 'src/app/services/airports.service';
-import { AdminloginComponent } from '../adminlogin/adminlogin.component';
+import Swal from 'sweetalert2';
+
 
 @Component({
   selector: 'app-addflight',
@@ -16,6 +17,7 @@ export class AddflightComponent implements OnInit {
   flights;
   flightcheck=true;
   v:Adminflight;
+  isLoggedIn: boolean;
   constructor(private service:AdminflightcrudService, private airportservice : AirportsService, private router: Router) { }
 
   ngOnInit(): void {
@@ -40,7 +42,22 @@ export class AddflightComponent implements OnInit {
       this.flights = data;
      
   }) 
+  if(!sessionStorage.getItem('admin'))
+    {
+      Swal.fire({
+        title: 'Oops!',
+        text: 'Login to Continue!',
+        icon: 'warning',
+       
+      })
+      this.router.navigate([`${'/AdminLogin'}`]);
+    }
+    if(sessionStorage.getItem('admin'))
+    {
+        this.isLoggedIn = true
+    }
   }
+ 
   onclickfn()
   {
     this.flightcheck=true;
@@ -48,13 +65,14 @@ export class AddflightComponent implements OnInit {
   
   
  
-  submitForm(AddFlightForm) {
-   
+  async submitForm(AddFlightForm) {
+    
   for(let i=0;i<this.flights.length;i++)
   {
     if(this.flights[i].flight_number==AddFlightForm.value.flight_number)
       {
         this.flightcheck=false;
+        window.scrollTo(0,1);
       }
   }
 
@@ -62,10 +80,12 @@ export class AddflightComponent implements OnInit {
     
     if(this.flightcheck==true)
     {
+      Swal.fire('Fetching Your Flights');    Swal.showLoading();
       console.log(AddFlightForm.value);
-      this.service.addflight(AddFlightForm.value).subscribe((data)=>
+      await this.service.addflight(AddFlightForm.value).subscribe((data)=>
       console.log(data,"Flight Added")
       )
+      Swal.close();
     this.router.navigate([`${'ViewAllFlights'}`]);
     }
    

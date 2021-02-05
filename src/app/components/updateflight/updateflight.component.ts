@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Adminflight } from 'src/app/models/adminflight';
 import { AdminflightcrudService } from 'src/app/services/adminflightcrud.service';
 import { AirportsService } from 'src/app/services/airports.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-updateflight',
@@ -12,6 +13,7 @@ import { AirportsService } from 'src/app/services/airports.service';
 export class UpdateflightComponent implements OnInit {
   public citydata;
   updateflight:Adminflight;
+  isLoggedIn: boolean;
   constructor(private service:AdminflightcrudService,private router:ActivatedRoute,private airportservice : AirportsService, private routers: Router) { }
 
   ngOnInit(): void {
@@ -33,10 +35,25 @@ export class UpdateflightComponent implements OnInit {
       }
     )
     this.citydata = this.airportservice.airports;
-    
+    if(!sessionStorage.getItem('admin'))
+    {
+      Swal.fire({
+        title: 'Oops!',
+        text: 'Login to Continue!',
+        icon: 'warning',
+       
+      })
+      this.routers.navigate([`${'/AdminLogin'}`]);
+    }
+    if(sessionStorage.getItem('admin'))
+    {
+        this.isLoggedIn = true
+    }
   }
+
  
   submitForm(UpdateFlightForm) {
+    
     UpdateFlightForm.value.flight_number=this.updateflight.flight_number;
     console.log(UpdateFlightForm.value);
     
