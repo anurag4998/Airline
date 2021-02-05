@@ -6,7 +6,7 @@
         <div class="Heading">
             <h1>Cancelled Flight History</h1>
         </div>
-        <div class = "cardwrapper" >
+        <div class = "cardwrapper" *ngFor = "let a of cancelledtickets" >
             <div class="cancelledflightcard">
                 <div class="title">
                     <div class="titleheader name">
@@ -14,22 +14,49 @@
                     </div>
                     <div class="flightdetail titleheader">
                         <small>flight</small>
-                        <strong>AI111</strong>
+                        <strong>{{a.flight_number}}</strong>
                     </div>
                 </div>
                 <div class="Location">
                     <div class="departurelocation city">
-                        <h3>Delhi</h3>
+                        <h3>{{a.departure_location}}</h3>
                     </div>
                     <a class="airplane">
                         <div class="fa fa-plane"></div>
                     </a>
                     <div class="Arrivallocation city">
-                        <h3>Mumbai</h3>
+                        <h3>{{a.arrival_location}}</h3>
                     </div>
                 </div>
                 <div class="flightcardbody">
-                   
+                    <div class=" bodyrow">
+                        <div class="flightdetail">
+                            <small>Transaction Id</small>
+                            <strong>{{a.transaction_id}}</strong>
+                        </div>
+                        <div class="flightdetail timecontainer">
+                            <small>Class</small>
+                            <strong>{{a.seat_type}}</strong>
+                        </div>
+                        <div class="flightdetail timecontainer">
+                            <small>Refund Amount</small>
+                            <strong>{{a.cancellation_amount}}</strong>
+                        </div>
+                    </div>
+                    <div class=" bodyrow">
+                        <div class="flightdetail">
+                            <small>Travel Date</small>
+                            <strong>{{a.travel_date|date}}</strong>
+                        </div>
+                        <div class="flightdetail timecontainer">
+                            <small>Booking Date</small>
+                            <strong>{{a.booking_date|date}}</strong>
+                        </div>
+                        <div class="flightdetail timecontainer">
+                            <small>Number of Seatst</small>
+                            <strong>{{a.number_of_seats}}</strong>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

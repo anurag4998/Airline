@@ -4,25 +4,7 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-}
-
-.menu
-{
-    width: 100%;
-    max-height: 100vh;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    flex-direction: column;
-    padding: 3rem;
-    min-height: 100vh;
-}
-
-.Heading>h1
-{
-    padding: 2rem;
-    font-family: 'Poppins';
-    font-weight: 600;
+    max-height: calc(100% - 6.5rem);
 }
 
 .cardwrapper
@@ -31,6 +13,25 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.menu
+{
+    width: 100%;
+    min-height: 100vh;
+    max-height: 95vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    padding: 3rem 3rem 1rem 3rem;
+    overflow-y: scroll;
+}
+
+.Heading>h1
+{
+    padding: 2rem;
+    font-family: 'Poppins';
+    font-weight: 600;
 }
 
 .cancelledflightcard
@@ -42,7 +43,7 @@
     width: 50%;
     background-color: #f3f3f3;
     border-radius: 2rem;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
 }
 
 /*********Title*********/
