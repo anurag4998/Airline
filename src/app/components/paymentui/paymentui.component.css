@@ -1,25 +1,29 @@
+/************************Subheader***************************/
 header 
 {
     display: flex;
     align-items: center;
-    height: 6.0rem;
-    background-color: #111;
+    height: 6.5rem;
+    background-color:#003366;
     width: 100%;
     color: white;
-    position: center;
+    position: relative;
 }
-
 .logo 
 {
-    margin-bottom: 1.5rem;
+    padding-left: 3rem;
 }
-
-.logo>a
+.logo > a
 {
-    color: white;
+    color: #fff;
+    text-transform: uppercase;
     text-decoration: none;
+    letter-spacing: 0.25rem;
+    display: inline-block;
+    padding: 15px 20px;
+    position: relative;
+    
 }
-
 .msg{
   
   margin-top: 1rem;

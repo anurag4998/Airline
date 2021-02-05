@@ -1,4 +1,30 @@
-
+/************************Subheader***************************/
+header 
+{
+    display: flex;
+    align-items: center;
+    height: 6.5rem;
+    background-color:#003366;
+    width: 100%;
+    color: white;
+    position: relative;
+}
+.logo 
+{
+    padding-left: 3rem;
+}
+.logo > a
+{
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 0.25rem;
+    display: inline-block;
+    padding: 15px 20px;
+    position: relative;
+    
+}
+/***************************************************/
 .passengercontainer
 {
     background-color:  #fdfdfd;

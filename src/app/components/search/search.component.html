@@ -1,7 +1,7 @@
  <div class="header row">
   <nav class="navbar" *ngIf = "loggedIn == false">
         <div class="logo">
-          <a [routerLink]="['/']"> LOGO </a>   
+          <a [routerLink]="['/']" class="logo" > <img style="width: 10rem; height: 10rem;" src="../../../assets/logo3.png"></a>   
         </div>
       <div class="nav-items">
         
@@ -13,11 +13,11 @@
   </nav>
   <nav class="navbar" *ngIf = "loggedIn == true">
     <div class="logo">
-      <a [routerLink]="['/']"> LOGO </a>   
+      <a [routerLink]="['/']"> <img style="width: 10rem; height: 10rem;" src="../../../assets/logo3.png"> </a>   
     </div>
     <div class="nav-items">
         <a (click) = "handlelogout()">Logout</a>
-        <li><a [routerLink]="['/flight/user/dashboard']" class="avatar"><fa-icon [icon]="faUser"></fa-icon></a></li>  
+        <a [routerLink]="['/flight/user/dashboard']" class="avatar"><fa-icon [icon]="faUser"></fa-icon></a> 
       </div>
   </nav>
 
