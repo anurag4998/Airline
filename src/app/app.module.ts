@@ -43,7 +43,13 @@ import { FlightdataComponent } from './components/dashboard/flightdata/flightdat
 import { SidebarComponent } from './components/dashboard/sidebar/sidebar.component';
 import { LoggedinheaderComponent } from './components/loggedinheader/loggedinheader.component';
 import { CancellationsComponent } from './components/dashboard/cancellations/cancellations.component';
+<<<<<<< HEAD
 import { RulesComponent } from './components/rules/rules.component'
+=======
+import { AdminheaderComponent } from './components/adminheader/adminheader.component';
+import { AdminfooterComponent } from './components/adminfooter/adminfooter.component';
+import { AdminloggedinheaderComponent } from './components/adminloggedinheader/adminloggedinheader.component'
+>>>>>>> ec508332b079218a99ad554e102fd51f064594ba
 
 @NgModule({
   declarations: [
@@ -73,7 +79,13 @@ import { RulesComponent } from './components/rules/rules.component'
     SidebarComponent,
     LoggedinheaderComponent,
     CancellationsComponent,
+<<<<<<< HEAD
     RulesComponent,
+=======
+    AdminheaderComponent,
+    AdminfooterComponent,
+    AdminloggedinheaderComponent,
+>>>>>>> ec508332b079218a99ad554e102fd51f064594ba
    
   ],
   imports: [

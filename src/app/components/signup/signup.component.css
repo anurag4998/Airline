@@ -132,6 +132,12 @@
     font-size: 1.6rem;
     margin-top: 1rem;
 }
+div>small
+{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
 @media screen and (max-width:1200px)
 {
     .Hero

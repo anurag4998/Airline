@@ -1,14 +1,25 @@
-<div class="bg">    
+<app-adminheader *ngIf="!isLoggedIn"></app-adminheader>
+ <app-adminloggedinheader *ngIf="isLoggedIn == true"></app-adminloggedinheader>
+
+ <div class="bg">    
     <div class="view">
         <table class="tbl">
-            
             <thead>
-                <tr><th colspan="7" ><h1 class="h1">FLIGHTS</h1></th></tr>
+                <tr>
+                    <th class="head" colspan="3">
+                        <span>
+                            <img src="../../assets/adminheader.png" class="head_logo " >
+                        </span>
+                    </th>
+                    <th class="h">
+                        <h1 class="h1">
+                        FLIGHTS
+                    </h1>
+                </th></tr>
                 <tr>
                     <th colspan="7">
-                       <div class="searchplace">
-                           <span class="searchicon">⌕</span>
-                            <input type="text" class="search" name="search" [(ngModel)]="searchText" placeholder="Search for Flights">
+                       <div class="searchplace">                          
+                            <input type="text" class="search" name="search" [(ngModel)]="searchText" placeholder="&#xf002; Search for Flights">
                         </div> 
                     </th>
                 </tr>
@@ -26,7 +37,12 @@
             <tbody>
                 
                 <tr class="tr" *ngFor="let flight of flights | filter:searchText">
-                    <td class="td">{{flight.flight_number}}</td>
+                    <td class="td">
+                        <div>
+                            <img src="../../assets/adminplanelogo.png" class="head_logo">
+                        </div>
+                        {{flight.flight_number}}
+                    </td>
                     <td class="td">{{flight.departure_location}}</td>
                     <td class="td">{{flight.departure_time}}</td>
                     <td class="td">{{flight.arrival_location}}</td>
@@ -42,3 +58,5 @@
         </table>
     </div>
 </div>
+
+<app-adminfooter></app-adminfooter>
