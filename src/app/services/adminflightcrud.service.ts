@@ -8,7 +8,7 @@ import { Adminflight } from '../models/adminflight';
   providedIn: 'root'
 })
 export class AdminflightcrudService {
-  private apiServer = environment.url+"admin/";
+  private apiServer = environment.url+"adminoperations/";
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json'

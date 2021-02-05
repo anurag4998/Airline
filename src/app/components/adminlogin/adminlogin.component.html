@@ -4,12 +4,12 @@
     <div class="logincontainer">
         <h1 class='loginform__heading'>Admin Login</h1>
         <div *ngIf="!verify">
-                <span class="msg">&#9888; Invalid Credentials</span> 
+                <span class="msg">&#10687; Invalid Credentials</span> 
         </div>
         <form class="loginform" #AdminLoginForm="ngForm" (ngSubmit)="submitForm(AdminLoginForm)" novalidate>
             <div class="inputcontainer">
                 <label class="label">Email</label>
-                <input type='email'  class='loginform__input' placeholder="Email"  name="email" autoComplete="off" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required #email="ngModel"
+                <input type='email'  class='loginform__input' placeholder="Email"  name="email" (click)="clickoninput()" autoComplete="off" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required #email="ngModel"
                 [(ngModel)]="adminlogin.email"/>
                 <div *ngIf="!email?.valid && (email?.dirty ||email?.touched)" class="errors">
                     <div *ngIf="email.errors.required">
@@ -22,7 +22,7 @@
             </div>
             <div class='pwdcontainer inputcontainer'>
                 <label class="label">Password</label>
-                <input [type]="visible ? 'text' : 'password'"  id='password' class='loginform__input' name="password" minLength="8" placeholder="Password" autoComplete="off" required #password="ngModel"
+                <input [type]="visible ? 'text' : 'password'"  id='password' class='loginform__input' name="password" minLength="8" placeholder="Password" (click)="clickoninput()" autoComplete="off" required #password="ngModel"
                 [(ngModel)]="adminlogin.password"/>
                 <fa-icon [icon]  =  "visible ? faEye : faEyeSlash "  (click) = "onClick()" class="loginform__toggleicon"></fa-icon>
                 

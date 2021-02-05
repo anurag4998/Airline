@@ -80,7 +80,7 @@ export class AddflightComponent implements OnInit {
     
     if(this.flightcheck==true)
     {
-      Swal.fire('Fetching Your Flights');    Swal.showLoading();
+      Swal.fire('Adding Flight');    Swal.showLoading();
       console.log(AddFlightForm.value);
       await this.service.addflight(AddFlightForm.value).subscribe((data)=>
       console.log(data,"Flight Added")

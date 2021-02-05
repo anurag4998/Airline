@@ -48,10 +48,11 @@ export class DeleteflightComponent implements OnInit {
     }
   }
 
-  delete(flightnumber)
+  async delete(flightnumber)
   {
-    
-    this.service.deleteflight(flightnumber).subscribe(); 
+    Swal.fire('Deleting Flight');    Swal.showLoading();
+    await this.service.deleteflight(flightnumber).subscribe();
+    Swal.close(); 
     this.routers.navigate([`${'ViewAllFlights'}`]);
   }
 }

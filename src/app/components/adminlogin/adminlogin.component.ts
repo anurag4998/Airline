@@ -24,6 +24,10 @@ export class AdminloginComponent implements OnInit {
       password:''
     };
   }
+  clickoninput()
+  {
+    this.verify=true;
+  }
   onClick()
   {
     this.visible = !this.visible;
@@ -33,7 +37,7 @@ export class AdminloginComponent implements OnInit {
     console.log(AdminLoginForm.value);
     this.timer = true
     let response = await this.loginservice.login(AdminLoginForm.value)
-    console.log(response)
+   
     if(response == "Verified")
       {
         this.router.navigate([`${'ViewAllFlights'}`]);
@@ -42,6 +46,7 @@ export class AdminloginComponent implements OnInit {
       }
     else 
       {
+        this.verify=false;
         this.response = response
       }
     setTimeout(() => {
