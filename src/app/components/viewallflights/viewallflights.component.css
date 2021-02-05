@@ -16,7 +16,21 @@
     min-height:575px;
     
 }
+.head
+{   padding:25px;
+    text-align: right;
+}
+.h{
+    text-align: left;
 
+}
+
+.head_logo
+{
+    padding-top: 10px;
+    height: 7rem;
+    cursor: pointer;
+}
 .tbl
     {
         border-spacing: 0.5rem;
@@ -30,6 +44,8 @@
     }
 .h1
 {
+    text-align: left;
+    background-color: white;
     font-size:30px;
     padding-top: 40px;
     padding-bottom: 10px;
@@ -96,40 +112,24 @@
     
     .searchplace
     {
-         margin-bottom: 30px;
+         padding-bottom: 30px;
+         
     }
     .search
     { 
        
-        font-family: 'Rubik';
-        padding-top:15px;
-        padding-bottom:15px;
-        padding-right:15px;
-        padding-left:5px;
+        font-family: 'Rubik', sans-serif;
+        padding:15px;
         border:none;
         background-color: rgb(216, 215, 215);
         height:50px;
         width:400px;
         font-size:16px;
-        border-top-right-radius: 5px;
-        border-bottom-right-radius: 5px;
+        border-radius: 5px;
         outline: none;
-        
+        font-family: FontAwesome;
     }
-    .searchicon
-    {
-        color:rgb(133, 131, 131);
-        font-size: 30px;
-        background-color: rgb(216, 215, 215);
-        padding-top: 3px;
-        padding-left: 10px;
-        padding-bottom: 12px;
-        border-top-left-radius: 5px;
-        border-bottom-left-radius: 5px;
-      
-        
-    }
-
+    
 
 @media screen and (max-width:768px)
 {

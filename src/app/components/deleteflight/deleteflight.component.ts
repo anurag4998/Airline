@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Adminflight } from 'src/app/models/adminflight';
 import { AdminflightcrudService } from 'src/app/services/adminflightcrud.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-deleteflight',
@@ -9,6 +10,7 @@ import { AdminflightcrudService } from 'src/app/services/adminflightcrud.service
   styleUrls: ['./deleteflight.component.css']
 })
 export class DeleteflightComponent implements OnInit {
+  isLoggedIn: boolean;
   constructor(private service:AdminflightcrudService, private router:ActivatedRoute, private routers: Router) { }
   flight:Adminflight;
 
@@ -30,9 +32,25 @@ export class DeleteflightComponent implements OnInit {
       duration:data["duration"]
       }
     )
+    if(!sessionStorage.getItem('admin'))
+    {
+      Swal.fire({
+        title: 'Oops!',
+        text: 'Login to Continue!',
+        icon: 'warning',
+       
+      })
+      this.routers.navigate([`${'/AdminLogin'}`]);
+    }
+    if(sessionStorage.getItem('admin'))
+    {
+        this.isLoggedIn = true
+    }
   }
+
   delete(flightnumber)
   {
+    
     this.service.deleteflight(flightnumber).subscribe(); 
     this.routers.navigate([`${'ViewAllFlights'}`]);
   }

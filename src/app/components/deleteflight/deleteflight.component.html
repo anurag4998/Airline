@@ -1,4 +1,6 @@
-<div class="bg">
+<app-adminheader *ngIf="!isLoggedIn"></app-adminheader>
+ <app-adminloggedinheader *ngIf="isLoggedIn == true"></app-adminloggedinheader>
+ <div class="bg">
     <div class="view">
         <div *ngIf="flight">
             <table class="tbl">
@@ -20,7 +22,10 @@
                 </thead>
                 <tbody>
                     <tr class="tr">
-                        <td class="td">{{flight.flight_number}}</td>
+                        <td class="td">
+                            <div>
+                                <img src="../../assets/adminplanelogo.png" class="head_logo">
+                            </div>{{flight.flight_number}}</td>
                         <td class="td">{{flight.departure_location}}</td>
                         <td class="td">{{flight.arrival_location}}</td>
                         <td class="td">{{flight.departure_time}}</td>
@@ -43,3 +48,6 @@
         </div>
     </div>
 </div>
+
+
+<app-adminfooter></app-adminfooter>

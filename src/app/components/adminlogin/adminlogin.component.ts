@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { faEyeSlash, faEye } from '@fortawesome/free-solid-svg-icons';
+import { AdminloginService } from 'src/app/services/adminlogin.service';
 
 @Component({
   selector: 'app-adminlogin',
@@ -10,7 +12,9 @@ export class AdminloginComponent implements OnInit {
   verify=true;
   yes;
   public adminlogin;
-  constructor() { }
+  public response: string
+  public timer : boolean
+  constructor(private loginservice:AdminloginService, private router: Router) { }
   faEyeSlash = faEyeSlash;
   faEye=faEye;
   visible = false;
@@ -24,21 +28,24 @@ export class AdminloginComponent implements OnInit {
   {
     this.visible = !this.visible;
   }
-  submitForm(AdminLoginForm)
+  async submitForm(AdminLoginForm)
   {
     console.log(AdminLoginForm.value);
-
-    if(this.adminlogin.email == "aditya@gmail.com" && this.adminlogin.password == "regex123" )
+    this.timer = true
+    let response = await this.loginservice.login(AdminLoginForm.value)
+    console.log(response)
+    if(response == "Verified")
       {
-        
-        window.location.href = "http://localhost:4200/ViewAllFlights";
-        console.log("yes");
-      }
-     else 
-      {
-        console.log("no");
-        this.verify=false;
-      }
+        this.router.navigate([`${'ViewAllFlights'}`]);
+        sessionStorage.setItem('admin',AdminLoginForm.value.email)
 
+      }
+    else 
+      {
+        this.response = response
+      }
+    setTimeout(() => {
+      this.timer = false
+    },3000)
   }
 }
