@@ -4,11 +4,25 @@
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.6)), url(../../../assets/header.jpg);
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
+  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.5)), url(../../../assets/login_image.jpg);
+  
   padding: 2rem;
+  position: relative;
+}
+.logo 
+{
+    position: absolute;
+    top: 0rem;
+    left: 1rem;
+    width: 10rem;
+    height: 10rem;
+    cursor: pointer;
+    outline: none;
+}
+.logo > img 
+{
+    width: 100%;
+    height: 100%;
 }
 
 .signupcontainer

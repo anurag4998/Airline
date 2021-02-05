@@ -1,4 +1,7 @@
 <div class="loginwrapper">
+    <div class="logo" [routerLink]="['/']">
+        <img src="../../../assets/logo3.png">
+    </div>
     <div class="logincontainer">
         <h1 class='loginform__heading'>Login</h1>
         <form class="loginform" #f="ngForm" novalidate (ngSubmit)="f.form.valid && onSubmit(f.value)" >

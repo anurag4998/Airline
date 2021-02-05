@@ -1,4 +1,7 @@
 <div class=" Hero signupwrapper">
+    <div class="logo" [routerLink]="['/']">
+        <img src="../../../assets/logo3.png">
+    </div>
     <div class = 'signupcontainer'>   
         <h1 class='signupform__heading'>Signup</h1>
         <form class="signupform" #f="ngForm" novalidate (ngSubmit) = "f.form.valid && onSubmit(f.value)">
