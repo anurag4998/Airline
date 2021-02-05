@@ -10,6 +10,7 @@ import { environment } from 'src/environments/environment';
     private apiServer = environment.url+"BookHistory";
     private useremail
     public bookedtickets
+    public cancelledtickets
     httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json'
@@ -48,6 +49,15 @@ import { environment } from 'src/environments/environment';
         }
 
     }
+    async getcancelleddata(){
+      let params = new HttpParams();
+      let apiServer =  environment.url + 'CancelHistory'
+      params = params.append('mail', this.useremail);
 
+      let cancelleddata =  await this.httpClient.get<[]>(apiServer,{ params: params }).toPromise()
+      this.cancelledtickets = cancelleddata
+      console.log(this.cancelledtickets)
+    
+  }
   
   }
