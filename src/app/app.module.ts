@@ -25,7 +25,7 @@ import { DeleteflightComponent } from './components/deleteflight/deleteflight.co
 import { UpdateflightComponent } from './components/updateflight/updateflight.component';
 import { ViewallflightsComponent } from './components/viewallflights/viewallflights.component';
 import { AdminloginComponent } from './components/adminlogin/adminlogin.component';
-import { AdminnavigationComponent } from './components/adminnavigation/adminnavigation.component';
+
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 
@@ -65,7 +65,7 @@ import { AdminloggedinheaderComponent } from './components/adminloggedinheader/a
     ViewallflightsComponent,
     PassengersComponent,
     AdminloginComponent,
-    AdminnavigationComponent,
+
     PageNotFoundComponent,
   
     SeatuiComponent,
