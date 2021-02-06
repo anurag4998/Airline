@@ -23,12 +23,13 @@
                     <p class="heading">Traveller Details</p>
                     <p class="heading passenger__summary__headingcontainer--count">{{count}}/{{this.flightselectobj.number_of_seats}} Selected</p>
                 </div>
-            
+                <div class="errormsg" *ngIf = "f.invalid || count<flightselected.number_of_seats">Incomplete</div>
+
                 <form #f = "ngForm" (ngSubmit) = "f.valid && onSubmit()">
                     <div *ngFor = "let obj of dataarray; let i = index" class="passengerdetails details-wrapper">
+
                         <div class="card-heading">
                             <span class="title">Adult</span>
-                            <div class="errormsg" *ngIf = "f.invalid">Incomplete</div>
                         </div>
                         <div class="card-body">
                             <div class="card-body--info">
