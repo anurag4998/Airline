@@ -30,8 +30,10 @@ export class SignupComponent implements OnInit {
   {
     delete formvalue.cnfpwd;
     this.timer = true
+    Swal.fire('Creating your account');    Swal.showLoading();
     let response = await this.signup.post(formvalue)
-    
+    Swal.close()
+
     if(response == null)
     {
       Swal.fire('Done', 'Account Created!', 'success')

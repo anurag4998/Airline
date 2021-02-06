@@ -23,8 +23,11 @@ export class Signupservice {
     }
     catch(error)
     { 
+      console.log(error)
          if(error.status == 0)
           return ('Check Your Connection')
+        else if(error.status == 409)
+          return "Email-Id already registered"
         else if(error.status == 400)
           return "Invalid Credentials"
         else if(error.status == 500)
