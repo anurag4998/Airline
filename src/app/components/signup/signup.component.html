@@ -5,8 +5,8 @@
     <div class = 'signupcontainer'>   
         <h1 class='signupform__heading'>Signup</h1>
         <form class="signupform" #f="ngForm" novalidate (ngSubmit) = "f.form.valid && onSubmit(f.value)">
-            <div *ngIf = "error!=null && timer == true ? true : false" class="error-msg">
-                {{error}}
+            <div *ngIf = "response!=null && timer == true ? true : false" class="error-msg">
+                {{response}}
             </div>
             <div class="row">
                 <div class="col-12 col-md-5 inputgroup">

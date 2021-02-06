@@ -25,6 +25,8 @@ import { environment } from 'src/environments/environment';
     {
       if(error.status == 400)
           return "Invalid Credentials"
+      if(error.status == 500)
+        return "500"
     }
   }
 }

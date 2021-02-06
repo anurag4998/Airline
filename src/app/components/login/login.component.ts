@@ -38,7 +38,12 @@ export class LoginComponent implements OnInit {
       }
     else 
       {
-        this.response = response
+        if(response == "500" )
+          {
+            Swal.fire('Internal Server Error', 'Try again later' , 'error')
+          }
+          else
+            this.response = response
       }
     setTimeout(() => {
       this.timer = false

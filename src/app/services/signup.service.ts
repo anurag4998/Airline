@@ -25,7 +25,10 @@ export class Signupservice {
     { 
          if(error.status == 0)
           return ('Check Your Connection')
-         return (error.error.Message)
+        else if(error.status == 400)
+          return "Invalid Credentials"
+        else if(error.status == 500)
+          return "500"
     }
   
   }

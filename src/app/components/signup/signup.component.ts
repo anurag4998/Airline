@@ -18,7 +18,7 @@ export class SignupComponent implements OnInit {
   //password toggle
   visible = false;
   //Error Messages
-  public error:string ;
+  public response:string ;
   public timer : boolean
   ngOnInit(): void {
   }
@@ -30,9 +30,9 @@ export class SignupComponent implements OnInit {
   {
     delete formvalue.cnfpwd;
     this.timer = true
-    this.error = await this.signup.post(formvalue)
+    let response = await this.signup.post(formvalue)
     
-    if(this.error == null)
+    if(response == null)
     {
       Swal.fire('Done', 'Account Created!', 'success')
       this.router.navigate([`${'login'}`]);
@@ -40,7 +40,12 @@ export class SignupComponent implements OnInit {
     }
     else 
     {
-      Swal.fire('oops', this.error, 'error')
+      if(response == "500" )
+          {
+            Swal.fire('Internal Server Error', 'Try again later' , 'error')
+          }
+          else
+            this.response = response
     }
     setTimeout(() => {
       this.timer = false
