@@ -61,10 +61,20 @@ export class PassengersComponent implements OnInit {
       {
         this.fetchseats.number_of_seats = this.flightselected.number_of_seats
         this.fetchseats.seatclass = this.flightselected.travel_status == true?"business":"economy"
-        await this.fetchseats.fetchseats(this.flightselected.flight_number,this.flightselected.travel_date)
-        this.router.navigate([`${'flight/seats'}`]);
-        this.TransactionService.passengers = this.dataarray
-        this.TransactionService.final_amount = this.totalprice
+        let response = await this.fetchseats.fetchseats(this.flightselected.flight_number,this.flightselected.travel_date)
+        if(!response)
+        {
+          this.router.navigate([`${'flight/seats'}`]);
+          this.TransactionService.passengers = this.dataarray
+          this.TransactionService.final_amount = this.totalprice
+        }
+        else 
+        {
+          Swal.fire('Oops' , 'An unexpected error occured, try again later', 'error')
+          this.router.navigate([`${''}`]);
+        }
+        
+      
       }
 
       async fetchprice() 

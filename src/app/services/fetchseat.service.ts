@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpHeaders,HttpParams } from "@angular/common/http";
 import {  Observable, throwError } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { error } from 'protractor';
 
 
 @Injectable({
@@ -50,18 +51,23 @@ export class FetchSeatService{
             let params = new HttpParams();
             params = params.append('flightnumber', no);
             params = params.append('date', date);
-    
-            let a =   await this.httpClient.get<[]>(this.apiServer,{ params: params }).toPromise()
-            this.bookedseats = a;
-
-            this.seats.map( x => {
-                if(this.bookedseats.includes(x.seatnumber))
-                {
-                  x.booked = 1
-                }
-            })
+            try 
+            {
+              let a =   await this.httpClient.get<[]>(this.apiServer,{ params: params }).toPromise()
+              this.bookedseats = a;
+  
+              this.seats.map( x => {
+                  if(this.bookedseats.includes(x.seatnumber))
+                  {
+                    x.booked = 1
+                  }
+              })
+            }
+            catch(e)
+            {
+                return "error";
+            }
             
           }
      
-
 }
