@@ -49,12 +49,36 @@
                             </div>
                         </div>
                     </div>
+                    <section class="section contact__summary">
+                        <p class="heading">Contact Details</p>
+                        <form class="contactdetails  details-wrapper" #form = "ngForm">
+                            <div class="contactdetails--info">
+                                <h3>Your ticket and flights information will be sent here.</h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="card-body--details card-body--firstname">
+                                    <div class="card-body--input">
+                                        <input type="text" placeholder="India(+91)" required readonly>
+                                    </div>
+                                    <div class="card-body--input card-body--mobile_no">
+                                        <input type="text" placeholder="Mobile No" required name="mobile" [(ngModel)]="mobile">
+                                    </div>
+                                    <div class="card-body--input card-body--email">
+                                        <input type="email" placeholder="Email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" 
+                                         name="email" [(ngModel)]="email">
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </section>
                     <div class="buttons">
                         <span (click) = "onAdd()" class="passengerdetails--addpassengers" *ngIf = "count<flightselected.number_of_seats">+ Add Passenger</span>
                         <button type="submit" class="passenger--submit" [disabled] = "count!=flightselected.number_of_seats">Continue</button>
                     </div>
                     
                 </form>
+               
+                
 
             </section>
         
@@ -85,24 +109,7 @@
 
         </section>
     </div>
-        <!-- <form class="contactdetails  details-wrapper">
-            <div class="contactdetails--info">
-                <h3>Your ticket and flights information will be sent here.</h3>
-            </div>
-            <div class="card-body">
-                <div class="card-body--details card-body--firstname">
-                    <div class="card-body--input">
-                        <input type="text" placeholder="India(+91)" required readonly>
-                    </div>
-                    <div class="card-body--input card-body--mobile_no">
-                        <input type="text" placeholder="Mobile No" required>
-                    </div>
-                    <div class="card-body--input card-body--email">
-                        <input type="email" placeholder="Email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" >
-                    </div>
-                </div>
-            </div>
-        </form> -->
+        
     </div>
 </div>
 

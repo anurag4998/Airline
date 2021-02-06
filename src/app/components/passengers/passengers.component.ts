@@ -20,7 +20,8 @@ export class PassengersComponent implements OnInit {
   public totalprice:number
   passenger = new Passenger()
   public isLoggedIn: boolean = false
-
+  public mobile:string
+  public email:string
   public dataarray = []
  
     ngOnInit(): void {
@@ -59,6 +60,19 @@ export class PassengersComponent implements OnInit {
  
     async onSubmit()
       {
+        if(!this.email || !this.mobile)
+        {
+            Swal.fire('oops', 'Enter contact details', 'error')    
+            return
+        }
+        var emailregex =  new RegExp ("[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$")
+        var phoneregex = new RegExp("^[0-9]{10}$")
+
+        if(!emailregex.test(this.email) || !phoneregex.test(this.mobile))
+        {
+          Swal.fire('oops', 'Check your contact details', 'error')    
+          return
+        }
         this.fetchseats.number_of_seats = this.flightselected.number_of_seats
         this.fetchseats.seatclass = this.flightselected.travel_status == true?"business":"economy"
         let response = await this.fetchseats.fetchseats(this.flightselected.flight_number,this.flightselected.travel_date)
@@ -67,6 +81,8 @@ export class PassengersComponent implements OnInit {
           this.router.navigate([`${'flight/seats'}`]);
           this.TransactionService.passengers = this.dataarray
           this.TransactionService.final_amount = this.totalprice
+          this.TransactionService.contact_no = this.mobile
+          this.TransactionService.contact_email = this.email
         }
         else 
         {

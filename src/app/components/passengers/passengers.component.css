@@ -259,6 +259,10 @@ form
     margin-right: 1.5rem;
 }
 /***************Contact***********/
+.contact__summary
+{
+    width: 100%;
+}
 
 .contactdetails
 {
