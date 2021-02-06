@@ -66,10 +66,21 @@ export class AirplanecardComponent implements OnInit {
         this.router.navigate([`${'flight/passengers'}`]);
     }
     else {
-      Swal.fire('Login To Continue')
-      this.router.navigate([`${'/login'}`]);
-     
+      Swal.fire({
+        icon:'warning',
+        title: 'Oops!',
+        text: 'Login to continue',
+        showCancelButton: true,
+        confirmButtonColor: '#049F0C',
+        cancelButtonColor:'#ff0000',
+        confirmButtonText: 'Take me to login',
+        cancelButtonText: 'Maybe Later'
+      }).then(async(result) => {
+        if(result.value)
+        {
+          this.router.navigate([`${'/login'}`]);
+        }
+      })
     }
-
   }
 }
