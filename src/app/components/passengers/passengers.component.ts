@@ -69,9 +69,14 @@ export class PassengersComponent implements OnInit {
 
       async fetchprice() 
       {
-        this.seatprice = await this.flightselected.getFlightPrice(this.flightselected.flight_number,this.flightselected.travel_status)
-
-        console.log(this.flightselected.travel_date)
+        let response = await this.flightselected.getFlightPrice(this.flightselected.flight_number,this.flightselected.travel_status)
+        if(response != 'false')
+          this.seatprice = response
+        else 
+          {
+            Swal.fire('Oops' , 'Error fetching price', 'error')
+            return
+          }
         let current_date = new Date()
         let travel_date = new Date(this.flightselected.travel_date)
         let difference_days = (travel_date.getTime() - current_date.getTime())/(1000*3600*24)
