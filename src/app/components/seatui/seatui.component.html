@@ -110,7 +110,7 @@
             </div>
             <div class="legendwrapper">
                 <div class="seatblock" style="background-color: white;"></div>
-                <span>Unreserved</span>
+                <span>{{seatclass == "business" ? "economy" : seatclass == "economy" ? "business" : undefined }}</span>
             </div>
             <div class="legendwrapper">
                 <div class="seatblock choosen" ></div>
