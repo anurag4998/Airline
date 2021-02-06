@@ -9,10 +9,6 @@ header
     color: white;
     position: relative;
 }
-.logo 
-{
-    padding-left: 3rem;
-}
 .logo > a
 {
     color: #fff;
@@ -22,6 +18,7 @@ header
     display: inline-block;
     padding: 15px 20px;
     position: relative;
+    margin-bottom: 0.8rem;
     
 }
 .msg{
@@ -55,6 +52,10 @@ body a {
   body a:hover {
     border-bottom: 2px solid #40b3ff;
     opacity: 1;
+  }
+  .text 
+  {
+    margin-top: 1rem;
   }
   .field {
     margin-bottom: 25px;
