@@ -76,25 +76,6 @@
 
     </div>
 </div> 
-<form class="contactdetails details-wrapper" #f = "ngForm">
-            <div class="contactdetails--info">
-                <h3>Your ticket and flights information will be sent here.</h3>
-            </div>
-            <div class="card-body">
-                <div class="card-body--details card-body--firstname">
-                    <div class="card-body--input">
-                        <input type="text" placeholder="India(+91)" required readonly>
-                    </div>
-                    <div class="card-body--input card-body--mobile_no">
-                        <input type="text" placeholder="Mobile No" required name="mobile" [(ngModel)]="mobile">
-                    </div>
-                    <div class="card-body--input card-body--email">
-                        <input type="email" placeholder="Email" required 
-                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" name="email" [(ngModel)]="email">
-                    </div>
-                </div>
-            </div>
-</form>
 <footer>
     <div class="footer--left">
         <span class="footer--title">Select Seat</span>

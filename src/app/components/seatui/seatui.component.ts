@@ -24,8 +24,6 @@ export class SeatuiComponent implements OnInit {
   public k=0;
   public numberofseats:number
   public seatclass:string
-  public mobile:string
-  public email:string
   public reservedSeatsArray = []
 
 
@@ -134,26 +132,23 @@ export class SeatuiComponent implements OnInit {
   onSubmit()
   {
  
-    if(!this.email || !this.mobile)
-    {
-        Swal.fire('oops', 'Enter contact details', 'error')    
-        return
-    }
-    var emailregex =  new RegExp ("[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$")
-    var phoneregex = new RegExp("^[0-9]{10}$")
-    if(!emailregex.test(this.email) || !phoneregex.test(this.mobile))
-    {
-      Swal.fire('oops', 'Check your contact details', 'error')    
+    // if(!this.email || !this.mobile)
+    // {
+    //     Swal.fire('oops', 'Enter contact details', 'error')    
+    //     return
+    // }
+    // var emailregex =  new RegExp ("[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$")
+    // var phoneregex = new RegExp("^[0-9]{10}$")
+    // if(!emailregex.test(this.email) || !phoneregex.test(this.mobile))
+    // {
+    //   Swal.fire('oops', 'Check your contact details', 'error')    
 
-    }
+    // }
     
-    else
     {
       if(this.reservedSeatsArray.length == this.numberofseats)
         {
           this.TransactionService.seatArray = this.reservedSeatsArray
-          this.TransactionService.contact_no = this.mobile
-          this.TransactionService.contact_email = this.email
           this.router.navigate([`${'flight/payment'}`]);
         }
         else 
