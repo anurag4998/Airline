@@ -34,7 +34,7 @@ export class PaymentuiComponent implements OnInit {
 
   async submitForm(paymentForm)
   {
-      delete paymentForm.cvv
+      delete paymentForm.cvc
       delete paymentForm.name
       this.TransactionService.card_details = paymentForm
       let result = await this.TransactionService.post()
