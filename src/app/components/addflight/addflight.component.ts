@@ -34,7 +34,9 @@ export class AddflightComponent implements OnInit {
       Sunday:false,
       departure_time:null,
       arrival_time:null,
-      duration:null
+      duration:null,
+      business_cost:null,
+      economy_cost:null
     }
     this.citydata = this.airportservice.airports;
     this.flightcheck=true;

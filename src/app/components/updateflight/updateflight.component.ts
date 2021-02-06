@@ -31,8 +31,11 @@ export class UpdateflightComponent implements OnInit {
       Sunday:data["Sunday"],
       departure_time:data["departure_time"],
       arrival_time:data["arrival_time"],
-      duration:data["duration"]
+      duration:data["duration"],
+      business_cost:data["business_cost"],
+      economy_cost:data["economy_cost"]
       }
+      
     )
     this.citydata = this.airportservice.airports;
     if(!sessionStorage.getItem('admin'))

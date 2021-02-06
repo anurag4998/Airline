@@ -14,4 +14,6 @@ export class Adminflight {
     departure_time:Time;
     arrival_time:Time;
     duration:Time;
+    business_cost: number;
+    economy_cost:number;
 }
