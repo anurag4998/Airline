@@ -30,13 +30,13 @@ export class FlightdataComponent implements OnInit {
     let current_date = `${new Date().getFullYear()}-${new Date().getMonth()+1}-${new Date().getDate()}`
     Swal.fire({
       icon:'warning',
-      title: 'Are you sure to Delete this ticket?',
+      title: 'Are you sure to cancel this ticket?',
       text: 'You will not be able to revert this ',
       showCancelButton: true,
       confirmButtonColor: '#049F0C',
       cancelButtonColor:'#ff0000',
-      confirmButtonText: 'Yes, delete it!',
-      cancelButtonText: 'No, keep it'
+      confirmButtonText: 'Yes, cancel it!',
+      cancelButtonText: 'Keep my reservation'
     }).then(async(result) => {
       console.log(result)
       if(result.value)
@@ -62,12 +62,7 @@ export class FlightdataComponent implements OnInit {
             'success'
           )
         }
-    })
-
-
-    
-
-
+    })  
   }
   checktime(departure_time,travel_date)
   { 
