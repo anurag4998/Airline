@@ -11,7 +11,7 @@
             <div class="form-group">
                 <div class="row">
                     <label for="flight_number" class="col-sm-3 control-label">Flight Number</label>
-                    <div class="col-sm-9" id="flight_number" ><input type ="text" (click)="onclickfn()" name="flight_number" class="form-control" placeholder="Flight Number" pattern="^[0-9]*$" required minlength="4" maxlength="4" #flight_number="ngModel"
+                    <div class="col-sm-9" id="flight_number" ><input type ="text" (click)="onclickfn()" name="flight_number" class="form-control" placeholder="Flight Number" pattern="^[0-9]*$" required minlength="3" maxlength="4" #flight_number="ngModel"
                         [(ngModel)]="addflight.flight_number">
                     <div
                     *ngIf="!flight_number?.valid && (flight_number?.dirty ||flight_number?.touched)" class="errors">
