@@ -45,7 +45,7 @@ export class PaymentuiComponent implements OnInit {
           'Your Tickets are booked :)',
           'success'
         )
-        this.router.navigate([`${'/flight/user/dashboard'}`]);
+        this.router.navigate([`${'/flight/payment/eticket'}`]);
 
       }
       else 

@@ -1,0 +1,132 @@
+@media print {
+    app-loggedinheader, app-footer,.bg,.btn,.userdashboard {
+      visibility: hidden;
+    }
+    .page {
+      visibility: visible;
+    }
+    .page {
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+  }
+
+  .head_logo{
+    width: 7rem; 
+    height: 7rem;
+    padding:10px;
+}
+
+.bg{
+    height: 140%;
+    display: flex;
+    background-image: url('../../../assets/headernew.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;    
+    background-color: #5947c9;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.eticket
+{
+    font-family: 'Poppins'  !important;
+    float:right;
+    padding:20px;
+}
+.page {
+    font-family: 'Poppins'  !important;
+    max-width: 140%;
+    min-width: 800px;
+    padding: 30px;
+    margin: auto;
+    border-radius: 0.3em;
+    background-color: #f2f2f2 !important;
+}
+h2{
+    color: white !important;
+}
+
+.heading{
+   
+    padding:10px;
+    color: whitesmoke !important;
+    background-color: rgb(75, 70, 155) !important;
+    border-radius: 5px;
+    
+}
+.bookdate
+{
+    float:right;
+}
+.sub_head
+{   
+    font-family: 'Poppins'  !important;
+    margin-top:20px;
+    margin-bottom: 10px;
+    background-color: rgb(111, 105, 185) !important;
+    color: white !important;
+    padding: 12px;
+    border-radius: 4px;
+    font-size: 16px;
+}
+.book_head
+{   
+    font-weight: 500;
+    font-size: 16px;
+    padding:10px;
+    
+}
+
+.btn
+{
+    position: center;
+    margin-top:10px;
+    color:rgb(255, 255, 255);
+    border: none;
+    border-radius: 5px;
+    padding: 8px 18px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    width:90px;
+    background-color: rgb(84, 110, 230);
+    font-weight:500;
+    font-family: 'Rubik', sans-serif;
+    cursor: pointer;
+}
+
+.table
+{
+    width:100%;
+    text-align: center;
+    border:none;
+    border-collapse: collapse;
+}
+.td,.th
+{
+    padding:10px;
+    border:none;
+    border-collapse: collapse;
+    width:10%;
+    text-align: center;
+}
+.th
+{
+    background-color: rgb(132, 164, 194);
+}
+tr:nth-child(even) 
+{
+    background-color: rgb(226, 219, 219);
+}
+.userdashboard {
+    padding-left:10px;
+    padding-top:20px;
+    font-size: small;
+    text-decoration: none;
+}
+.fa-arrow-circle-right
+{ 
+    padding:5px;
+}

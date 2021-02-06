@@ -1,0 +1,181 @@
+<app-loggedinheader></app-loggedinheader>
+<div class="bg">
+
+    <div class="page">
+        <div class="heading">
+            <img class="head_logo" src="../../../assets/logo3.png"><h2 class="eticket">E-Ticket</h2>
+            
+
+        </div>
+        <div class="book_head">
+            <span >Transaction Id : {{transaction_id}} </span><span class="bookdate">Booking Date: {{booking_date}}</span>
+            
+        </div>
+        <div>
+            <h3 class="sub_head">Travel Information</h3>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th class="th">
+                        Flight Number
+                    </th>
+                    <th class="th">
+                        From/Terminal
+                    </th>
+                    <th class="th">
+                        To/Terminal
+                    </th >
+                    <th class="th">
+                        Departure
+                    </th>
+                    <th class="th">
+                        Arrival
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td class="td">
+                        {{flight_number}}
+                    </td>
+                    <td class="td">
+                        {{departure}}
+                    </td>
+                    <td class="td">
+                        {{arrival}}
+                    </td>
+                    <td class="td">
+                    {{travel_date}},<br>
+                    {{departure_time}}
+                    </td>
+                    <td class="td">
+                    {{travel_date}},<br>
+                    {{arrival_time}}
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div>
+            <h3 class="sub_head">Passenger Information</h3>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th class="th">
+                        S.No.
+                    </th>
+                    <th class="th">
+                        Passenger Name
+                    </th>
+                    <th class="th">
+                        Age
+                    </th>
+                    <th class="th">
+                        Status
+                    </th>
+                    <th class="th">
+                        Seat Number
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let passenger of passengers;let i = index">
+                    <td class="td">
+                    {{i+1}}.
+                    </td >
+                    <td class="td">
+                        {{passenger.Name}}
+                    </td>
+                    <td class="td">
+                        {{passenger.age}}
+                    </td>
+                    <td class="td">
+                    Confirmed
+                    </td>
+                    <td class="td">
+                        {{passenger.seatno}}
+                    </td>
+                </tr>
+               
+                
+                </tbody>
+            </table>
+        </div>
+        <div>
+            <h3 class="sub_head">Payment Information</h3>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th class="th">Purchase Description
+                    </th>
+                    <th class="th">
+                        Price
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td class="td">
+                        Fare
+                    </td>
+                    <td class="td">
+                        {{amount-512-amount*0.05}}.00 INR
+                    </td>
+                </tr>
+                <tr>
+                    <td class="td">
+                        User Development Fee(UDF)
+                    </td>
+                    <td class="td">
+                        126.00 INR
+                    </td>
+                </tr>
+                <tr>
+                    <td class="td">
+                        Service Tax @5.00%
+                    </td>
+                    <td class="td">
+                        {{amount*0.05}} INR
+                    </td>
+                </tr>
+                <tr>
+                    <td class="td">
+                        Passenger Service Fee
+                    </td>
+                    <td class="td">
+                        236.00 INR
+                    </td>
+                </tr>
+                <tr>
+                    <td class="td">
+                        Convenience Fee
+                    </td>
+                    <td class="td">
+                        150.00 INR
+                    </td>
+                </tr>
+                <tr>
+                    <th class="th">
+                        Total:
+                    </th>
+                    <th class="th">
+                        {{amount}} INR    
+                    </th>
+                </tr>
+                </tbody>
+                
+            </table>
+        </div>
+        <div style="text-align: center;">
+            <div>
+                <button class="btn" onclick="window.print()"><i class="fa fa-print"></i>Print</button>
+            </div>
+            <div class="userdashboard">   
+                <a [routerLink]="['/']">Go To Home <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

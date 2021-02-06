@@ -24,6 +24,10 @@ export class ViewallflightsComponent implements OnInit {
         this.flights = data;
         this.flights=this.flights.sort();
     })  
+    if (!this.service.refreshcheck) {
+      window.location.reload();
+      this.service.refreshcheck=true
+    } 
     if(!sessionStorage.getItem('admin'))
     {
       Swal.fire({

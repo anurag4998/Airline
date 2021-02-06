@@ -47,6 +47,7 @@ import { RulesComponent } from './components/rules/rules.component'
 import { AdminheaderComponent } from './components/adminheader/adminheader.component';
 import { AdminfooterComponent } from './components/adminfooter/adminfooter.component';
 import { AdminloggedinheaderComponent } from './components/adminloggedinheader/adminloggedinheader.component';
+import { EticketComponent } from './components/eticket/eticket.component';
 
 @NgModule({
   declarations: [
@@ -80,6 +81,7 @@ import { AdminloggedinheaderComponent } from './components/adminloggedinheader/a
     AdminheaderComponent,
     AdminfooterComponent,
     AdminloggedinheaderComponent,
+    EticketComponent,
    
   ],
   imports: [

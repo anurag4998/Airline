@@ -14,6 +14,7 @@ export class AdminflightcrudService {
       'Content-Type': 'application/json'
     })
   }
+  public refreshcheck=true;
   constructor(private httpClient: HttpClient) { }
   
   getAll(): Observable<Adminflight[]> {
@@ -21,7 +22,9 @@ export class AdminflightcrudService {
   }
 
   deleteflight(flightnumber){
+    this.refreshcheck=false;
     return this.httpClient.delete<Adminflight>(this.apiServer + flightnumber, this.httpOptions)  
+    
   }
 
   getByflightnumber(flightnumber): Observable<Adminflight> {
@@ -29,10 +32,12 @@ export class AdminflightcrudService {
   } 
  
   updateflight(flightnumber, flight): Observable<Adminflight> {
+    this.refreshcheck=false;
     return this.httpClient.put<Adminflight>(this.apiServer+ flightnumber, JSON.stringify(flight), this.httpOptions)
   }  
   
   addflight(flight): Observable<Adminflight> {
+    this.refreshcheck=false;
     return this.httpClient.post<Adminflight>(this.apiServer, JSON.stringify(flight), this.httpOptions)
   }
 }

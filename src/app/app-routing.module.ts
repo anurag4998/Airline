@@ -18,6 +18,7 @@ import { ResetpasswordComponent } from './components/resetpassword/resetpassword
 import { FlightdataComponent } from './components/dashboard/flightdata/flightdata.component';
 import { CancellationsComponent } from './components/dashboard/cancellations/cancellations.component';
 import { RulesComponent} from './components/rules/rules.component';
+import { EticketComponent } from './components/eticket/eticket.component';
 
 const routes: Routes = [
   { path: '', component:SearchComponent},
@@ -32,7 +33,7 @@ const routes: Routes = [
   {path :'user/resetpassword', component:ResetpasswordComponent},
   {path :'flight/rules',component:RulesComponent},
   {path : 'flight/user/dashboard/cancelled', component:CancellationsComponent },
-
+  {path:'flight/payment/eticket', component:EticketComponent},
   
   
   {path: 'AdminLogin', component: AdminloginComponent},
