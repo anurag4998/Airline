@@ -34,11 +34,16 @@ export class SearchflightService {
     params = params.append('day', day);
     params = params.append('date', date);
     params = params.append('seats', seats);
-  
-    let a =   await this.httpClient.get<Searchflight[]>(this.apiServer,{ params: params }).toPromise()
-    this.flightdata = a;
-    
-    
- 
+     
+    try 
+    {
+      let a =   await this.httpClient.get<Searchflight[]>(this.apiServer,{ params: params }).toPromise()
+      this.flightdata = a;
+    }
+    catch(error)
+    {
+       if(error.status == 500)
+          return "error"
+    }   
   }
 }

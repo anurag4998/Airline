@@ -62,11 +62,22 @@ export class SearchComponent implements OnInit {
     let seats = this.model.seats
 
     if(direction == 'one-way')
-     await this.GetFlightsService.post(
-        depart_location,arrival_location,day,departure_date,seats
-      )
-      Swal.close();
-      this.router.navigate([`${this.pageName}`]);
+    {
+      let response = await this.GetFlightsService.post(depart_location,arrival_location,day,departure_date,seats)
+      if(response == null)
+        {
+          Swal.close();
+          this.router.navigate([`${this.pageName}`]);
+        }
+      else
+        {
+          Swal.close()
+          Swal.fire('Internal Server Error', 'Try again later' , 'error')
+
+        }
+    }
+    
+     
 
 
 
