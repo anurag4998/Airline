@@ -144,6 +144,23 @@ form
     margin-top: 1rem;
     text-transform: capitalize;
 }
+.admin--login
+{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 2rem 4rem;
+    height: 5rem;
+    width: 100vw;
+    background-color: #222;
+}
+.admin--login > a
+{
+    text-decoration: none;
+    color: #fff;
+    padding-left: 2rem;
+
+}
 
 /* mat-fields css */
 
