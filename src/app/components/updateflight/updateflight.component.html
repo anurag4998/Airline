@@ -141,7 +141,7 @@
                     
                     <div class="row">
                         <label for="business_cost" class="col-sm-3 control-label">Business Price</label>
-                        <div class="col-sm-9" id="business_cost"><input type ="text" name="business_cost" class="form-control" placeholder="Business Class Price" required #business_cost="ngModel"
+                        <div class="col-sm-9" id="business_cost"><input type ="number" name="business_cost" class="form-control" placeholder="Business Class Price" required #business_cost="ngModel"
                             [(ngModel)]="updateflight.business_cost">
                             <div
                             *ngIf="!business_cost?.valid && (business_cost?.dirty ||business_cost?.touched)" class="errors">
@@ -154,7 +154,7 @@
     
                     <div class="row">
                         <label for="economy_cost" class="col-sm-3 control-label">Economy Price</label>
-                        <div class="col-sm-9" id="economy_cost"><input type ="text" name="economy_cost" class="form-control" placeholder="Economy Class Price" required #economy_cost="ngModel"
+                        <div class="col-sm-9" id="economy_cost"><input type ="number" name="economy_cost" class="form-control" placeholder="Economy Class Price" required #economy_cost="ngModel"
                             [(ngModel)]="updateflight.economy_cost">
                             <div
                             *ngIf="!economy_cost?.valid && (economy_cost?.dirty ||economy_cost?.touched)" class="errors">

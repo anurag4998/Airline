@@ -34,7 +34,7 @@ export class AdminloginComponent implements OnInit {
   }
   async submitForm(AdminLoginForm)
   {
-    console.log(AdminLoginForm.value);
+   
     this.timer = true
     let response = await this.loginservice.login(AdminLoginForm.value)
    
