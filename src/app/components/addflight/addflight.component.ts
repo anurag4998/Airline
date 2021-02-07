@@ -66,8 +66,9 @@ export class AddflightComponent implements OnInit {
   }
   
   
+  
  
-  async submitForm(AddFlightForm) {
+  submitForm(AddFlightForm) {
     
   for(let i=0;i<this.flights.length;i++)
   {
@@ -83,8 +84,7 @@ export class AddflightComponent implements OnInit {
     if(this.flightcheck==true)
     {
       Swal.fire('Adding Flight');    Swal.showLoading();
-      console.log(AddFlightForm.value);
-      await this.service.addflight(AddFlightForm.value).subscribe((data)=>
+      this.service.addflight(AddFlightForm.value).subscribe((data)=>
       console.log(data,"Flight Added")
       )
       Swal.close();

@@ -55,12 +55,12 @@ export class UpdateflightComponent implements OnInit {
   }
 
  
-  async submitForm(UpdateFlightForm) {
+  submitForm(UpdateFlightForm) {
     
     UpdateFlightForm.value.flight_number=this.updateflight.flight_number;
-    console.log(UpdateFlightForm.value);
+   
     Swal.fire('Updating Flight');    Swal.showLoading();
-    await this.service.updateflight(this.router.snapshot.params['flightnumber'],UpdateFlightForm.value).subscribe((data)=>
+    this.service.updateflight(this.router.snapshot.params['flightnumber'],UpdateFlightForm.value).subscribe((data)=>
      console.log(data,"Flight Added")
    )
    Swal.close();
