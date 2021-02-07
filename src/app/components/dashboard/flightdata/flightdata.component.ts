@@ -66,14 +66,21 @@ export class FlightdataComponent implements OnInit {
   }
   checktime(departure_time,travel_date)
   { 
-    if(new Date(travel_date).getDate() < new Date().getDate())
+    if(new Date(travel_date).getTime() - new Date().getTime() < 0 )
       return false;
-    if(new Date(travel_date).getDate() == new Date().getDate())
+
+    if((new Date(travel_date).getDay() == new Date().getDay()))
       {
         if( parseInt(departure_time.substring(0,2)) - new Date().getHours() > 3)
+          return true;
+        else
         return false;
       }
-      else
-        return true
+    
+
+    if((new Date(travel_date).getDay() > new Date().getDay()))
+      return true
+
+  
   }
-}
+} 
