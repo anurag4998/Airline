@@ -4,7 +4,7 @@
           <a [routerLink]="['/']" class="logo" > <img style="width: 10rem; height: 10rem;" src="../../../assets/logo3.png"></a>   
         </div>
       <div class="nav-items">
-        
+            <a [routerLink]="['flight/rules']" style="cursor: pointer;">Booking Rules</a>
             <a [routerLink]="['/login']">Login</a>
             <a [routerLink]="['/signup']">Signup</a>
             
@@ -16,6 +16,7 @@
       <a [routerLink]="['/']"> <img style="width: 10rem; height: 10rem;" src="../../../assets/logo3.png"> </a>   
     </div>
     <div class="nav-items">
+        <a [routerLink]="['flight/rules']" style="cursor: pointer;">Booking Rules</a>
         <a (click) = "handlelogout()" style="cursor: pointer;">Logout</a>
         <a [routerLink]="['/flight/user/dashboard']" class="avatar"><fa-icon [icon]="faUser"></fa-icon></a> 
       </div>
