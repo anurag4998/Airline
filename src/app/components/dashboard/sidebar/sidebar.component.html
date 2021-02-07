@@ -1,19 +1,19 @@
 <div class="dashboard--menu-wrapper">
     <div class="left dashboard--menu">
-        <div class="section">
+        <!-- <div class="section">
             <a [routerLink]="['/flight/user/details']"> <i class="fa fa-address-card ico"></i> Personal Details</a>
-        </div>
+        </div> -->
         <div class="section">
             <a [routerLink]="['/flight/user/dashboard']"> <i class="fa fa-calendar ico"></i> Booking History </a>
         </div>
-        <div class="section">
+        <!-- <div class="section">
             <a [routerLink]="['/flight/user/details/card']"> <i class="fa fa-credit-card ico "></i> Credit Card Details </a>
-        </div>
+        </div> -->
         <div class="section">
             <a [routerLink]="['/flight/user/dashboard/cancelled']"> <i class="fa fa-calendar ico"></i> Cancellation History </a>
         </div>
         <div class="section">
-            <a><i class="fa fa-sign-out ico" ></i>  Logout </a> 
+            <a><i class="fa fa-sign-out ico" (click) = "handlelogout()"></i>  Logout </a> 
         </div>
     </div>
 </div>
