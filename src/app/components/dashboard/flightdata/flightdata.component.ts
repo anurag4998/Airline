@@ -78,9 +78,9 @@ export class FlightdataComponent implements OnInit {
       }
     
 
-    if((new Date(travel_date).getDay() > new Date().getDay()))
+    if((new Date(travel_date).getTime() - new Date().getTime() > 0))
       return true
 
-  
+      
   }
 } 
