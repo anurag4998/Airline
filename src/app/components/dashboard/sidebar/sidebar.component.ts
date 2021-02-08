@@ -14,7 +14,7 @@ export class SidebarComponent implements OnInit {
   }
   handleLogout = () => 
   {
-    sessionStorage.removeItem('admin')
-    this.router.navigate([`${'/AdminLogin'}`]);
+    sessionStorage.removeItem('user')
+    this.router.navigate([`${''}`]);
   }
 }
