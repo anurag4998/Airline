@@ -1,6 +1,20 @@
-# Airline
+# Airline Booking Systen
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.5.
+An airline reservation system website created using MVC paradigm, frontend done in angular
+
+### Home Page
+
+![Design preview](./photos/home.PNG)
+
+### Seat Select page
+
+![Design preview](./photos/seat.png)
+
+### Ticket
+
+![Design preview](./photos/ticket.PNG)
+
 
 ## Development server
 
