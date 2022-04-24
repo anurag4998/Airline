@@ -18,8 +18,16 @@
     padding:10px;
 }
 
+.airlineLogo
+{
+  width: 6rem;
+  height: 6rem;
+  background-image: url('../../../assets/logo3.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 .bg{
-    height: 140%;
     display: flex;
     background-image: url('../../../assets/headernew.jpg');
     background-repeat: no-repeat;
@@ -28,6 +36,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    padding: 2rem;
 }
 .eticket
 {

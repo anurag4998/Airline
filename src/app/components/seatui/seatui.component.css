@@ -72,7 +72,7 @@ ul {
    height: 90vh;
    background-color: #e0e0e0;
    overflow-y: hidden;
-
+   overflow-x: scroll;
 
 }
 .airplane-seatswrapper
@@ -84,7 +84,7 @@ ul {
     background-color: #e0e0e0;
     transform: rotateZ(-90deg);
     height: 300rem;
-    padding-top: 80rem;
+    padding-top: 90rem;
 }
 .airplane-seatswrapper>div 
 {
@@ -100,16 +100,22 @@ ul {
     align-items: center;
 }
 
-.cockpit>img 
+.flight-image
 {
-    height:  100%;
+    background-repeat: no-repeat;
+    background-size: cover;    
+    height: 100%;
+    width: 50rem;
 }
-
-.tail >img 
+.cockpit-img
 {
-    height:100%;
-}
+    background-image: url('../../../assets/cockpit.png');
 
+}
+.tail-img 
+{
+    background-image: url('../../../assets/tail.a786df74.png');
+}
 .seatwrapper
 {
     display: flex;
@@ -147,6 +153,14 @@ ul {
 
 }
 
+.cockpit-img
+{
+    background-image: url('../../../assets/cockpit.png');
+    background-repeat: no-repeat;
+    background-size: cover;    
+    height: 100%;
+    width: 50rem;
+}
 .notallowed
 {
     cursor: not-allowed;

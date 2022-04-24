@@ -40,6 +40,14 @@
 {
     margin-top: -2rem;
 }
+.card__flight__logo__img
+{
+    background-image: url('../../../assets/logo.png');
+    height: 6rem;
+    width: 6rem;
+    background-repeat: no-repeat;
+    background-size: cover;      
+}
 .card__location--time
 {
     height: 3.5rem;

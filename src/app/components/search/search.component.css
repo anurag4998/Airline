@@ -24,6 +24,14 @@
 {
     padding-left: 3rem;
 }
+.searchlogoImg
+{
+  width: 10rem;
+  height: 10rem;
+  background-image: url('../../../assets/logo3.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 .nav-items 
 {
     display: flex;
@@ -48,9 +56,6 @@
 {
     color:#4834d4; 
     background-color: #fff;
-
-
-
 }
 .row 
 {
@@ -79,10 +84,8 @@
     margin-bottom:5rem 0;
     color: #333;
 }
-.wrapper
+.card
 {
-    max-height: 40%;
-    min-width: 80%;
     background-color: rgba(255, 255, 255, 0.945);
     border-radius: 3rem;
     padding: 1rem;
@@ -100,7 +103,6 @@ form
 .form__radio
 {
     padding: 1rem 1rem;
-
 }
 
 
